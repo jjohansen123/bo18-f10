@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Form1
+    partial class mainForm1
     {
         /// <summary>
         /// Required designer variable.
@@ -32,12 +32,13 @@
             this.deleteBtn = new System.Windows.Forms.Button();
             this.baseBtn = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.changeBTN = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // createBtn
             // 
-            this.createBtn.Location = new System.Drawing.Point(6, 734);
+            this.createBtn.Location = new System.Drawing.Point(6, 682);
             this.createBtn.Name = "createBtn";
             this.createBtn.Size = new System.Drawing.Size(302, 46);
             this.createBtn.TabIndex = 1;
@@ -67,11 +68,13 @@
             this.baseBtn.Name = "baseBtn";
             this.baseBtn.Size = new System.Drawing.Size(120, 80);
             this.baseBtn.TabIndex = 0;
+            this.baseBtn.TabStop = true;
             this.baseBtn.Tag = "temp1";
             this.baseBtn.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
+            this.panel1.AutoSize = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.baseBtn);
             this.panel1.Location = new System.Drawing.Point(314, 12);
@@ -79,20 +82,31 @@
             this.panel1.Size = new System.Drawing.Size(1252, 820);
             this.panel1.TabIndex = 3;
             // 
-            // Form1
+            // changeBTN
+            // 
+            this.changeBTN.Location = new System.Drawing.Point(6, 734);
+            this.changeBTN.Name = "changeBTN";
+            this.changeBTN.Size = new System.Drawing.Size(302, 46);
+            this.changeBTN.TabIndex = 4;
+            this.changeBTN.Text = "Change";
+            this.changeBTN.UseVisualStyleBackColor = true;
+            // 
+            // mainForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1578, 844);
+            this.Controls.Add(this.changeBTN);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.createBtn);
-            this.Name = "Form1";
+            this.Name = "mainForm1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Test123";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -101,6 +115,7 @@
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.RadioButton baseBtn;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button changeBTN;
     }
 }
 

@@ -1,0 +1,16 @@
+c:\users\kissi\source\repos\BachelorApp\BachelorDataAccess\bin\Debug\BachelorDataAccess.dll.config
+c:\users\kissi\source\repos\BachelorApp\BachelorDataAccess\bin\Debug\BachelorDataAccess.dll
+c:\users\kissi\source\repos\BachelorApp\BachelorDataAccess\bin\Debug\BachelorDataAccess.pdb
+c:\users\kissi\source\repos\BachelorApp\BachelorDataAccess\bin\Debug\BachelorModel.dll
+c:\users\kissi\source\repos\BachelorApp\BachelorDataAccess\bin\Debug\EntityFramework.dll
+c:\users\kissi\source\repos\BachelorApp\BachelorDataAccess\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\kissi\source\repos\BachelorApp\BachelorDataAccess\bin\Debug\EntityFramework.SqlServerCompact.dll
+c:\users\kissi\source\repos\BachelorApp\BachelorDataAccess\bin\Debug\System.Data.SqlServerCe.dll
+c:\users\kissi\source\repos\BachelorApp\BachelorDataAccess\bin\Debug\BachelorModel.pdb
+c:\users\kissi\source\repos\BachelorApp\BachelorDataAccess\bin\Debug\EntityFramework.xml
+c:\users\kissi\source\repos\BachelorApp\BachelorDataAccess\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\kissi\source\repos\BachelorApp\BachelorDataAccess\bin\Debug\EntityFramework.SqlServerCompact.xml
+c:\users\kissi\source\repos\BachelorApp\BachelorDataAccess\obj\Debug\BachelorDataAccess.csprojResolveAssemblyReference.cache
+c:\users\kissi\source\repos\BachelorApp\BachelorDataAccess\obj\Debug\BachelorDataAccess.csproj.CoreCompileInputs.cache
+c:\users\kissi\source\repos\BachelorApp\BachelorDataAccess\obj\Debug\BachelorDataAccess.dll
+c:\users\kissi\source\repos\BachelorApp\BachelorDataAccess\obj\Debug\BachelorDataAccess.pdb

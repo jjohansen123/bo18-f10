@@ -8,3 +8,13 @@ C:\Users\Martin\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\Bac
 C:\Users\Martin\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\WindowsFormsApp1.exe
 C:\Users\Martin\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\Martin\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\WindowsFormsApp1.MainForm1.resources
+C:\Users\sonic\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\sonic\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\bin\Debug\WindowsFormsApp1.exe
+C:\Users\sonic\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\sonic\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\BachelorGUI.csprojResolveAssemblyReference.cache
+C:\Users\sonic\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\WindowsFormsApp1.mainForm1.resources
+C:\Users\sonic\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\sonic\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\BachelorGUI.csproj.GenerateResource.cache
+C:\Users\sonic\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\BachelorGUI.csproj.CoreCompileInputs.cache
+C:\Users\sonic\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\WindowsFormsApp1.exe
+C:\Users\sonic\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\WindowsFormsApp1.pdb

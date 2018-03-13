@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BachelorDataAccess;
 using BachelorModel;
+using System.Data.SqlClient;
 
 namespace BachelorApp
 {
@@ -13,22 +14,57 @@ namespace BachelorApp
     class Program
     {
 
-        public static void RecursiveDelete(Node s)
+        public static void DeleteNode()
         {
+            try
+            {
+                Console.WriteLine("Node to Delete: ");
+                Int32 NodeID = Int32.Parse(Console.ReadLine());
 
-            if(s.Children == null || s.Children.Count() == 0)
-            {
-                s = null;
-                return;
-            }
-            else
-            {
-                foreach(Node n in s.Children)
+                using (var db = new BachelorContext())
                 {
-                    RecursiveDelete(n);
+                    List<Node> nodes = db.Nodes.ToList();
+                    foreach (Node s in nodes)
+                    {
+                        if (s.NodeID == NodeID)
+                        {
+                            if (s.Children == null || s.Children.Count() == 0)
+                            {
+                                SqlConnectionStringBuilder connStringBuilder = new SqlConnectionStringBuilder
+                                {
+                                    DataSource = @"(local)\SQLEXPRESS",
+                                    InitialCatalog = "BachelorDataAccess.BachelorContext",
+                                    IntegratedSecurity = true
+                                };
+
+                                try
+                                {
+                                    using (SqlConnection conn = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = BachelorDataAccess.BachelorContext; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False"))
+                                    {
+                                        SqlCommand cmd = new SqlCommand(string.Format("DELETE FROM dbo.Nodes WHERE NodeID = '{0}'", NodeID), conn);
+                                        conn.Open();
+                                        cmd.ExecuteNonQuery();
+                                        //SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM dbo.Books where Title LIKE @title", conn); // 2
+                                        //cmd.Parameters.AddWithValue("@title", searchCriteria); 
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine(ex);
+                                    Console.ReadLine();
+                                }
+                            }
+                        }
+                    }
+                    RefeshAll();
                 }
             }
-            s = null;
+
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                Console.ReadLine();
+            }
         }
 
 
@@ -71,7 +107,7 @@ namespace BachelorApp
                             
                         }
                     }
-
+                    RefeshAll();
                     Menu();
                 }
             }
@@ -97,6 +133,7 @@ namespace BachelorApp
                             db.SaveChanges();
                         }
                     }
+
                 }
             }
             catch (Exception e)
@@ -236,50 +273,15 @@ namespace BachelorApp
                     List<Node> nodes = db.Nodes.ToList();
                     Console.Clear();
                     Console.WriteLine("Node information");
-
-                    //var i = from db 
-
-                    foreach (Node s in nodes) {
+              
+                    foreach (Node s in nodes)
+                    {
                         if (s.Children == null)
                         {
                             s.Children = new List<Node>();
                         }
-                        Console.WriteLine("Node ID: " + s.NodeID + " - Parent ID: " + s.ParentID + " - Description: " + s.Description + " - Routers connected: " + s.Children.Count + " - Users directly connected: " + s.DirectConnectedUsers + " - Total number of users: " + s.TotalConnectedUsers );
+                        Console.WriteLine("Node ID: " + s.NodeID + " - Parent ID: " + s.ParentID + " - Description: " + s.Description + " - Routers connected: " + s.Children.Count + " - Users directly connected: " + s.DirectConnectedUsers + " - Total number of users: " + s.TotalConnectedUsers);
                     }
-                    /*
-                List<Course> courses = db.Courses.ToList();
-                Console.WriteLine("\nCourses:\n");
-                foreach (Course cor in courses)
-                    Console.WriteLine(cor.CourseID + " - " + cor.CourseName);
-
-                Console.WriteLine("\n Enter the number of the student, press enter, then the number of the course:");
-                int StudNr = Int32.Parse(Console.ReadLine());
-                int CouNr = Int32.Parse(Console.ReadLine());
-
-                Course c = db.Courses.First(e => e.CourseID == CouNr);
-
-                if (c != null)
-                {
-                    Student s = db.Students.First(i => i.StudentID == StudNr);
-                    if (s != null)
-                    {
-                        if (s.Courses == null)
-                            s.Courses = new List<Course>();
-                        s.Courses.Add(c);
-
-                        if (c.Students == null)
-                            c.Students = new List<Student>();
-                        c.Students.Add(s);
-
-                Data Source=|DataDirectory|BachelorDataAccess.BachelorContext.sdf; 
-
-                        db.SaveChanges();
-                        Console.Clear();
-                        Console.WriteLine("Process completed");
-                        Menu();
-                    }
-                }
-                */
                     Console.ReadKey();
                     Menu();
                 }
@@ -292,6 +294,9 @@ namespace BachelorApp
             }
         }
 
+        /// <summary>
+        /// Menus this instance.
+        /// </summary>
         public static void Menu()
         {
             Console.WriteLine("Options:\n[1]: Add node to system\n[2]: View Nodes\n[3]: Edit node\n[4]: Delete node(and all its children)\n[Anything else] Exit");
@@ -310,38 +315,16 @@ namespace BachelorApp
                 UpdateNode();
             }
             else if (ButtonPressed == ConsoleKey.D4 || ButtonPressed == ConsoleKey.NumPad4 || ButtonPressed == ConsoleKey.PageDown)
-            {
-                Console.WriteLine("Insert ID of node to delete");
-                Int32 DeleteNode = Int32.Parse(Console.ReadLine());
-                try
-                {
-                    using (var db = new BachelorContext())
-                    {
-                        List<Node> nodes = db.Nodes.ToList();
-                        foreach (Node s in nodes)
-                        {
-                            if (s.NodeID == DeleteNode)
-                            {
-                                RecursiveDelete(s);
-                                db.SaveChanges();
-                                Menu();
-                            }
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e);
-                    Console.ReadKey();
-                }
+            {    
+                DeleteNode();
+                Menu();
             }
             else
             {
                 Console.WriteLine("Exiting");
                 Console.ReadKey();
             }
-
-            }
+        }
         
         static void Main(string[] args)
         {

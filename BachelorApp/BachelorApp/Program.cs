@@ -11,15 +11,15 @@ namespace BachelorApp
 {
 
 
-    class Program
+    public class Program
     {
 
-        public static void DeleteNode()
+        public static void DeleteNode(Int32 NodeID)
         {
             try
             {
                 Console.WriteLine("Node to Delete: ");
-                Int32 NodeID = Int32.Parse(Console.ReadLine());
+                //Int32 NodeID = Int32.Parse(Console.ReadLine());
 
                 using (var db = new BachelorContext())
                 {
@@ -200,17 +200,17 @@ namespace BachelorApp
             }
  
         }
-        public static void Register()
+        public static void Register(string NodeDescription, Int32 readParent, Int32 DirectCon)
         {
             try
             {
                 
                 Console.WriteLine("Insert description:");
-                string NodeDescription = Console.ReadLine();
+                //string NodeDescription = Console.ReadLine();
                 Console.WriteLine("Insert parent ID:");
-                Int32 readParent = Int32.Parse(Console.ReadLine());
+                //Int32 readParent = Int32.Parse(Console.ReadLine());
                 Console.WriteLine("Insert directly connected users:");
-                Int32 DirectCon = Int32.Parse(Console.ReadLine());
+                //Int32 DirectCon = Int32.Parse(Console.ReadLine());
 
 
                 using (var db = new BachelorContext())
@@ -245,7 +245,7 @@ namespace BachelorApp
                             db.SaveChanges();
                         }
                     }
-                    Menu();
+                    //Menu();
                     /*--------------------------
                     db.Nodes.Add(new Node() { Description = NodeDescription, ParentID = readParent, DirectConnectedUsers = DirectCon, Children = new List<Node>() });
                     db.SaveChanges();
@@ -258,9 +258,6 @@ namespace BachelorApp
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                Console.WriteLine("Unable to comply. Press any key to return to menu.");
-                Console.ReadKey();
-                Menu();
             }
         }
 
@@ -304,7 +301,7 @@ namespace BachelorApp
             Console.Clear();
             if (ButtonPressed == ConsoleKey.D1 || ButtonPressed == ConsoleKey.NumPad1 || ButtonPressed == ConsoleKey.End)
             {
-                Register();
+                //Register();
             }
             else if (ButtonPressed == ConsoleKey.D2 || ButtonPressed == ConsoleKey.NumPad2 || ButtonPressed == ConsoleKey.DownArrow)
             {
@@ -316,7 +313,7 @@ namespace BachelorApp
             }
             else if (ButtonPressed == ConsoleKey.D4 || ButtonPressed == ConsoleKey.NumPad4 || ButtonPressed == ConsoleKey.PageDown)
             {    
-                DeleteNode();
+                //DeleteNode();
                 Menu();
             }
             else
@@ -329,6 +326,79 @@ namespace BachelorApp
         static void Main(string[] args)
         {
             Menu();
+        }
+
+        public static String ViewSingleNodeDescription(Int32 NodeID)
+        {
+            SqlConnectionStringBuilder connStringBuilder = new SqlConnectionStringBuilder
+            {
+                DataSource = @"(local)\SQLEXPRESS",
+                InitialCatalog = "BachelorDataAccess.BachelorContext",
+                IntegratedSecurity = true
+            };
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = BachelorDataAccess.BachelorContext; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False"))
+                {
+                    SqlCommand cmd = new SqlCommand(string.Format("SELECT Description FROM dbo.Nodes WHERE NodeID = '{0}'", NodeID), conn);
+                    conn.Open();
+                    String Output = (String)cmd.ExecuteScalar();
+                    return Output;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return "error";
+            }
+        }
+        public static int ViewSingleNodeConnected(Int32 NodeID)
+        {
+            SqlConnectionStringBuilder connStringBuilder = new SqlConnectionStringBuilder
+            {
+                DataSource = @"(local)\SQLEXPRESS",
+                InitialCatalog = "BachelorDataAccess.BachelorContext",
+                IntegratedSecurity = true
+            };
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = BachelorDataAccess.BachelorContext; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False"))
+                {
+                    SqlCommand cmd = new SqlCommand(string.Format("SELECT DirectConnectedUsers FROM dbo.Nodes WHERE NodeID = '{0}'", NodeID), conn);
+                    conn.Open();
+                    int Output = (int)cmd.ExecuteScalar();
+                    return Output;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return 0;
+            }
+        }
+        public static int ViewSingleNodeParent(Int32 NodeID)
+        {
+            SqlConnectionStringBuilder connStringBuilder = new SqlConnectionStringBuilder
+            {
+                DataSource = @"(local)\SQLEXPRESS",
+                InitialCatalog = "BachelorDataAccess.BachelorContext",
+                IntegratedSecurity = true
+            };
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = BachelorDataAccess.BachelorContext; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False"))
+                {
+                    SqlCommand cmd = new SqlCommand(string.Format("SELECT ParentID FROM dbo.Nodes WHERE NodeID = '{0}'", NodeID), conn);
+                    conn.Open();
+                    int Output = (int)cmd.ExecuteScalar();
+                    return Output;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return 0;
+            }
         }
     }
 }

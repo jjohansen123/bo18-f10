@@ -1,0 +1,43 @@
+C:\Users\Martin\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Martin\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Martin\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Martin\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\BachelorGUI.csprojResolveAssemblyReference.cache
+C:\Users\Martin\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Martin\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\BachelorGUI.csproj.GenerateResource.Cache
+C:\Users\Martin\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\BachelorGUI.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Martin\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\Martin\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\WindowsFormsApp1.MainForm1.resources
+C:\Users\sonic\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\sonic\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\bin\Debug\WindowsFormsApp1.exe
+C:\Users\sonic\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\sonic\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\BachelorGUI.csprojResolveAssemblyReference.cache
+C:\Users\sonic\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\sonic\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\BachelorGUI.csproj.GenerateResource.cache
+C:\Users\sonic\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\BachelorGUI.csproj.CoreCompileInputs.cache
+C:\Users\sonic\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\WindowsFormsApp1.exe
+C:\Users\sonic\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\sonic\Documents\GitHub\bo18-f10\Gui Bachelor\BachelorGUI\obj\Debug\BachelorGUI.mainForm1.resources
+C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\obj\Debug\BachelorGUI.csprojResolveAssemblyReference.cache
+C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\obj\Debug\BachelorGUI.mainForm1.resources
+C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\obj\Debug\BachelorGUI.csproj.GenerateResource.cache
+C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\obj\Debug\BachelorGUI.csproj.CoreCompileInputs.cache
+C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\obj\Debug\WindowsFormsApp1.exe
+C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\WindowsFormsApp1.exe
+C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorApp.exe
+C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorDataAccess.dll
+C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorModel.dll
+C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\EntityFramework.dll
+C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorApp.pdb
+C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorApp.exe.config
+C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorDataAccess.pdb
+C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorDataAccess.dll.config
+C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorModel.pdb
+C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\EntityFramework.xml
+C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\obj\Debug\BachelorGUI.csproj.CopyComplete
+C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\EntityFramework.SqlServer.xml

@@ -15,6 +15,6 @@ namespace BachelorModel
         public int TotalConnectedUsers { set; get; }
         public virtual List<Node> Children { get; set; }
          
-        
+        //public int temp { get; set; } 
     }
 }

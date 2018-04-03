@@ -231,8 +231,7 @@ namespace BachelorApp
                             // db.Nodes.Add(new Node() { Description = NodeDescription, ParentID = readParent, DirectConnectedUsers = DirectCon, Children = new List<Node>() });
                             s.Children.Add(new Node() { Description = NodeDescription, ParentID = readParent, DirectConnectedUsers = DirectCon, Children = new List<Node>() });
                             db.SaveChanges();
-                            Console.Clear();
-                            Console.WriteLine("Process completed");
+                            
                             
                         }
                     }

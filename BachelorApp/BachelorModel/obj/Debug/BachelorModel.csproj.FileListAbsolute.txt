@@ -10,3 +10,9 @@ C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorModel\obj\Debug\Bac
 C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorModel\obj\Debug\BachelorModel.csproj.CoreCompileInputs.cache
 C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorModel\obj\Debug\BachelorModel.dll
 C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorModel\obj\Debug\BachelorModel.pdb
+C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorModel\bin\Debug\BachelorModel.dll
+C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorModel\bin\Debug\BachelorModel.pdb
+C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorModel\obj\Debug\BachelorModel.csprojResolveAssemblyReference.cache
+C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorModel\obj\Debug\BachelorModel.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorModel\obj\Debug\BachelorModel.dll
+C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorModel\obj\Debug\BachelorModel.pdb

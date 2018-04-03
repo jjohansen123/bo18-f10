@@ -24,46 +24,18 @@ namespace BachelorGUI
         private void CreateBTN_Click(object sender, EventArgs e)
         {
             int id = 1;
+            List<RadioButton> temprb = new List<RadioButton>();
             foreach(RadioButton rb in panel1.Controls)
             {
-                if (rb.Checked)
-                {
-                    maxLength = (((rb.Location.X - 13)/100) + 1);
-
-                    if(rb.Name == "baseBtn")
-                    {
-                        break;
-                    }
-                    id =  int.Parse(rb.Name);
-                    break;
-                }
-                
+                temprb.Add(rb);
             }
 
-            if (conUTB.Text.All(char.IsDigit))
-            {
-                //BachelorApp.Program.Register(descTB.Text, id, Convert.ToInt32(conUTB.Text));
-                btnCount++;
+            /*
+            RadioButton rBtn;
+            rBtn = Create
+            */
 
-                RadioButton rBtn = new RadioButton();
-                rBtn.Appearance = Appearance.Button;
-                rBtn.BackColor = baseBtn.BackColor;
-                rBtn.FlatStyle = FlatStyle.Flat;
-                rBtn.FlatAppearance.MouseOverBackColor = baseBtn.FlatAppearance.MouseOverBackColor;
-                rBtn.FlatAppearance.CheckedBackColor = baseBtn.FlatAppearance.CheckedBackColor;
-                rBtn.Name = btnCount.ToString();
-                rBtn.Location = new Point(baseBtn.Location.X + baseBtn.Width * maxLength + 20 * maxLength, baseBtn.Location.Y);
-                rBtn.Size = baseBtn.Size;
-                rBtn.TabStop = false;
-                rBtn.CheckedChanged += new System.EventHandler(this.baseBtn_CheckedChanged);
-
-                panel1.Controls.Add(rBtn);
-                SortField();
-            }
-            else
-            {
-                MessageBox.Show("feil på nummer");
-            }
+            
         }
         private void SortField()
         {//todo bedre sortering basert på parent
@@ -102,7 +74,7 @@ namespace BachelorGUI
                         MessageBox.Show("Du kan ikke slette denne!");
                         break;
                     }
-                    //BachelorApp.Program.DeleteNode(Convert.ToInt32(idTB.Text));
+                    BachelorApp.Program.DeleteNode(Convert.ToInt32(rb.Name));
                     panel1.Controls.Remove(rb);
                     break;
                 }
@@ -111,8 +83,9 @@ namespace BachelorGUI
             SortField();
         }
 
-        private void baseBtn_CheckedChanged(object sender, EventArgs e)
+        public void baseBtn_CheckedChanged(object sender, EventArgs e)
         {
+            
             foreach (RadioButton rb in panel1.Controls)
             {
                 if (rb.Checked)
@@ -129,6 +102,11 @@ namespace BachelorGUI
                     break;
                 }   
             }
+        }
+
+        private void MainForm1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

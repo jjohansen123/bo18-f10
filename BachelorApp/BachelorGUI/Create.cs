@@ -11,7 +11,8 @@ namespace WindowsFormsApp1
 {
     class Create
     {
-        public RadioButton Create(List<RadioButton> listrb, Int32 conU, string desc)
+        private static int btnCount = 1;
+        public static RadioButton CreateRBtn(List<RadioButton> listrb, Int32 conU, string desc)
         {
             int id = 1, maxLength = 1;
             foreach (RadioButton rb in listrb)
@@ -36,10 +37,10 @@ namespace WindowsFormsApp1
                     baseBtn = rb;
 
             }
-            if (conU<= 0)
+            if (conU >= 0)
             {
-                BachelorApp.Program.Register(desc, id, conU);
-                //btnCount++;
+                //BachelorApp.Program.Register(desc, id, conU);
+                btnCount++;
 
                 RadioButton rBtn = new RadioButton();
                 rBtn.Appearance = Appearance.Button;
@@ -51,7 +52,7 @@ namespace WindowsFormsApp1
                 rBtn.Location = new Point(baseBtn.Location.X + baseBtn.Width * maxLength + 20 * maxLength, baseBtn.Location.Y);
                 rBtn.Size = baseBtn.Size;
                 rBtn.TabStop = false;
-                //rBtn.CheckedChanged += new System.EventHandler(BachelorGUI.MainForm1.ActiveForm.Controls.baseBtn_CheckedChanged);
+               
 
                 return rBtn;
             }

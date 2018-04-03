@@ -16,71 +16,36 @@ namespace BachelorGUI
         public MainForm1()
         {
             InitializeComponent();
-        }
-        //todo forandre verdier/bruk
-        int maxLength = 1;
-        int btnCount = 1;
-
-        private void CreateBTN_Click(object sender, EventArgs e)
+        }  
+        private List<RadioButton> GenerateList()
         {
-            int id = 1;
             List<RadioButton> temprb = new List<RadioButton>();
-            foreach(RadioButton rb in panel1.Controls)
+            foreach (RadioButton rb in panel1.Controls)
             {
                 temprb.Add(rb);
             }
-
-            /*
-            RadioButton rBtn;
-            rBtn = Create
-            */
-
-            
+            return temprb;
+        }
+        private void CreateBTN_Click(object sender, EventArgs e)
+        {
+            if (conUTB.Text.All(char.IsNumber))
+            {
+                RadioButton rBtn;
+                rBtn = WindowsFormsApp1.Create.CreateRBtn(GenerateList(), Convert.ToInt32(conUTB.Text), descTB.Text);
+                rBtn.CheckedChanged += new System.EventHandler(this.baseBtn_CheckedChanged);
+                this.panel1.Controls.Add(rBtn);
+                SortField();
+            }
         }
         private void SortField()
-        {//todo bedre sortering basert på parent
-            for (int i = 1; i <= maxLength; i++)
-            {
-                List<RadioButton> temprb = new List<RadioButton>();
-                int arrayint = 0;
-                foreach (RadioButton rb in panel1.Controls)
-                {
-                    if (((rb.Location.X - 13) / 100) == i)
-                    {
-                        temprb.Add(rb);
-                        arrayint++;
-                    }
-                }
-
-                if (temprb.Count > 0)
-                {
-                    for (int j = 0; j < temprb.Count; j++)
-                    {
-                        int heigth = panel1.Height / (temprb.Count + 1);
-                        temprb[j].Location = new Point(temprb[j].Location.X, (panel1.Location.Y / 2) + (heigth * (j + 1)) - (baseBtn.Height / 2));
-                    }
-                }
-            }
+        {
+            WindowsFormsApp1.Sort.SortField(GenerateList(), panel1.Height,panel1.Location.Y,baseBtn.Height);
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
-            foreach (RadioButton rb in panel1.Controls)
-            {
-                if (rb.Checked)
-                {
-                    if(rb.Name == "baseBtn")
-                    {
-                        MessageBox.Show("Du kan ikke slette denne!");
-                        break;
-                    }
-                    BachelorApp.Program.DeleteNode(Convert.ToInt32(rb.Name));
-                    panel1.Controls.Remove(rb);
-                    break;
-                }
-
-            }
-            SortField();
+             this.panel1.Controls.Remove(WindowsFormsApp1.Delete.DeleteBtn(GenerateList()));
+             SortField();
         }
 
         public void baseBtn_CheckedChanged(object sender, EventArgs e)
@@ -93,12 +58,13 @@ namespace BachelorGUI
                     if(rb.Name == "baseBtn")
                     {
                         int id = 1;
-                        descTB.Text = BachelorApp.Program.ViewSingleNodeDescription(Convert.ToInt32(id));
-                        conUTB.Text = BachelorApp.Program.ViewSingleNodeConnected(Convert.ToInt32(id)).ToString();
+                        descTB.Text = BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(id));
+                        conUTB.Text = BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(id)).ToString();
                         break;
                     }
-                    descTB.Text = BachelorApp.Program.ViewSingleNodeDescription(Convert.ToInt32(rb.Name));
-                    conUTB.Text = BachelorApp.Program.ViewSingleNodeConnected(Convert.ToInt32(rb.Name)).ToString();
+                    
+                    descTB.Text = BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name));
+                    conUTB.Text = BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(rb.Name)).ToString();
                     break;
                 }   
             }

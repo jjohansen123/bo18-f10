@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace BachelorGUI
 {
     class Sort
     {
@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
             }
             maxLength = (((maxLength - 13) / 100) + 1);
 
-            for (int i = 1; i <= maxLength; i++)
+            for (int i = 0; i <= maxLength; i++)
             {
                 List<RadioButton> temprb = new List<RadioButton>();
                 int arrayint = 0;

@@ -8,7 +8,7 @@ using BachelorModel;
 
 namespace BachelorApp
 {
-    class Updatenode
+    public class Updatenode
     {
         public static void UpdateNode()
         {
@@ -76,7 +76,6 @@ namespace BachelorApp
                         }
                     }
                     BachelorApp.Refreshall.RefeshAll();
-                    BachelorApp.MenuNogui.Menu();
                 }
             }
             catch (Exception e)
@@ -100,7 +99,6 @@ namespace BachelorApp
                         }
                     }
                     BachelorApp.Refreshall.RefeshAll();
-                    BachelorApp.MenuNogui.Menu();
                 }
             }
             catch (Exception e)

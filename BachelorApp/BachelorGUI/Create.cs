@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BachelorGUI;
 
-namespace WindowsFormsApp1
+namespace BachelorGUI
 {
     class Create
     {
@@ -39,7 +39,7 @@ namespace WindowsFormsApp1
             }
             if (conU >= 0)
             {
-                //BachelorApp.Program.Register(desc, id, conU);
+                BachelorApp.Register.RegisterNode(desc, id, conU);
                 btnCount++;
 
                 RadioButton rBtn = new RadioButton();
@@ -63,7 +63,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        public static RadioButton CreateRBtnWithOutDB(List<RadioButton> listrb, Int32 conU, string desc, int parent, int name)
+        public static RadioButton CreateRBtnWithOutDB(List<RadioButton> listrb, int parent, int name)
         {
             int id = 1, maxLength = 1;
             foreach (RadioButton rb in listrb)
@@ -88,29 +88,22 @@ namespace WindowsFormsApp1
                     baseBtn = rb;
 
             }
-            if (conU >= 0)
-            {
-                btnCount++;
+            
+            btnCount++;
 
-                RadioButton rBtn = new RadioButton();
-                rBtn.Appearance = Appearance.Button;
-                rBtn.BackColor = baseBtn.BackColor;
-                rBtn.FlatStyle = FlatStyle.Flat;
-                rBtn.FlatAppearance.MouseOverBackColor = baseBtn.FlatAppearance.MouseOverBackColor;
-                rBtn.FlatAppearance.CheckedBackColor = baseBtn.FlatAppearance.CheckedBackColor;
-                rBtn.Name = Convert.ToString(name);
-                rBtn.Location = new Point(baseBtn.Location.X + baseBtn.Width * maxLength + 20 * maxLength, baseBtn.Location.Y);
-                rBtn.Size = baseBtn.Size;
-                rBtn.TabStop = false;
+            RadioButton rBtn = new RadioButton();
+            rBtn.Appearance = Appearance.Button;
+            rBtn.BackColor = baseBtn.BackColor;
+            rBtn.FlatStyle = FlatStyle.Flat;
+            rBtn.FlatAppearance.MouseOverBackColor = baseBtn.FlatAppearance.MouseOverBackColor;
+            rBtn.FlatAppearance.CheckedBackColor = baseBtn.FlatAppearance.CheckedBackColor;
+            rBtn.Name = Convert.ToString(name);
+            rBtn.Location = new Point(baseBtn.Location.X + baseBtn.Width * maxLength + 20 * maxLength, baseBtn.Location.Y);
+            rBtn.Size = baseBtn.Size;
+            rBtn.TabStop = false;
 
-
-                return rBtn;
-            }
-            else
-            {
-                MessageBox.Show("feil på nummer");
-                return null;
-            }
+            return rBtn;
         }
+        //todo private void create btn
     }
 }

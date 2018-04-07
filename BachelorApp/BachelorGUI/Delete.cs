@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace BachelorGUI
 {
     class Delete
     {
@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
                         MessageBox.Show("Du kan ikke slette denne!");
                         return null;
                     }
-                    //BachelorApp.Program.DeleteNode(Convert.ToInt32(rb.Name));
+                    BachelorApp.Deletenode.DeleteNode(Convert.ToInt32(rb.Name));
                     return rb;
                 }
             }

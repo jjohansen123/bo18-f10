@@ -47,9 +47,11 @@
             // 
             // createBtn
             // 
-            this.createBtn.Location = new System.Drawing.Point(6, 682);
+            this.createBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.createBtn.Location = new System.Drawing.Point(4, 443);
+            this.createBtn.Margin = new System.Windows.Forms.Padding(2);
             this.createBtn.Name = "createBtn";
-            this.createBtn.Size = new System.Drawing.Size(302, 46);
+            this.createBtn.Size = new System.Drawing.Size(201, 30);
             this.createBtn.TabIndex = 1;
             this.createBtn.Text = "Create";
             this.createBtn.UseVisualStyleBackColor = true;
@@ -57,9 +59,11 @@
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(6, 786);
+            this.deleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.deleteBtn.Location = new System.Drawing.Point(4, 511);
+            this.deleteBtn.Margin = new System.Windows.Forms.Padding(2);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(302, 46);
+            this.deleteBtn.Size = new System.Drawing.Size(201, 30);
             this.deleteBtn.TabIndex = 2;
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = true;
@@ -73,9 +77,10 @@
             this.baseBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.baseBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.baseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.baseBtn.Location = new System.Drawing.Point(20, 375);
+            this.baseBtn.Location = new System.Drawing.Point(13, 244);
+            this.baseBtn.Margin = new System.Windows.Forms.Padding(2);
             this.baseBtn.Name = "baseBtn";
-            this.baseBtn.Size = new System.Drawing.Size(120, 80);
+            this.baseBtn.Size = new System.Drawing.Size(80, 52);
             this.baseBtn.TabIndex = 0;
             this.baseBtn.TabStop = true;
             this.baseBtn.Tag = "temp1";
@@ -85,115 +90,115 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoSize = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.baseBtn);
-            this.panel1.Location = new System.Drawing.Point(314, 12);
+            this.panel1.Location = new System.Drawing.Point(209, 8);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1252, 820);
+            this.panel1.Size = new System.Drawing.Size(835, 534);
             this.panel1.TabIndex = 3;
             // 
             // changeBTN
             // 
-            this.changeBTN.Location = new System.Drawing.Point(6, 734);
+            this.changeBTN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.changeBTN.Location = new System.Drawing.Point(4, 477);
+            this.changeBTN.Margin = new System.Windows.Forms.Padding(2);
             this.changeBTN.Name = "changeBTN";
-            this.changeBTN.Size = new System.Drawing.Size(302, 46);
+            this.changeBTN.Size = new System.Drawing.Size(201, 30);
             this.changeBTN.TabIndex = 4;
             this.changeBTN.Text = "Change";
             this.changeBTN.UseVisualStyleBackColor = true;
+            this.changeBTN.Click += new System.EventHandler(this.changeBTN_Click);
             // 
             // descTB
             // 
-            this.descTB.Location = new System.Drawing.Point(6, 229);
-            this.descTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.descTB.Location = new System.Drawing.Point(4, 149);
             this.descTB.Name = "descTB";
-            this.descTB.Size = new System.Drawing.Size(298, 26);
+            this.descTB.Size = new System.Drawing.Size(200, 20);
             this.descTB.TabIndex = 5;
             // 
             // descLBL
             // 
             this.descLBL.AutoSize = true;
-            this.descLBL.Location = new System.Drawing.Point(2, 205);
-            this.descLBL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.descLBL.Location = new System.Drawing.Point(1, 133);
             this.descLBL.Name = "descLBL";
-            this.descLBL.Size = new System.Drawing.Size(93, 20);
+            this.descLBL.Size = new System.Drawing.Size(63, 13);
             this.descLBL.TabIndex = 6;
             this.descLBL.Text = "Description:";
             // 
             // conULBL
             // 
             this.conULBL.AutoSize = true;
-            this.conULBL.Location = new System.Drawing.Point(2, 266);
-            this.conULBL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.conULBL.Location = new System.Drawing.Point(1, 173);
             this.conULBL.Name = "conULBL";
-            this.conULBL.Size = new System.Drawing.Size(137, 20);
+            this.conULBL.Size = new System.Drawing.Size(92, 13);
             this.conULBL.TabIndex = 8;
             this.conULBL.Text = "Connected Users:";
             // 
             // conUTB
             // 
-            this.conUTB.Location = new System.Drawing.Point(6, 291);
-            this.conUTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.conUTB.Location = new System.Drawing.Point(4, 189);
             this.conUTB.Name = "conUTB";
-            this.conUTB.Size = new System.Drawing.Size(298, 26);
+            this.conUTB.Size = new System.Drawing.Size(200, 20);
             this.conUTB.TabIndex = 7;
             // 
             // schoolCB
             // 
             this.schoolCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.schoolCB.FormattingEnabled = true;
-            this.schoolCB.Location = new System.Drawing.Point(6, 12);
-            this.schoolCB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.schoolCB.Location = new System.Drawing.Point(4, 8);
             this.schoolCB.Name = "schoolCB";
-            this.schoolCB.Size = new System.Drawing.Size(300, 28);
+            this.schoolCB.Size = new System.Drawing.Size(201, 21);
             this.schoolCB.TabIndex = 9;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(6, 389);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.richTextBox1.Location = new System.Drawing.Point(4, 253);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(298, 282);
+            this.richTextBox1.Size = new System.Drawing.Size(200, 185);
             this.richTextBox1.TabIndex = 10;
             this.richTextBox1.Text = "";
             // 
             // outputLBL
             // 
             this.outputLBL.AutoSize = true;
-            this.outputLBL.Location = new System.Drawing.Point(6, 360);
-            this.outputLBL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.outputLBL.Location = new System.Drawing.Point(4, 234);
             this.outputLBL.Name = "outputLBL";
-            this.outputLBL.Size = new System.Drawing.Size(62, 20);
+            this.outputLBL.Size = new System.Drawing.Size(42, 13);
             this.outputLBL.TabIndex = 11;
             this.outputLBL.Text = "Output:";
             // 
             // idLBL
             // 
             this.idLBL.AutoSize = true;
-            this.idLBL.Location = new System.Drawing.Point(2, 145);
-            this.idLBL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.idLBL.Location = new System.Drawing.Point(1, 94);
             this.idLBL.Name = "idLBL";
-            this.idLBL.Size = new System.Drawing.Size(30, 20);
+            this.idLBL.Size = new System.Drawing.Size(21, 13);
             this.idLBL.TabIndex = 13;
             this.idLBL.Text = "ID:";
             // 
             // idTB
             // 
             this.idTB.Cursor = System.Windows.Forms.Cursors.Default;
-            this.idTB.Location = new System.Drawing.Point(6, 169);
-            this.idTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.idTB.Location = new System.Drawing.Point(4, 110);
             this.idTB.Name = "idTB";
             this.idTB.ReadOnly = true;
-            this.idTB.Size = new System.Drawing.Size(298, 26);
+            this.idTB.Size = new System.Drawing.Size(200, 20);
             this.idTB.TabIndex = 12;
             // 
             // MainForm1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1578, 845);
+            this.ClientSize = new System.Drawing.Size(1052, 549);
             this.Controls.Add(this.idLBL);
             this.Controls.Add(this.idTB);
             this.Controls.Add(this.outputLBL);
@@ -207,10 +212,12 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.createBtn);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Network Test";
             this.Load += new System.EventHandler(this.MainForm1_Load);
+            this.SizeChanged += new System.EventHandler(this.MainForm1_SizeChanged);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

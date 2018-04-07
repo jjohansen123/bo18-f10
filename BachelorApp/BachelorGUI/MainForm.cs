@@ -32,7 +32,7 @@ namespace BachelorGUI
             if (conUTB.Text.All(char.IsNumber))
             {
                 RadioButton rBtn;
-                rBtn = WindowsFormsApp1.Create.CreateRBtn(GenerateList(), Convert.ToInt32(conUTB.Text), descTB.Text);
+                rBtn = BachelorGUI.Create.CreateRBtn(GenerateList(), Convert.ToInt32(conUTB.Text), descTB.Text);
                 rBtn.CheckedChanged += new System.EventHandler(this.baseBtn_CheckedChanged);
                 this.panel1.Controls.Add(rBtn);
                 SortField();
@@ -40,12 +40,12 @@ namespace BachelorGUI
         }
         private void SortField()
         {
-            WindowsFormsApp1.Sort.SortField(GenerateList(), panel1.Height,panel1.Location.Y,baseBtn.Height);
+            BachelorGUI.Sort.SortField(GenerateList(), panel1.Height,panel1.Location.Y,baseBtn.Height);
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
-             this.panel1.Controls.Remove(WindowsFormsApp1.Delete.DeleteBtn(GenerateList()));
+             this.panel1.Controls.Remove(BachelorGUI.Delete.DeleteBtn(GenerateList()));
              SortField();
         }
 
@@ -73,18 +73,28 @@ namespace BachelorGUI
 
         private void MainForm1_Load(object sender, EventArgs e)
         {
-            List <Node> temp = BachelorApp.View.ViewNodes();
+            List <Node> temp = BachelorApp.View.ViewNodesList();
             foreach(Node n in temp)
             {
                 if(n.NodeID != 1)
                 {
                     RadioButton rBtn;
-                    rBtn = WindowsFormsApp1.Create.CreateRBtnWithOutDB(GenerateList(), n.DirectConnectedUsers, n.Description,n.ParentID, n.NodeID);
+                    rBtn = BachelorGUI.Create.CreateRBtnWithOutDB(GenerateList(), n.ParentID, n.NodeID);
                     rBtn.CheckedChanged += new System.EventHandler(this.baseBtn_CheckedChanged);
                     this.panel1.Controls.Add(rBtn);
                     SortField();
                 }        
             }
+        }
+
+        private void changeBTN_Click(object sender, EventArgs e)
+        {
+            BachelorGUI.Change.ChangeNode(GenerateList(),descTB.Text,Convert.ToInt32(conUTB.Text));
+        }
+
+        private void MainForm1_SizeChanged(object sender, EventArgs e)
+        {
+            SortField();
         }
     }
 }

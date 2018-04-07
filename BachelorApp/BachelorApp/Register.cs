@@ -37,6 +37,7 @@ namespace BachelorApp
                             }
                             s.Children.Add(new Node() { Description = NodeDescription, ParentID = readParent, DirectConnectedUsers = DirectCon, Children = new List<Node>() });
                             db.SaveChanges();
+                            Tiers.Tiersort();
                         }
                     }
                     foreach (Node s in nodes)
@@ -82,7 +83,7 @@ namespace BachelorApp
                             }
                             s.Children.Add(new Node() { Description = NodeDescription, ParentID = readParent, DirectConnectedUsers = DirectCon, Children = new List<Node>() });
                             db.SaveChanges();
-
+                            Tiers.Tiersort();
 
                         }
                     }

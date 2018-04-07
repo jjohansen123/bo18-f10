@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BachelorApp;
+using BachelorModel;
 
 namespace BachelorGUI
 {
@@ -72,7 +73,7 @@ namespace BachelorGUI
 
         private void MainForm1_Load(object sender, EventArgs e)
         {
-
+            List < Node > = BachelorApp.View.ViewNodes();
         }
     }
 }

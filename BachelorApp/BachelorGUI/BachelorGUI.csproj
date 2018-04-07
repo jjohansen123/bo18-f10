@@ -96,6 +96,10 @@
       <Project>{add8702e-a33e-4069-92c7-d3422c80e4c5}</Project>
       <Name>BachelorApp</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BachelorModel\BachelorModel.csproj">
+      <Project>{ABFF6F99-AAD0-4C5F-96F4-E53862AEBC6B}</Project>
+      <Name>BachelorModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

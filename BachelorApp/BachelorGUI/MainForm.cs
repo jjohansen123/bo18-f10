@@ -73,7 +73,18 @@ namespace BachelorGUI
 
         private void MainForm1_Load(object sender, EventArgs e)
         {
-            List < Node > = BachelorApp.View.ViewNodes();
+            List <Node> temp = BachelorApp.View.ViewNodes();
+            foreach(Node n in temp)
+            {
+                if(n.NodeID != 1)
+                {
+                    RadioButton rBtn;
+                    rBtn = WindowsFormsApp1.Create.CreateRBtnWithOutDB(GenerateList(), n.DirectConnectedUsers, n.Description,n.ParentID, n.NodeID);
+                    rBtn.CheckedChanged += new System.EventHandler(this.baseBtn_CheckedChanged);
+                    this.panel1.Controls.Add(rBtn);
+                    SortField();
+                }        
+            }
         }
     }
 }

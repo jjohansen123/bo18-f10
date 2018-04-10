@@ -22,10 +22,18 @@ namespace BachelorApp
                 Console.WriteLine("Insert directly connected users:");
                 Int32 DirectCon = Int32.Parse(Console.ReadLine());
 
-
+                
                 using (var db = new BachelorContext())
                 {
                     List<Node> nodes = db.Nodes.ToList();
+
+                    List<HighestID> Highscore = db.HighID.ToList();
+                    foreach (HighestID s in Highscore)
+                    {
+                        s.Value++;
+                        Console.WriteLine("Highest node is now: " + s.Value);
+                        db.SaveChanges();
+                    }
                     foreach (Node s in nodes)
                     {
                         s.TotalConnectedUsers = 0;
@@ -48,9 +56,12 @@ namespace BachelorApp
                             s.TotalConnectedUsers = BachelorApp.Updatetotal.UpdateTotal(s);
                             db.SaveChanges();
                         }
+                    
                     }
+                    
                     BachelorApp.MenuNogui.Menu();
                 }
+                
             }
             catch (Exception e)
             {
@@ -95,6 +106,12 @@ namespace BachelorApp
                             s.TotalConnectedUsers = BachelorApp.Updatetotal.UpdateTotal(s);
                             db.SaveChanges();
                         }
+                    }
+                    List<HighestID> Highscore = db.HighID.ToList();
+                    foreach (HighestID s in Highscore)
+                    {
+                        s.NodeID++;
+                        db.SaveChanges();
                     }
                 }
             }

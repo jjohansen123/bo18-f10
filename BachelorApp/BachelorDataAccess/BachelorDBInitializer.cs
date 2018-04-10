@@ -14,10 +14,12 @@ namespace BachelorDataAccess
     {
         protected override void Seed(BachelorContext context)
         {
-            context.Nodes.Add(new Node() { Description = "Top node", ParentID = 0, Children = new List<Node>() });     
+
+            context.Nodes.Add(new Node() { Description = "Top node", ParentID = 0, Children = new List<Node>() });
+            context.HighID.Add(new HighestID() { NodeID = 1, Value = 1 });
             base.Seed(context);
 
-
+            //BachelorApp.SQLFIX.Sqlfix();
         }
     }
 }

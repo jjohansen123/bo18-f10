@@ -10,7 +10,7 @@ namespace BachelorApp
     {
         public static void Menu()
         {
-            Console.WriteLine("Options:\n[1]: Add node to system\n[2]: View Nodes\n[3]: Edit node\n[4]: Delete node(and all its children)\n[Anything else] Exit");
+            Console.WriteLine("Options:\n[1]: Add node to system\n[2]: View Nodes\n[3]: Edit node\n[4]: View highest node ID\n[5]: Delete node(and all its children)\n[6]: Temporary SQL fix\n[Anything else] Exit");
             ConsoleKey ButtonPressed = Console.ReadKey().Key;
             Console.Clear();
             if (ButtonPressed == ConsoleKey.D1 || ButtonPressed == ConsoleKey.NumPad1 || ButtonPressed == ConsoleKey.End)
@@ -25,10 +25,20 @@ namespace BachelorApp
             {
                 BachelorApp.Updatenode.UpdateNode();
             }
-            else if (ButtonPressed == ConsoleKey.D4 || ButtonPressed == ConsoleKey.NumPad4 || ButtonPressed == ConsoleKey.PageDown)
+            else if (ButtonPressed == ConsoleKey.D4 || ButtonPressed == ConsoleKey.NumPad3 || ButtonPressed == ConsoleKey.PageDown)
+            {
+                BachelorApp.Highestnode.PrintHighest();
+                Menu();
+            }
+            else if (ButtonPressed == ConsoleKey.D5 || ButtonPressed == ConsoleKey.NumPad4 || ButtonPressed == ConsoleKey.PageDown)
             {
                 BachelorApp.Deletenode.DeleteNode();
                 BachelorApp.Refreshall.RefeshAll();
+                Menu();
+            }
+            else if (ButtonPressed == ConsoleKey.D6 || ButtonPressed == ConsoleKey.NumPad4 || ButtonPressed == ConsoleKey.PageDown)
+            {
+                BachelorApp.SQLFIX.Sqlfix();
                 Menu();
             }
             else

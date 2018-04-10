@@ -18,9 +18,11 @@ namespace BachelorApp
                 using (var db = new BachelorContext())
                 {
                     List<Node> nodes = db.Nodes.ToList();
+                    
                     Console.Clear();
                     Console.WriteLine("Node information");
 
+                    
                     foreach (Node s in nodes)
                     {
                         if (s.Children == null)

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BachelorModel;
 
 namespace BachelorGUI
 {
@@ -12,34 +13,52 @@ namespace BachelorGUI
     {
         public static void SortField(List<RadioButton> listrb, int panelHeight, int PanelLocY, int bntHeight)
         {
-            int maxLength = 0;
-            foreach(RadioButton rb in listrb)
+            if(listrb.Count == BachelorApp.View.ViewNodesList().Count)
             {
-                if (rb.Location.X > maxLength)
-                    maxLength = rb.Location.X;
+                int start = 1;//top node
+                recSort(start, panelHeight, PanelLocY, listrb);
             }
-            maxLength = (((maxLength - 13) / 100) + 1);
-
-            for (int i = 0; i <= maxLength; i++)
+        }
+        private static void recSort(int Parent, int rangeTop, int rangeBot, List<RadioButton> listrb)
+        {
+            List<Node> templist = BachelorApp.ViewSingleNodeChildren.ViewChildren(Parent);
+            if (templist == null)
             {
-                List<RadioButton> temprb = new List<RadioButton>();
-                int arrayint = 0;
-                foreach (RadioButton rb in listrb)
+                foreach(RadioButton rb in listrb)
                 {
-                    if (((rb.Location.X - 13) / 100) == i)
+                    if(rb.Name == Parent.ToString())
                     {
-                        temprb.Add(rb);
-                        arrayint++;
+                        rb.Location = new Point(rb.Location.X, (rangeTop) + ((rangeBot - rangeTop)/2) - (rb.Height / 2));
+                    }
+
+                    else if(rb.Name == "baseBtn" && Parent == 1)
+                    {
+                        rb.Location = new Point(rb.Location.X, (rangeTop) + ((rangeBot - rangeTop) / 2) - (rb.Height / 2));
                     }
                 }
+            }
+            
 
-                if (temprb.Count > 0)
+            else
+            {
+                int range = (rangeBot - rangeTop) /templist.Count;
+                int i = 0;
+                foreach (Node n in templist)
                 {
-                    for (int j = 0; j < temprb.Count; j++)
+                    recSort(n.NodeID, rangeTop+(range * i), rangeTop + (range * (i+1)), listrb);
+                    foreach (RadioButton rb in listrb)
                     {
-                        int heigth = panelHeight / (temprb.Count + 1);
-                        temprb[j].Location = new Point(temprb[j].Location.X, (PanelLocY / 2) + (heigth * (j + 1)) - (bntHeight / 2));
+                        if (rb.Name == Parent.ToString())
+                        {
+                            rb.Location = new Point(rb.Location.X, (rangeTop) + ((rangeBot - rangeTop) / 2) - (rb.Height / 2));
+                        }
+
+                        else if (rb.Name == "baseBtn" && Parent == 1)
+                        {
+                            rb.Location = new Point(rb.Location.X, (rangeTop) + ((rangeBot - rangeTop) / 2) - (rb.Height / 2));
+                        }
                     }
+                    i++;
                 }
             }
         }

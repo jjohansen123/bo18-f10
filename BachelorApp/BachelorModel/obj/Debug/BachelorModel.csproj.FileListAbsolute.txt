@@ -21,3 +21,4 @@ C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorModel\obj\Debug\Bac
 C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorModel\obj\Debug\BachelorModel.dll
 C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorModel\obj\Debug\BachelorModel.pdb
 C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorModel\obj\Debug\BachelorModel.csprojResolveAssemblyReference.cache
+C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorModel\obj\Debug\BachelorModel.csprojResolveAssemblyReference.cache

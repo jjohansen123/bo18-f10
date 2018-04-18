@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Change.cs" />
+    <Compile Include="NodeHasChildren.cs" />
     <Compile Include="Sort.cs" />
     <Compile Include="Delete.cs" />
     <Compile Include="Create.cs" />

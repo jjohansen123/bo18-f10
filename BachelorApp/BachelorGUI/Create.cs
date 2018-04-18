@@ -11,7 +11,6 @@ namespace BachelorGUI
 {
     class Create
     {
-        private static int btnCount = 1;
         public static RadioButton CreateRBtn(List<RadioButton> listrb, Int32 conU, string desc)
         {
             int id = 1, maxLength = 1;
@@ -40,7 +39,6 @@ namespace BachelorGUI
             if (conU >= 0)
             {
                 BachelorApp.Register.RegisterNode(desc, id, conU);
-                btnCount++;
 
                 RadioButton rBtn = new RadioButton();
                 rBtn.Appearance = Appearance.Button;
@@ -48,7 +46,7 @@ namespace BachelorGUI
                 rBtn.FlatStyle = FlatStyle.Flat;
                 rBtn.FlatAppearance.MouseOverBackColor = baseBtn.FlatAppearance.MouseOverBackColor;
                 rBtn.FlatAppearance.CheckedBackColor = baseBtn.FlatAppearance.CheckedBackColor;
-                rBtn.Name = btnCount.ToString();
+                rBtn.Name = BachelorApp.Highestnode.GetHighest().ToString();
                 rBtn.Location = new Point(baseBtn.Location.X + baseBtn.Width * maxLength + 20 * maxLength, baseBtn.Location.Y);
                 rBtn.Size = baseBtn.Size;
                 rBtn.TabStop = false;
@@ -88,8 +86,6 @@ namespace BachelorGUI
                     baseBtn = rb;
 
             }
-            
-            btnCount++;
 
             RadioButton rBtn = new RadioButton();
             rBtn.Appearance = Appearance.Button;

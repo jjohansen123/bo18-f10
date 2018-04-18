@@ -45,8 +45,26 @@ namespace BachelorGUI
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
-             this.panel1.Controls.Remove(BachelorGUI.Delete.DeleteBtn(GenerateList()));
-             SortField();
+            if (!baseBtn.Checked)
+            {
+                if (BachelorGUI.NodeHasChildren.HasChild(GenerateList()))
+                {
+                    DialogResult dialogResult = MessageBox.Show("Do you want to delete this node and all it's connected nodes", "Delete all connected nodes", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        foreach (RadioButton rb in BachelorGUI.Delete.DeleteBtnRec(GenerateList()))
+                        {
+                            this.panel1.Controls.Remove(rb);
+                        }
+                    }
+                }
+                else
+                {
+                    this.panel1.Controls.Remove(BachelorGUI.Delete.DeleteBtn(GenerateList()));
+                }
+            }
+            
+            SortField();
         }
 
         public void baseBtn_CheckedChanged(object sender, EventArgs e)

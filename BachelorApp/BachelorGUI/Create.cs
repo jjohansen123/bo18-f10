@@ -46,7 +46,17 @@ namespace BachelorGUI
                 rBtn.FlatStyle = FlatStyle.Flat;
                 rBtn.FlatAppearance.MouseOverBackColor = baseBtn.FlatAppearance.MouseOverBackColor;
                 rBtn.FlatAppearance.CheckedBackColor = baseBtn.FlatAppearance.CheckedBackColor;
-                rBtn.Name = BachelorApp.Highestnode.GetHighest().ToString();
+                rBtn.Name = BachelorApp.Highestnode.GetHighest(1).ToString();
+                /*
+                 *
+                 * 
+                 *
+                 MARTIN FIKS DETTE!!!!!!
+                 * todo
+                 *
+                 *
+                 *
+                 */
                 rBtn.Location = new Point(baseBtn.Location.X + baseBtn.Width * maxLength + 20 * maxLength, baseBtn.Location.Y);
                 rBtn.Size = baseBtn.Size;
                 rBtn.TabStop = false;

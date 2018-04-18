@@ -10,6 +10,6 @@ namespace BachelorModel
     {
         public int Key { get; set; }
         public int HighestId { get; set; }
-        public String Test { get; set; }
+        public int SiteId { get; set; }
     }
 }

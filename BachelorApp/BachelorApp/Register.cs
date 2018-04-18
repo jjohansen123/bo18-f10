@@ -27,11 +27,11 @@ namespace BachelorApp
                 {
                     List<Node> nodes = db.Nodes.ToList();
 
-                    List<HighestID> Highscore = db.HighID.ToList();
-                    foreach (HighestID s in Highscore)
+                    List<HighId> Highscore = db.HighestNode.ToList();
+                    foreach (HighId s in Highscore)
                     {
-                        s.Value++;
-                        Console.WriteLine("Highest node is now: " + s.Value);
+                        s.HighestId++;
+                        Console.WriteLine("Highest node is now: " + s.HighestId);
                         db.SaveChanges();
                     }
                     foreach (Node s in nodes)
@@ -107,10 +107,10 @@ namespace BachelorApp
                             db.SaveChanges();
                         }
                     }
-                    List<HighestID> Highscore = db.HighID.ToList();
-                    foreach (HighestID s in Highscore)
+                    List<HighId> Highscore = db.HighestNode.ToList();
+                    foreach (HighId s in Highscore)
                     {
-                        s.NodeID++;
+                        s.HighestId++;
                         db.SaveChanges();
                     }
                 }

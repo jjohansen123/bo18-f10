@@ -13,7 +13,8 @@ namespace BachelorDataAccess
     public partial class BachelorContext : DbContext
     {
         public virtual DbSet<Node> Nodes { get; set; }
-        public virtual DbSet<HighestID> HighID { get; set; }
+        public virtual DbSet<HighId> HighestNode { get; set; }
+        public virtual DbSet<Site> Sites { get; set; }
         public BachelorContext()
         {
             Configuration.ProxyCreationEnabled = false;
@@ -30,11 +31,11 @@ namespace BachelorDataAccess
                     m.ToTable("Nodes");
                 });
 
-            modelBuilder.Entity<HighestID>()
-                .HasKey(a => a.NodeID)
+            modelBuilder.Entity<HighId>()
+                .HasKey(a => a.Key)
                 .Map(m =>
                 {
-                    m.ToTable("HighestNodeID");
+                    m.ToTable("HighestNodeId");
 
                 });
 

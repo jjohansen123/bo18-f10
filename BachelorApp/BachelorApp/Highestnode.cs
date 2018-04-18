@@ -17,10 +17,10 @@ namespace BachelorApp
             {
                 using (var db = new BachelorContext())
                 {
-                    List<HighestID> highest = db.HighID.ToList();
-                    foreach (HighestID s in highest)
+                    List<HighId> highest = db.HighestNode.ToList();
+                    foreach (HighId s in highest)
                     {
-                        Console.WriteLine("Highest ID in database: " + s.Value);
+                        Console.WriteLine("Highest ID in database: " + s.HighestId);
                         Console.ReadKey();
                     }
                 }
@@ -37,10 +37,10 @@ namespace BachelorApp
             {
                 using (var db = new BachelorContext())
                 {
-                    List<HighestID> highest = db.HighID.ToList();
-                    foreach (HighestID s in highest)
+                    List<HighId> highest = db.HighestNode.ToList();
+                    foreach (HighId s in highest)
                     {
-                       return s.Value;
+                       return s.HighestId;
                     }
                 }
                 return 0;

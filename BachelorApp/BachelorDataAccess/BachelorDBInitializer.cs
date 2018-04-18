@@ -16,7 +16,8 @@ namespace BachelorDataAccess
         {
 
             context.Nodes.Add(new Node() { Description = "Top node", ParentID = 0, Children = new List<Node>() });
-            context.HighID.Add(new HighestID() { NodeID = 1, Value = 1 });
+            context.HighestNode.Add(new HighId() { Key = 1, HighestId = 1, Test = "REEEEE" });
+            context.Sites.Add(new Site() { SiteName="Example Network" });
             base.Seed(context);
 
             //BachelorApp.SQLFIX.Sqlfix();

@@ -10,6 +10,5 @@ namespace BachelorModel
     {
         public int SiteId { get; set; }
         public int HighestId { get; set; }
-        
     }
 }

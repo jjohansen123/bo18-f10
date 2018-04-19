@@ -41,6 +41,7 @@ namespace BachelorGUI
         private void SortField()
         {
             BachelorGUI.Sort.SortField(GenerateList(), panel1.Height,panel1.Location.Y,baseBtn.Height);
+            Recolor();
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
@@ -108,11 +109,16 @@ namespace BachelorGUI
         private void changeBTN_Click(object sender, EventArgs e)
         {
             BachelorGUI.Change.ChangeNode(GenerateList(),descTB.Text,Convert.ToInt32(conUTB.Text));
+            Recolor();
         }
 
         private void MainForm1_SizeChanged(object sender, EventArgs e)
         {
             SortField();
+        }
+        private void Recolor()
+        {
+            BachelorGUI.Recolor.recolor(GenerateList());
         }
     }
 }

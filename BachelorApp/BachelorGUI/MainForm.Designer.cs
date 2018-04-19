@@ -72,10 +72,10 @@
             // baseBtn
             // 
             this.baseBtn.Appearance = System.Windows.Forms.Appearance.Button;
-            this.baseBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.baseBtn.BackColor = System.Drawing.Color.Blue;
             this.baseBtn.Checked = true;
-            this.baseBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.baseBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.baseBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
+            this.baseBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkBlue;
             this.baseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.baseBtn.Location = new System.Drawing.Point(13, 244);
             this.baseBtn.Margin = new System.Windows.Forms.Padding(2);

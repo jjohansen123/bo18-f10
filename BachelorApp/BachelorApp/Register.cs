@@ -70,16 +70,10 @@ namespace BachelorApp
         }
 
         
-        public static void RegisterNode(string NodeDescription, Int32 readParent, Int32 DirectCon)
-        {
+        public static void RegisterNode(string NodeDescription, Int32 readParent, Int32 DirectCon, int site)
+        { //SE HER MARTIN TODO: DROPDOWN MENU SOM BESTEMMER SITE, REEEE!
             try
             {
-
-                Console.WriteLine("Insert description:");
-                Console.WriteLine("Insert parent ID:");
-                Console.WriteLine("Insert directly connected users:");
-
-
                 using (var db = new BachelorContext())
                 {
                     List<Node> nodes = db.Nodes.ToList();
@@ -95,7 +89,7 @@ namespace BachelorApp
                             s.Children.Add(new Node() { Description = NodeDescription, ParentID = readParent, DirectConnectedUsers = DirectCon, Children = new List<Node>() });
                             db.SaveChanges();
                             Tiers.Tiersort();
-
+                            Highestnode.SetHighest(site);
                         }
                     }
                     foreach (Node s in nodes)

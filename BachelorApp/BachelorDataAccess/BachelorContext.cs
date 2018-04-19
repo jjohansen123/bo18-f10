@@ -32,7 +32,7 @@ namespace BachelorDataAccess
                 });
 
             modelBuilder.Entity<HighId>()
-                .HasKey(a => a.Key)
+                .HasKey(a => a.SiteId)
                 .Map(m =>
                 {
                     m.ToTable("HighestNodeId");

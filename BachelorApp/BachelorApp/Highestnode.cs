@@ -11,6 +11,28 @@ namespace BachelorApp
 {
     public class Highestnode
     {
+        public static void SetHighest(int Site)
+        {
+            try
+            {
+                using (var db = new BachelorContext())
+                {
+                    List<HighId> highest = db.HighestNode.ToList();
+                    foreach (HighId s in highest)
+                    {
+                        if (s.SiteId == Site)
+                        {
+                            s.HighestId++;
+                            db.SaveChanges();
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
         public static void PrintHighest()
         {
             try
@@ -22,8 +44,9 @@ namespace BachelorApp
                     foreach (HighId s in highest)
                     {
                         Console.WriteLine("Highest ID on site: "+ s.SiteId +" is " + s.HighestId);
-                        Console.ReadKey();
+                        
                     }
+                    Console.ReadKey();
                 }
             }
             catch(Exception e)

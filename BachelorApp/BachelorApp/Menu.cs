@@ -44,7 +44,7 @@ namespace BachelorApp
             }
             else if (ButtonPressed == ConsoleKey.D7 || ButtonPressed == ConsoleKey.NumPad3 || ButtonPressed == ConsoleKey.PageDown)
             {
-                SiteFunctions.AddSiteNoGUI();
+                SiteFunctions.RegisterNode();
                 Menu();
             }
             else if (ButtonPressed == ConsoleKey.D8 || ButtonPressed == ConsoleKey.NumPad2 || ButtonPressed == ConsoleKey.DownArrow)

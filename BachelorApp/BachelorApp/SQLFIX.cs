@@ -38,6 +38,6 @@ namespace BachelorApp
                 Console.WriteLine(e);
             }
         
-    }
+        }
     }
 }

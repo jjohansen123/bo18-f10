@@ -26,7 +26,6 @@ namespace BachelorApp
                             db.SaveChanges();
                         }
                     }
-                    BachelorApp.MenuNogui.Menu();
                 }
             }
             catch (Exception e)

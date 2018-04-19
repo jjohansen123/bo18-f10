@@ -27,7 +27,6 @@ namespace BachelorGUI
                     id = int.Parse(rb.Name);
                     break;
                 }
-
             }
             RadioButton baseBtn = new RadioButton();
             foreach (RadioButton rb in listrb)
@@ -38,7 +37,7 @@ namespace BachelorGUI
             }
             if (conU >= 0)
             {
-                BachelorApp.Register.RegisterNode(desc, id, conU);
+                BachelorApp.Register.RegisterNode(desc, id, conU,1);
 
                 RadioButton rBtn = new RadioButton();
                 rBtn.Appearance = Appearance.Button;

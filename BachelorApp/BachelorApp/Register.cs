@@ -74,6 +74,7 @@ namespace BachelorApp
         { //SE HER MARTIN TODO: DROPDOWN MENU SOM BESTEMMER SITE, REEEE!
             try
             {
+                site = 1;
                 using (var db = new BachelorContext())
                 {
                     List<Node> nodes = db.Nodes.ToList();
@@ -88,7 +89,7 @@ namespace BachelorApp
                             }
                             s.Children.Add(new Node() { Description = NodeDescription, ParentID = readParent, DirectConnectedUsers = DirectCon, Children = new List<Node>() });
                             db.SaveChanges();
-                            Tiers.Tiersort();
+                           // Tiers.Tiersort();
                             Highestnode.SetHighest(site);
                         }
                     }
@@ -101,12 +102,12 @@ namespace BachelorApp
                             db.SaveChanges();
                         }
                     }
-                    List<HighId> Highscore = db.HighestNode.ToList();
+                    /*List<HighId> Highscore = db.HighestNode.ToList();
                     foreach (HighId s in Highscore)
                     {
                         s.HighestId++;
                         db.SaveChanges();
-                    }
+                    }*/
                 }
             }
             catch (Exception e)

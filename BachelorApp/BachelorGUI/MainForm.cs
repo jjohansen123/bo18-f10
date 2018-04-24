@@ -108,8 +108,22 @@ namespace BachelorGUI
 
         private void changeBTN_Click(object sender, EventArgs e)
         {
-            BachelorGUI.Change.ChangeNode(GenerateList(),descTB.Text,Convert.ToInt32(conUTB.Text));
-            Recolor();
+            bool formcheck = false;
+            FormCollection fc = Application.OpenForms;
+            foreach(Form f in fc)
+            {
+                if(f.Name == "ChangeForm")
+                {
+                    formcheck = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (formcheck == false)
+            {
+                ChangeForm ChangeForm = new ChangeForm(GenerateList());
+                ChangeForm.Show();
+            }
         }
 
         private void MainForm1_SizeChanged(object sender, EventArgs e)

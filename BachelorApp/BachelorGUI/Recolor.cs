@@ -45,8 +45,8 @@ namespace BachelorGUI
                         else
                         {
                             rb.BackColor = ColorTranslator.FromHtml("#66ff66");
-                            rb.FlatAppearance.MouseOverBackColor = ColorTranslator.FromHtml("#00ff00");
-                            rb.FlatAppearance.CheckedBackColor = ColorTranslator.FromHtml("#00ff00");
+                            rb.FlatAppearance.MouseOverBackColor = ColorTranslator.FromHtml("#00cc00");
+                            rb.FlatAppearance.CheckedBackColor = ColorTranslator.FromHtml("#00cc00");
                         }
                     }
                     else

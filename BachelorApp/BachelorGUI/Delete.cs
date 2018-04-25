@@ -10,7 +10,7 @@ namespace BachelorGUI
 {
     class Delete
     {
-        public static RadioButton DeleteBtn(List<RadioButton> listrb)
+        public static RadioButton DeleteBtn(List<RadioButton> listrb, int SiteID)
         {
             foreach (RadioButton rb in listrb)
             {
@@ -21,7 +21,7 @@ namespace BachelorGUI
                         MessageBox.Show("Du kan ikke slette denne!");
                         return null;
                     }
-                    BachelorApp.Deletenode.DeleteNode(Convert.ToInt32(rb.Name));
+                    BachelorApp.Deletenode.DeleteNode(Convert.ToInt32(rb.Name), SiteID);
                     return rb;
                 }
             }
@@ -29,29 +29,29 @@ namespace BachelorGUI
             return null;
         }
 
-        public static List<RadioButton> DeleteBtnRec(List<RadioButton> listrb)
+        public static List<RadioButton> DeleteBtnRec(List<RadioButton> listrb, int SiteID)
         {
             List<RadioButton> deleteList = new List<RadioButton>();
             foreach(RadioButton rb in listrb)
             {
                 if (rb.Checked)
                 {
-                    return recDelete(Convert.ToInt32(rb.Name), listrb, deleteList);
+                    return recDelete(Convert.ToInt32(rb.Name), listrb, deleteList, SiteID);
                 }
             }
             return null;
         }
 
-        private static List<RadioButton> recDelete(int Parent, List<RadioButton> listrb, List<RadioButton> endlist)
+        private static List<RadioButton> recDelete(int Parent, List<RadioButton> listrb, List<RadioButton> endlist, int SiteID)
         {
-            List<Node> templist = BachelorApp.ViewSingleNodeChildren.ViewChildren(Parent);
+            List<Node> templist = BachelorApp.ViewSingleNodeChildren.ViewChildren(Parent,SiteID);
             if (templist == null)
             {
                 foreach (RadioButton rb in listrb)
                 {
                     if (rb.Name == Parent.ToString())
                     {
-                        BachelorApp.Deletenode.DeleteNode(Convert.ToInt32(rb.Name));
+                        BachelorApp.Deletenode.DeleteNode(Convert.ToInt32(rb.Name),SiteID);
                         endlist.Add(rb);
                         return endlist;
                     }
@@ -63,14 +63,14 @@ namespace BachelorGUI
             {
                 foreach (Node n in templist)
                 {
-                    endlist.AddRange(recDelete(n.NodeID, listrb, endlist));
+                    endlist.AddRange(recDelete(n.NodeID, listrb, endlist, SiteID));
                 }
 
                 foreach (RadioButton rb in listrb)
                 {
                     if (rb.Name == Parent.ToString())
                     {
-                        BachelorApp.Deletenode.DeleteNode(Convert.ToInt32(rb.Name));
+                        BachelorApp.Deletenode.DeleteNode(Convert.ToInt32(rb.Name), SiteID);
                         endlist.Add(rb);
                         return endlist;
                     }

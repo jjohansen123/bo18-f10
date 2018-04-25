@@ -32,24 +32,40 @@ namespace BachelorGUI
 
             bool formcheck = false;
             FormCollection fc = Application.OpenForms;
+            List<Form> closeList = new List<Form>();
             foreach (Form f in fc)
             {
+                if (f.Name == "SiteForm")
+                {
+                    formcheck = true;
+                    f.Focus();
+                    MessageBox.Show("You have to close the school window to continue");
+                    break;
+                }
+                if (f.Name == "ChangeForm")
+                {
+                    closeList.Add(f);
+
+                }
                 if (f.Name == "CreateForm")
                 {
                     formcheck = true;
                     f.Focus();
-                    break;
                 }
+            }
+            foreach (Form f in closeList)
+            {
+                f.Close();
             }
             if (formcheck == false)
             {
-                CreateForm CreateForm = new CreateForm(GenerateList());
+                CreateForm CreateForm = new CreateForm(GenerateList(), getSiteID());
                 CreateForm.Show();
             }
         }
         private void SortField()
         {
-            BachelorGUI.Sort.SortField(GenerateList(), panel1.Height,panel1.Location.Y,baseBtn.Height);
+            BachelorGUI.Sort.SortField(GenerateList(), panel1.Height,panel1.Location.Y,baseBtn.Height, getSiteID());
             Recolor();
         }
 
@@ -57,12 +73,12 @@ namespace BachelorGUI
         {
             if (!baseBtn.Checked)
             {
-                if (BachelorGUI.NodeHasChildren.HasChild(GenerateList()))
+                if (BachelorGUI.NodeHasChildren.HasChild(GenerateList(), getSiteID()))
                 {
                     DialogResult dialogResult = MessageBox.Show("Do you want to delete this node and all it's connected nodes", "Delete all connected nodes", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
-                        foreach (RadioButton rb in BachelorGUI.Delete.DeleteBtnRec(GenerateList()))
+                        foreach (RadioButton rb in BachelorGUI.Delete.DeleteBtnRec(GenerateList(), getSiteID()))
                         {
                             this.panel1.Controls.Remove(rb);
                         }
@@ -70,7 +86,7 @@ namespace BachelorGUI
                 }
                 else
                 {
-                    this.panel1.Controls.Remove(BachelorGUI.Delete.DeleteBtn(GenerateList()));
+                    this.panel1.Controls.Remove(BachelorGUI.Delete.DeleteBtn(GenerateList(), getSiteID()));
                 }
             }
             
@@ -87,13 +103,13 @@ namespace BachelorGUI
                     if(rb.Name == "baseBtn")
                     {
                         int id = 1;
-                        descTB.Text = BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(id));
-                        conUTB.Text = BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(id)).ToString();
+                        descTB.Text = BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(id), getSiteID());
+                        conUTB.Text = BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(id), getSiteID()).ToString();
                         break;
                     }
                     
-                    descTB.Text = BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name));
-                    conUTB.Text = BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(rb.Name)).ToString();
+                    descTB.Text = BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name), getSiteID());
+                    conUTB.Text = BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(rb.Name), getSiteID()).ToString();
                     break;
                 }   
             }
@@ -101,36 +117,44 @@ namespace BachelorGUI
 
         private void MainForm1_Load(object sender, EventArgs e)
         {
-            List <Node> temp = BachelorApp.View.ViewNodesList();
-            foreach(Node n in temp)
-            {
-                if(n.NodeID != 1)
-                {
-                    RadioButton rBtn;
-                    rBtn = BachelorGUI.Create.CreateRBtnWithOutDB(GenerateList(), n.ParentID, n.NodeID);
-                    rBtn.CheckedChanged += new System.EventHandler(this.baseBtn_CheckedChanged);
-                    this.panel1.Controls.Add(rBtn);
-                    SortField();
-                }        
-            }
+            UpdateCB(schoolCB);
+            schoolCB.SelectedIndex = 0;
+            UpdatePanel();
+            Recolor();
         }
 
         private void changeBTN_Click(object sender, EventArgs e)
         {
             bool formcheck = false;
             FormCollection fc = Application.OpenForms;
-            foreach(Form f in fc)
+            List<Form> closeList = new List<Form>();
+            foreach (Form f in fc)
             {
-                if(f.Name == "ChangeForm")
+                if(f.Name == "SiteForm")
                 {
                     formcheck = true;
                     f.Focus();
+                    MessageBox.Show("You have to close the school window to continue");
                     break;
                 }
+                if (f.Name == "CreateForm")
+                {
+                    closeList.Add(f);
+
+                }
+                if (f.Name == "ChangeForm")
+                {
+                    formcheck = true;
+                    f.Focus();
+                }
+            }
+            foreach (Form f in closeList)
+            {
+                f.Close();
             }
             if (formcheck == false)
             {
-                ChangeForm ChangeForm = new ChangeForm(GenerateList());
+                ChangeForm ChangeForm = new ChangeForm(GenerateList(), getSiteID());
                 ChangeForm.Show();
             }
         }
@@ -141,7 +165,7 @@ namespace BachelorGUI
         }
         private void Recolor()
         {
-            BachelorGUI.Recolor.recolor(GenerateList());
+            BachelorGUI.Recolor.recolor(GenerateList(), getSiteID());
         }
 
         private void panel1_ControlAdded(object sender, ControlEventArgs e)
@@ -156,7 +180,90 @@ namespace BachelorGUI
 
         private void SchoolBtn_Click(object sender, EventArgs e)
         {
+            bool formcheck = false;
+            FormCollection fc = Application.OpenForms;
+            List<Form> closeList = new List<Form>();
+            foreach (Form f in fc)
+            {
+                if (f.Name == "SiteForm")
+                {
+                    formcheck = true;
+                    f.Focus();
+                }
+                if (f.Name == "ChangeForm")
+                {
+                    closeList.Add(f);
 
+                }
+                if (f.Name == "CreateForm")
+                {
+                    closeList.Add(f);
+                }
+
+            }
+            foreach(Form f in closeList)
+            {
+                f.Close();
+            }
+            if (formcheck == false)
+            {
+                SiteForm siteForm = new SiteForm();
+                siteForm.Show();
+            }
+        }
+
+        public void ClearPanel()
+        {
+            foreach(RadioButton rb in GenerateList())
+            {
+                if(rb.Name != "baseBtn")
+                {
+                    this.panel1.Controls.Remove(rb);
+                }
+            }
+        }
+
+        public void UpdatePanel()
+        {
+            List<Node> temp = BachelorApp.View.ViewNodesList(getSiteID());
+            foreach (Node n in temp)
+            {
+                if (n.NodeID != 1)
+                {
+                    RadioButton rBtn;
+                    rBtn = BachelorGUI.Create.CreateRBtnWithOutDB(GenerateList(), n.ParentID, n.NodeID);
+                    rBtn.CheckedChanged += new System.EventHandler(this.baseBtn_CheckedChanged);
+                    this.panel1.Controls.Add(rBtn);
+                    
+                }
+            }
+            SortField();
+        }
+
+        private int getSiteID()
+        {
+            foreach (Site s in BachelorApp.SiteFunctions.GetSite())
+            {
+                if (s.SiteName == schoolCB.Text)
+                {
+                    return s.SiteId;
+                }
+            }
+            return 1;
+        }
+
+        private void schoolCB_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            ClearPanel();
+            UpdatePanel();
+        }
+        public static void UpdateCB(ComboBox schoolCB)
+        {
+            schoolCB.Items.Clear();
+            foreach (Site s in BachelorApp.SiteFunctions.GetSite())
+            {
+                schoolCB.Items.Add(s.SiteName);
+            }
         }
     }
 }

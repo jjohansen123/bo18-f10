@@ -156,6 +156,7 @@
             this.schoolCB.Name = "schoolCB";
             this.schoolCB.Size = new System.Drawing.Size(170, 21);
             this.schoolCB.TabIndex = 9;
+            this.schoolCB.SelectionChangeCommitted += new System.EventHandler(this.schoolCB_SelectionChangeCommitted);
             // 
             // richTextBox1
             // 

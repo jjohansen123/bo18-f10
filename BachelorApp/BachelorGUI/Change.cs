@@ -9,7 +9,7 @@ namespace BachelorGUI
 {
     class Change
     {
-        public static void ChangeNode(List<RadioButton> listrb, string desc, int users)
+        public static void ChangeNode(List<RadioButton> listrb, string desc, int users, int SiteID)
         {
             int nodeID = 1;
             foreach (RadioButton rb in listrb)
@@ -25,12 +25,12 @@ namespace BachelorGUI
                 }
             }
 
-            if (desc != BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(nodeID))
+            if (desc != BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(nodeID, SiteID))
             {
                 BachelorApp.Updatenode.UpdateNodeDescription(nodeID, desc);
             }
 
-            if (users != BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(nodeID))
+            if (users != BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(nodeID, SiteID))
             {
                 BachelorApp.Updatenode.UpdateNodeUsers(nodeID, users);
             }

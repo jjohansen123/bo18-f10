@@ -13,8 +13,10 @@ namespace BachelorGUI
     public partial class CreateForm : Form
     {
         List<RadioButton> listrb = new List<RadioButton>();
-        public CreateForm(List<RadioButton> temprb)
+        int siteID;
+        public CreateForm(List<RadioButton> temprb, int SiteID)
         {
+            siteID = SiteID;
             listrb = temprb;
             InitializeComponent();
         }
@@ -26,30 +28,23 @@ namespace BachelorGUI
                 if(descTB.Text != "")
                 {
                     RadioButton rBtn;
-                    rBtn = BachelorGUI.Create.CreateRBtn(listrb, Convert.ToInt32(ConUTB.Text), descTB.Text);
+                    rBtn = BachelorGUI.Create.CreateRBtn(listrb, Convert.ToInt32(ConUTB.Text), descTB.Text, siteID);
                     FormCollection fc = Application.OpenForms;
                     foreach (Form f in fc)
                     {
                         if(f.Name == "MainForm1")
                         {
-
                             foreach(Control c in f.Controls)
                             {
                                
                                 if(c.Name == "panel1")
                                 {
                                     c.Controls.Add(rBtn);
+                                    nodeCB.Items.Add(descTB.Text);
                                 }
                             }
-                            /*f.Controls.
-                            
-                            f.Controls.Find("panel1", true).Controls.Add(rBtn);
-                            MessageBox.Show("");
-                            break;*/
                         }
                     }
-
-                        //BachelorGUI.Create.CreateRBtn(listrb,Convert.ToInt32(ConUTB.Text),descTB.Text)
                 }
 
                 else
@@ -69,11 +64,11 @@ namespace BachelorGUI
             {
                 if (rb.Name == "baseBtn")
                 {
-                    nodeCB.Items.Add(BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(1));
+                    nodeCB.Items.Add(BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(1, siteID));
                 }
                 else
                 {
-                    nodeCB.Items.Add(BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name)));
+                    nodeCB.Items.Add(BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name), siteID));
                 }
             }
             nodeCB.SelectedIndex = 0;
@@ -97,7 +92,7 @@ namespace BachelorGUI
                 }
                 else
                 {
-                    if (BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name)) == nodeCB.Text)
+                    if (BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name), siteID) == nodeCB.Text)
                     {
                         rb.Checked = true;
                         break;

@@ -42,14 +42,22 @@ namespace BachelorApp
                 BachelorApp.MenuNogui.Menu();
             }
         }
-        public static List<Node> ViewNodesList()
+        public static List<Node> ViewNodesList(int ID)
         {
             try
             {
                 using (var db = new BachelorContext())
                 {
                     List<Node> nodes = db.Nodes.ToList();
-                    return nodes;
+                    List<Node> temp = new List<Node>();
+                    foreach(Node n in nodes)
+                    {
+                        if(n.SiteId == ID)
+                        {
+                            temp.Add(n);
+                        }
+                    }
+                    return temp;
                 }
             }
 

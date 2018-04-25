@@ -43,7 +43,7 @@
             this.CreateBTN.Name = "CreateBTN";
             this.CreateBTN.Size = new System.Drawing.Size(178, 29);
             this.CreateBTN.TabIndex = 13;
-            this.CreateBTN.Text = "Change Node";
+            this.CreateBTN.Text = "Create Node";
             this.CreateBTN.UseVisualStyleBackColor = true;
             this.CreateBTN.Click += new System.EventHandler(this.CreateBTN_Click);
             // 

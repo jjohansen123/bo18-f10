@@ -74,7 +74,7 @@ namespace BachelorApp
         { //SE HER MARTIN TODO: DROPDOWN MENU SOM BESTEMMER SITE, REEEE!
             try
             {
-                site = 1;
+                
                 using (var db = new BachelorContext())
                 {
                     List<Node> nodes = db.Nodes.ToList();
@@ -87,7 +87,7 @@ namespace BachelorApp
                             {
                                 s.Children = new List<Node>();
                             }
-                            s.Children.Add(new Node() { Description = NodeDescription, ParentID = readParent, DirectConnectedUsers = DirectCon, Children = new List<Node>() });
+                            s.Children.Add(new Node() { Description = NodeDescription, ParentID = readParent, DirectConnectedUsers = DirectCon, Children = new List<Node>(), SiteId = site });
                             db.SaveChanges();
                            // Tiers.Tiersort();
                             Highestnode.SetHighest(site);

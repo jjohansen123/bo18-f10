@@ -11,7 +11,7 @@ namespace BachelorGUI
 {
     class Recolor
     {
-        public static void recolor(List<RadioButton> listrb)
+        public static void recolor(List<RadioButton> listrb, int SiteID)
         {
             Color basebtn = ColorTranslator.FromHtml("#000000"), basecheck = ColorTranslator.FromHtml("#000000");
 
@@ -27,9 +27,9 @@ namespace BachelorGUI
             {
                 if(rb.Name != "baseBtn")
                 {
-                    if (BachelorApp.ViewSingleNodeChildren.ViewChildren(Convert.ToInt32(rb.Name)) == null)
+                    if (BachelorApp.ViewSingleNodeChildren.ViewChildren(Convert.ToInt32(rb.Name), SiteID) == null)
                     {
-                        int conu = BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(rb.Name));
+                        int conu = BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(rb.Name), SiteID);
                         if (conu > 45)
                         {
                             rb.BackColor = ColorTranslator.FromHtml("#ff4d4d");

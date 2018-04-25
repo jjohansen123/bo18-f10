@@ -11,7 +11,7 @@ namespace BachelorApp
 {
     public class Deletenode
     {
-        public static void DeleteNode(Int32 NodeID)
+        public static void DeleteNode(Int32 NodeID, int SiteID)
         {
             try
             {
@@ -36,7 +36,7 @@ namespace BachelorApp
                                 {
                                     using (SqlConnection conn = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = BachelorDataAccess.BachelorContext; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False"))
                                     {
-                                        SqlCommand cmd = new SqlCommand(string.Format("DELETE FROM dbo.Nodes WHERE NodeID = '{0}'", NodeID), conn);
+                                        SqlCommand cmd = new SqlCommand(string.Format("DELETE FROM dbo.Nodes WHERE NodeID = '{0}' AND SiteID = '{1}'", NodeID, SiteID), conn);
                                         conn.Open();
                                         cmd.ExecuteNonQuery();
                                     }

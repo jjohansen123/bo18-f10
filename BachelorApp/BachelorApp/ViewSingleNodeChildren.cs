@@ -10,7 +10,7 @@ namespace BachelorApp
 {
     public class ViewSingleNodeChildren
     {
-        public static List<Node> ViewChildren(Int32 ID)
+        public static List<Node> ViewChildren(Int32 ID, int SiteID)
         {
             try
             {
@@ -19,7 +19,7 @@ namespace BachelorApp
                     List<Node> nodes = db.Nodes.ToList();
                     foreach(Node n in nodes)
                     {
-                        if(n.NodeID == ID)
+                        if(n.NodeID == ID && n.SiteId == SiteID)
                         {
                             return n.Children;
                         }

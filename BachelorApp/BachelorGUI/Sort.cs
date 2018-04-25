@@ -11,17 +11,14 @@ namespace BachelorGUI
 {
     class Sort
     {
-        public static void SortField(List<RadioButton> listrb, int panelHeight, int PanelLocY, int bntHeight)
+        public static void SortField(List<RadioButton> listrb, int panelHeight, int PanelLocY, int bntHeight, int SiteID)
         {
-            if(listrb.Count == BachelorApp.View.ViewNodesList().Count)
-            {
-                int start = 1;//top node
-                recSort(start, panelHeight, PanelLocY, listrb);
-            }
+            int start = 1;//top node
+            recSort(start, panelHeight, PanelLocY, listrb, SiteID);
         }
-        private static void recSort(int Parent, int rangeTop, int rangeBot, List<RadioButton> listrb)
+        private static void recSort(int Parent, int rangeTop, int rangeBot, List<RadioButton> listrb, int SiteID)
         {
-            List<Node> templist = BachelorApp.ViewSingleNodeChildren.ViewChildren(Parent);
+            List<Node> templist = BachelorApp.ViewSingleNodeChildren.ViewChildren(Parent, SiteID);
             if (templist == null)
             {
                 foreach(RadioButton rb in listrb)
@@ -45,7 +42,7 @@ namespace BachelorGUI
                 int i = 0;
                 foreach (Node n in templist)
                 {
-                    recSort(n.NodeID, rangeTop+(range * i), rangeTop + (range * (i+1)), listrb);
+                    recSort(n.NodeID, rangeTop+(range * i), rangeTop + (range * (i+1)), listrb, SiteID);
                     foreach (RadioButton rb in listrb)
                     {
                         if (rb.Name == Parent.ToString())

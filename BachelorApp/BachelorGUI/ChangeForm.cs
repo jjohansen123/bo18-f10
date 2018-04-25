@@ -13,8 +13,10 @@ namespace BachelorGUI
     public partial class ChangeForm : Form
     {
         List<RadioButton> listrb = new List<RadioButton>();
-        public ChangeForm(List<RadioButton> templist)
+        int SiteID;
+        public ChangeForm(List<RadioButton> templist,int siteID)
         {
+            SiteID = siteID;
             listrb = templist;
             InitializeComponent();
         }
@@ -29,13 +31,13 @@ namespace BachelorGUI
                     {
                         if (descTB.Text != "")
                         {
-                            BachelorGUI.Change.ChangeNode(listrb, descTB.Text, Convert.ToInt32(ConUTB.Text));
+                            BachelorGUI.Change.ChangeNode(listrb, descTB.Text, Convert.ToInt32(ConUTB.Text), SiteID);
                             break;
                         }
 
                         else
                         {
-                            BachelorGUI.Change.ChangeNode(listrb, BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name)), Convert.ToInt32(ConUTB.Text));
+                            BachelorGUI.Change.ChangeNode(listrb, BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name),SiteID), Convert.ToInt32(ConUTB.Text), SiteID);
                             break;
                         }
                     }
@@ -44,13 +46,13 @@ namespace BachelorGUI
                     {
                         if (descTB.Text != "")
                         {
-                            BachelorGUI.Change.ChangeNode(listrb, descTB.Text, BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(rb.Name)));
+                            BachelorGUI.Change.ChangeNode(listrb, descTB.Text, BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(rb.Name), SiteID), SiteID);
                             break;
                         }
                     }
                 }
             }
-            BachelorGUI.Recolor.recolor(listrb);
+            BachelorGUI.Recolor.recolor(listrb,SiteID);
         }
 
         private void ChangeForm_Load(object sender, EventArgs e)
@@ -59,11 +61,11 @@ namespace BachelorGUI
             {
                 if(rb.Name == "baseBtn")
                 {
-                    nodeCB.Items.Add(BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(1));
+                    nodeCB.Items.Add(BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(1, SiteID));
                 }
                 else
                 {
-                    nodeCB.Items.Add(BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name)));
+                    nodeCB.Items.Add(BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name), SiteID));
                 }
             }
             nodeCB.SelectedIndex = 0;
@@ -87,7 +89,7 @@ namespace BachelorGUI
                 }
                 else
                 {
-                    if (BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name)) == nodeCB.Text)
+                    if (BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name), SiteID) == nodeCB.Text)
                     {
                         rb.Checked = true;
                         break;

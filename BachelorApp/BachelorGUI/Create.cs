@@ -59,6 +59,7 @@ namespace BachelorGUI
                 rBtn.Location = new Point(baseBtn.Location.X + baseBtn.Width * maxLength + 20 * maxLength, baseBtn.Location.Y);
                 rBtn.Size = baseBtn.Size;
                 rBtn.TabStop = false;
+                
                
 
                 return rBtn;

@@ -29,13 +29,22 @@ namespace BachelorGUI
         }
         private void CreateBTN_Click(object sender, EventArgs e)
         {
-            if (conUTB.Text.All(char.IsNumber))
+
+            bool formcheck = false;
+            FormCollection fc = Application.OpenForms;
+            foreach (Form f in fc)
             {
-                RadioButton rBtn;
-                rBtn = BachelorGUI.Create.CreateRBtn(GenerateList(), Convert.ToInt32(conUTB.Text), descTB.Text);
-                rBtn.CheckedChanged += new System.EventHandler(this.baseBtn_CheckedChanged);
-                this.panel1.Controls.Add(rBtn);
-                SortField();
+                if (f.Name == "CreateForm")
+                {
+                    formcheck = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (formcheck == false)
+            {
+                CreateForm CreateForm = new CreateForm(GenerateList());
+                CreateForm.Show();
             }
         }
         private void SortField()
@@ -133,6 +142,16 @@ namespace BachelorGUI
         private void Recolor()
         {
             BachelorGUI.Recolor.recolor(GenerateList());
+        }
+
+        private void panel1_ControlAdded(object sender, ControlEventArgs e)
+        {
+            foreach(RadioButton rb in GenerateList())
+            {
+                rb.CheckedChanged -= this.baseBtn_CheckedChanged;
+                rb.CheckedChanged += this.baseBtn_CheckedChanged;
+            }
+            SortField();
         }
     }
 }

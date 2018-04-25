@@ -153,5 +153,10 @@ namespace BachelorGUI
             }
             SortField();
         }
+
+        private void SchoolBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -42,6 +42,7 @@
             this.outputLBL = new System.Windows.Forms.Label();
             this.idLBL = new System.Windows.Forms.Label();
             this.idTB = new System.Windows.Forms.TextBox();
+            this.SchoolBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -151,9 +152,9 @@
             // 
             this.schoolCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.schoolCB.FormattingEnabled = true;
-            this.schoolCB.Location = new System.Drawing.Point(4, 8);
+            this.schoolCB.Location = new System.Drawing.Point(4, 9);
             this.schoolCB.Name = "schoolCB";
-            this.schoolCB.Size = new System.Drawing.Size(201, 21);
+            this.schoolCB.Size = new System.Drawing.Size(170, 21);
             this.schoolCB.TabIndex = 9;
             // 
             // richTextBox1
@@ -194,12 +195,24 @@
             this.idTB.Size = new System.Drawing.Size(200, 20);
             this.idTB.TabIndex = 12;
             // 
+            // SchoolBtn
+            // 
+            this.SchoolBtn.Location = new System.Drawing.Point(180, 9);
+            this.SchoolBtn.Name = "SchoolBtn";
+            this.SchoolBtn.Size = new System.Drawing.Size(25, 21);
+            this.SchoolBtn.TabIndex = 14;
+            this.SchoolBtn.Text = "+";
+            this.SchoolBtn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.SchoolBtn.UseVisualStyleBackColor = true;
+            this.SchoolBtn.Click += new System.EventHandler(this.SchoolBtn_Click);
+            // 
             // MainForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1052, 549);
+            this.Controls.Add(this.SchoolBtn);
             this.Controls.Add(this.idLBL);
             this.Controls.Add(this.idTB);
             this.Controls.Add(this.outputLBL);
@@ -240,6 +253,7 @@
         private System.Windows.Forms.Label outputLBL;
         private System.Windows.Forms.Label idLBL;
         public System.Windows.Forms.TextBox idTB;
+        private System.Windows.Forms.Button SchoolBtn;
     }
 }
 

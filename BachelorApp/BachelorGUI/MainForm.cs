@@ -117,10 +117,11 @@ namespace BachelorGUI
 
         private void MainForm1_Load(object sender, EventArgs e)
         {
-            UpdateCB(schoolCB);
+            UpdateCB();
             schoolCB.SelectedIndex = 0;
             UpdatePanel();
             Recolor();
+            SortField();
         }
 
         private void changeBTN_Click(object sender, EventArgs e)
@@ -219,6 +220,7 @@ namespace BachelorGUI
                 if(rb.Name != "baseBtn")
                 {
                     this.panel1.Controls.Remove(rb);
+                    rb.Dispose();
                 }
             }
         }
@@ -228,10 +230,10 @@ namespace BachelorGUI
             List<Node> temp = BachelorApp.View.ViewNodesList(getSiteID());
             foreach (Node n in temp)
             {
-                if (n.Lingling != 1)
+                if (n.LocalID != 1)
                 {
                     RadioButton rBtn;
-                    rBtn = BachelorGUI.Create.CreateRBtnWithOutDB(GenerateList(), n.ParentID, n.Lingling);
+                    rBtn = BachelorGUI.Create.CreateRBtnWithOutDB(GenerateList(), n.ParentID, n.LocalID);
                     rBtn.CheckedChanged += new System.EventHandler(this.baseBtn_CheckedChanged);
                     this.panel1.Controls.Add(rBtn);
                     
@@ -256,14 +258,17 @@ namespace BachelorGUI
         {
             ClearPanel();
             UpdatePanel();
+            SortField();
         }
-        public static void UpdateCB(ComboBox schoolCB)
+        public static void UpdateCB()
         {
+            int tempIndex = schoolCB.SelectedIndex;
             schoolCB.Items.Clear();
             foreach (Site s in BachelorApp.SiteFunctions.GetSite())
             {
                 schoolCB.Items.Add(s.SiteName);
             }
+            schoolCB.SelectedIndex = tempIndex;
         }
     }
 }

@@ -37,7 +37,7 @@
             this.descLBL = new System.Windows.Forms.Label();
             this.conULBL = new System.Windows.Forms.Label();
             this.conUTB = new System.Windows.Forms.TextBox();
-            this.schoolCB = new System.Windows.Forms.ComboBox();
+            MainForm1.schoolCB = new System.Windows.Forms.ComboBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.outputLBL = new System.Windows.Forms.Label();
             this.idLBL = new System.Windows.Forms.Label();
@@ -150,13 +150,13 @@
             // 
             // schoolCB
             // 
-            this.schoolCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.schoolCB.FormattingEnabled = true;
-            this.schoolCB.Location = new System.Drawing.Point(4, 9);
-            this.schoolCB.Name = "schoolCB";
-            this.schoolCB.Size = new System.Drawing.Size(170, 21);
-            this.schoolCB.TabIndex = 9;
-            this.schoolCB.SelectionChangeCommitted += new System.EventHandler(this.schoolCB_SelectionChangeCommitted);
+            MainForm1.schoolCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            MainForm1.schoolCB.FormattingEnabled = true;
+            MainForm1.schoolCB.Location = new System.Drawing.Point(4, 9);
+            MainForm1.schoolCB.Name = "schoolCB";
+            MainForm1.schoolCB.Size = new System.Drawing.Size(170, 21);
+            MainForm1.schoolCB.TabIndex = 9;
+            MainForm1.schoolCB.SelectionChangeCommitted += new System.EventHandler(this.schoolCB_SelectionChangeCommitted);
             // 
             // richTextBox1
             // 
@@ -218,7 +218,7 @@
             this.Controls.Add(this.idTB);
             this.Controls.Add(this.outputLBL);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.schoolCB);
+            this.Controls.Add(MainForm1.schoolCB);
             this.Controls.Add(this.conULBL);
             this.Controls.Add(this.conUTB);
             this.Controls.Add(this.descLBL);
@@ -249,7 +249,7 @@
         private System.Windows.Forms.Label descLBL;
         private System.Windows.Forms.Label conULBL;
         public System.Windows.Forms.TextBox conUTB;
-        private System.Windows.Forms.ComboBox schoolCB;
+        public static System.Windows.Forms.ComboBox schoolCB;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label outputLBL;
         private System.Windows.Forms.Label idLBL;

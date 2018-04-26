@@ -46,7 +46,7 @@ namespace BachelorAPI2.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != node.Lingling)
+            if (id != node.LocalID)
             {
                 return BadRequest();
             }
@@ -84,7 +84,7 @@ namespace BachelorAPI2.Controllers
             db.Nodes.Add(node);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = node.Lingling }, node);
+            return CreatedAtRoute("DefaultApi", new { id = node.LocalID }, node);
         }
 
         // DELETE: api/Nodes/5
@@ -114,7 +114,7 @@ namespace BachelorAPI2.Controllers
 
         private bool NodeExists(int id)
         {
-            return db.Nodes.Count(e => e.Lingling == id) > 0;
+            return db.Nodes.Count(e => e.LocalID == id) > 0;
         }
     }
 }

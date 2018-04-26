@@ -22,6 +22,7 @@ namespace BachelorGUI
             BachelorApp.SiteFunctions.AddSite(NameTB.Text);
             MessageBox.Show("School has been created");
             FormCollection fc = Application.OpenForms;
+            MainForm1.UpdateCB();
         }
 
         private void SiteForm_Load(object sender, EventArgs e)

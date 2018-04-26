@@ -10,7 +10,7 @@ namespace BachelorApp
 {
     public class Viewsinglenodedescription
     {
-        public static String ViewSingleNodeDescription(Int32 Lingling, int SiteID)
+        public static String ViewSingleNodeDescription(Int32 LocalID, int SiteID)
         {
             SqlConnectionStringBuilder connStringBuilder = new SqlConnectionStringBuilder
             {
@@ -22,7 +22,7 @@ namespace BachelorApp
             {
                 using (SqlConnection conn = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = BachelorDataAccess.BachelorContext; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False"))
                 {
-                    SqlCommand cmd = new SqlCommand(string.Format("SELECT Description FROM dbo.Nodes WHERE Lingling = '{0}' AND SiteID = '{1}'", Lingling, SiteID), conn);
+                    SqlCommand cmd = new SqlCommand(string.Format("SELECT Description FROM dbo.Nodes WHERE LocalID = '{0}' AND SiteID = '{1}'", LocalID, SiteID), conn);
                     conn.Open();
                     String Output = (String)cmd.ExecuteScalar();
                     return Output;

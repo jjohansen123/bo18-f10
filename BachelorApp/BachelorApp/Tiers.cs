@@ -20,7 +20,7 @@ namespace BachelorApp
                     List<Node> nodes = db.Nodes.ToList();
                     foreach (Node s in nodes)
                     {
-                        if (s.Lingling == 1)
+                        if (s.LocalID == 1)
                         {
                             Tieralg(s, 0);
                             db.SaveChanges();

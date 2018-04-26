@@ -21,13 +21,13 @@ namespace BachelorApp
             {
                 using (SqlConnection conn = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = BachelorDataAccess.BachelorContext; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False"))
                 {
-                    SqlCommand cmd = new SqlCommand(string.Format("SET IDENTITY_INSERT HighestLingling ON"), conn);
+                    SqlCommand cmd = new SqlCommand(string.Format("SET IDENTITY_INSERT HighestLocalID ON"), conn);
                     conn.Open();
                     cmd.ExecuteNonQuery();
-                    cmd = new SqlCommand(string.Format("INSERT into dbo.HighestLingling (Lingling,Value)  VALUES ( 1 , 1)"), conn);
+                    cmd = new SqlCommand(string.Format("INSERT into dbo.HighestLocalID (LocalID,Value)  VALUES ( 1 , 1)"), conn);
                     
                     cmd.ExecuteNonQuery();
-                    cmd = new SqlCommand(string.Format("SET IDENTITY_INSERT HighestLingling OFF"), conn);
+                    cmd = new SqlCommand(string.Format("SET IDENTITY_INSERT HighestLocalID OFF"), conn);
                     
                     cmd.ExecuteNonQuery();
                     conn.Close();

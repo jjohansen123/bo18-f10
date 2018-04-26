@@ -13,6 +13,7 @@ namespace BachelorGUI
     public partial class CreateForm : Form
     {
         List<RadioButton> listrb = new List<RadioButton>();
+        List<int> listIndex = new List<int>();
         int siteID;
         public CreateForm(List<RadioButton> temprb, int SiteID)
         {
@@ -40,6 +41,8 @@ namespace BachelorGUI
                                 if(c.Name == "panel1")
                                 {
                                     c.Controls.Add(rBtn);
+                                    listrb.Add(rBtn);
+                                    listIndex.Add(Convert.ToInt32(rBtn.Name));
                                     nodeCB.Items.Add(descTB.Text);
                                 }
                             }
@@ -65,10 +68,12 @@ namespace BachelorGUI
                 if (rb.Name == "baseBtn")
                 {
                     nodeCB.Items.Add(BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(1, siteID));
+                    listIndex.Add(1);
                 }
                 else
                 {
                     nodeCB.Items.Add(BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name), siteID));
+                    listIndex.Add(Convert.ToInt32(rb.Name));
                 }
             }
             nodeCB.SelectedIndex = 0;
@@ -92,7 +97,7 @@ namespace BachelorGUI
                 }
                 else
                 {
-                    if (BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name), siteID) == nodeCB.Text)
+                    if (BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription((listIndex[(nodeCB.SelectedIndex)]), siteID) == nodeCB.Text && Convert.ToInt32(rb.Name) == (listIndex[(nodeCB.SelectedIndex)]))
                     {
                         rb.Checked = true;
                         break;

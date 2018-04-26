@@ -37,7 +37,7 @@ namespace BachelorApp
                     foreach (Node s in nodes)
                     {
                         s.TotalConnectedUsers = 0;
-                        if (s.Lingling == readParent)
+                        if (s.LocalID == readParent)
                         {
                             if (s.Children == null)
                             {
@@ -50,7 +50,7 @@ namespace BachelorApp
                     }
                     foreach (Node s in nodes)
                     {
-                        if (s.Lingling == 1)
+                        if (s.LocalID == 1)
                         {
                             BachelorApp.Nullall.NullAll(s);
                             s.TotalConnectedUsers = BachelorApp.Updatetotal.UpdateTotal(s);
@@ -81,13 +81,13 @@ namespace BachelorApp
                     foreach (Node s in nodes)
                     {
                         s.TotalConnectedUsers = 0;
-                        if (s.Lingling == readParent)
+                        if (s.LocalID == readParent)
                         {
                             if (s.Children == null)
                             {
                                 s.Children = new List<Node>();
                             }
-                            s.Children.Add(new Node() { Description = NodeDescription, ParentID = readParent, Lingling = Highestnode.GetHighest(site) +1, DirectConnectedUsers = DirectCon, Children = new List<Node>(), SiteId = site });
+                            s.Children.Add(new Node() { Description = NodeDescription, ParentID = readParent, LocalID = Highestnode.GetHighest(site) +1, DirectConnectedUsers = DirectCon, Children = new List<Node>(), SiteId = site });
                             db.SaveChanges();
                            // Tiers.Tiersort();
                             Highestnode.SetHighest(site);
@@ -95,7 +95,7 @@ namespace BachelorApp
                     }
                     foreach (Node s in nodes)
                     {
-                        if (s.Lingling == 1)
+                        if (s.LocalID == 1)
                         {
                             BachelorApp.Nullall.NullAll(s);
                             s.TotalConnectedUsers = BachelorApp.Updatetotal.UpdateTotal(s);

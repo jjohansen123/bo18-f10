@@ -15,7 +15,7 @@ namespace BachelorApp
             try
             {
                 Console.WriteLine("Node to edit: ");
-                Int32 Lingling = Int32.Parse(Console.ReadLine());
+                Int32 LocalID = Int32.Parse(Console.ReadLine());
 
                 using (var db = new BachelorContext())
                 {
@@ -23,7 +23,7 @@ namespace BachelorApp
                     List<Node> nodes = db.Nodes.ToList();
                     foreach (Node s in nodes)
                     {
-                        if (s.Lingling == Lingling)
+                        if (s.LocalID == LocalID)
                         {
 
                             Int32 Option = Int32.Parse(Console.ReadLine());
@@ -60,7 +60,7 @@ namespace BachelorApp
             }
         }
 
-        public static void UpdateNodeDescription(int Lingling, String newDescription)
+        public static void UpdateNodeDescription(int LocalID, String newDescription)
         {
             try
             {
@@ -69,7 +69,7 @@ namespace BachelorApp
                     List<Node> nodes = db.Nodes.ToList();
                     foreach (Node s in nodes)
                     {
-                        if (s.Lingling == Lingling)
+                        if (s.LocalID == LocalID)
                         {
                             s.Description = newDescription;
                             db.SaveChanges();
@@ -83,7 +83,7 @@ namespace BachelorApp
                 throw e;
             }
         }
-        public static void UpdateNodeUsers(int Lingling, Int32 NewDirectlyConnected)
+        public static void UpdateNodeUsers(int LocalID, Int32 NewDirectlyConnected)
         {
             try
             {
@@ -92,7 +92,7 @@ namespace BachelorApp
                     List<Node> nodes = db.Nodes.ToList();
                     foreach (Node s in nodes)
                     {
-                        if (s.Lingling == Lingling)
+                        if (s.LocalID == LocalID)
                         {
                             s.DirectConnectedUsers = NewDirectlyConnected;
                             db.SaveChanges();

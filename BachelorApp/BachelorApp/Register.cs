@@ -87,7 +87,7 @@ namespace BachelorApp
                             {
                                 s.Children = new List<Node>();
                             }
-                            s.Children.Add(new Node() { Description = NodeDescription, ParentID = readParent, DirectConnectedUsers = DirectCon, Children = new List<Node>(), SiteId = site });
+                            s.Children.Add(new Node() { Description = NodeDescription, ParentID = readParent, Lingling = Highestnode.GetHighest(site) +1, DirectConnectedUsers = DirectCon, Children = new List<Node>(), SiteId = site });
                             db.SaveChanges();
                            // Tiers.Tiersort();
                             Highestnode.SetHighest(site);

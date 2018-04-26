@@ -26,7 +26,9 @@ namespace BachelorApp
                     conn.Open();
                     SqlCommand cmd = new SqlCommand(string.Format("SELECT MAX(SiteId) FROM DBO.Sites"), conn);
                     int HighestId = (int)cmd.ExecuteScalar() + 1;
-                    
+                    cmd = new SqlCommand(string.Format("SELECT MAX(NodeId) FROM DBO.Nodes"), conn);
+                    int HighestNodeId = (int)cmd.ExecuteScalar() + 1;
+
                     cmd = new SqlCommand(string.Format("SET IDENTITY_INSERT Sites ON"), conn);
                     cmd.ExecuteNonQuery();
 
@@ -48,7 +50,7 @@ namespace BachelorApp
                     cmd = new SqlCommand(string.Format("SET IDENTITY_INSERT Nodes ON"), conn);
                     cmd.ExecuteNonQuery();
 
-                    cmd = new SqlCommand(string.Format("INSERT into dbo.Nodes ( SiteId, Lingling, Description, DirectConnectedUsers, ParentID, TotalConnectedUsers, TierID, NodeID)  VALUES ( {0} , {1}, '{2}', {3}, {4}, {5}, {6}, {7})", HighestId+1, 1, "Top Node", 0, 0, 0, 0,1000), conn);
+                    cmd = new SqlCommand(string.Format("INSERT into dbo.Nodes ( SiteId, Lingling, Description, DirectConnectedUsers, ParentID, TotalConnectedUsers, TierID, NodeID)  VALUES ( {0} , {1}, '{2}', {3}, {4}, {5}, {6}, {7})", HighestId, 1, "Top Node", 0, 0, 0, 0,HighestNodeId), conn);
                     cmd.ExecuteNonQuery();
 
                     cmd = new SqlCommand(string.Format("SET IDENTITY_INSERT Nodes OFF"), conn);

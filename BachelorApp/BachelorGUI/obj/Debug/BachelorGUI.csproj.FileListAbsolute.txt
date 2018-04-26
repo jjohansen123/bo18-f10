@@ -89,3 +89,6 @@ C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\obj\Debug\Windo
 C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\obj\Debug\BachelorGUI.ChangeForm.resources
 C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\obj\Debug\BachelorGUI.CreateForm.resources
 C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\obj\Debug\BachelorGUI.SiteForm.resources
+C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\obj\Debug\BachelorGUI.ChangeForm.resources
+C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\obj\Debug\BachelorGUI.CreateForm.resources
+C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\obj\Debug\BachelorGUI.SiteForm.resources

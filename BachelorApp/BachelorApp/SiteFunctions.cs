@@ -36,19 +36,19 @@ namespace BachelorApp
                     cmd = new SqlCommand(string.Format("SET IDENTITY_INSERT Sites OFF"), conn);
                     cmd.ExecuteNonQuery();
 
-                    cmd = new SqlCommand(string.Format("SET IDENTITY_INSERT HighestNodeId ON"), conn);
+                    cmd = new SqlCommand(string.Format("SET IDENTITY_INSERT HighestLingling ON"), conn);
                     cmd.ExecuteNonQuery();
 
-                    cmd = new SqlCommand(string.Format("INSERT into dbo.HighestNodeID (SiteId,HighestId)  VALUES ( {0} , 1)", HighestId), conn);
+                    cmd = new SqlCommand(string.Format("INSERT into dbo.HighestLingling (SiteId,HighestId)  VALUES ( {0} , 1)", HighestId), conn);
                     cmd.ExecuteNonQuery();
 
-                    cmd = new SqlCommand(string.Format("SET IDENTITY_INSERT HighestNodeId OFF"), conn);
+                    cmd = new SqlCommand(string.Format("SET IDENTITY_INSERT HighestLingling OFF"), conn);
                     cmd.ExecuteNonQuery();
 
                     cmd = new SqlCommand(string.Format("SET IDENTITY_INSERT Nodes ON"), conn);
                     cmd.ExecuteNonQuery();
 
-                    cmd = new SqlCommand(string.Format("INSERT into dbo.Nodes (SiteId, NodeID, Description, DirectConnectedUsers, ParentID, TotalConnectedUsers, TierID)  VALUES ( {0} , {1}, '{2}', {3}, {4}, {5}, {6})", HighestId+1, 1, "Top Node", 0, 0, 0, 0), conn);
+                    cmd = new SqlCommand(string.Format("INSERT into dbo.Nodes ( SiteId, Lingling, Description, DirectConnectedUsers, ParentID, TotalConnectedUsers, TierID, NodeID)  VALUES ( {0} , {1}, '{2}', {3}, {4}, {5}, {6}, {7})", HighestId+1, 1, "Top Node", 0, 0, 0, 0,1000), conn);
                     cmd.ExecuteNonQuery();
 
                     cmd = new SqlCommand(string.Format("SET IDENTITY_INSERT Nodes OFF"), conn);
@@ -101,15 +101,15 @@ namespace BachelorApp
                     Console.WriteLine("Site OK");
 
 
-                    cmd = new SqlCommand(string.Format("SET IDENTITY_INSERT HighestNodeId ON"), conn);
+                    cmd = new SqlCommand(string.Format("SET IDENTITY_INSERT HighestLingling ON"), conn);
                     cmd.ExecuteNonQuery();
 
                     Console.WriteLine("Setting Highestnode ON");
 
-                    cmd = new SqlCommand(string.Format("INSERT into dbo.HighestNodeID (SiteId,HighestId)  VALUES ( {0} , 1)", HighestId), conn);
+                    cmd = new SqlCommand(string.Format("INSERT into dbo.HighestLingling (SiteId,HighestId)  VALUES ( {0} , 1)", HighestId), conn);
                     cmd.ExecuteNonQuery();
 
-                    cmd = new SqlCommand(string.Format("SET IDENTITY_INSERT HighestNodeId OFF"), conn);
+                    cmd = new SqlCommand(string.Format("SET IDENTITY_INSERT HighestLingling OFF"), conn);
                     cmd.ExecuteNonQuery();
 
                     Console.WriteLine("Highest node OK");

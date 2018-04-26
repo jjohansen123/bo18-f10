@@ -37,7 +37,7 @@ namespace BachelorApp
                     foreach (Node s in nodes)
                     {
                         s.TotalConnectedUsers = 0;
-                        if (s.NodeID == readParent)
+                        if (s.Lingling == readParent)
                         {
                             if (s.Children == null)
                             {
@@ -50,7 +50,7 @@ namespace BachelorApp
                     }
                     foreach (Node s in nodes)
                     {
-                        if (s.NodeID == 1)
+                        if (s.Lingling == 1)
                         {
                             BachelorApp.Nullall.NullAll(s);
                             s.TotalConnectedUsers = BachelorApp.Updatetotal.UpdateTotal(s);
@@ -81,7 +81,7 @@ namespace BachelorApp
                     foreach (Node s in nodes)
                     {
                         s.TotalConnectedUsers = 0;
-                        if (s.NodeID == readParent)
+                        if (s.Lingling == readParent)
                         {
                             if (s.Children == null)
                             {
@@ -95,7 +95,7 @@ namespace BachelorApp
                     }
                     foreach (Node s in nodes)
                     {
-                        if (s.NodeID == 1)
+                        if (s.Lingling == 1)
                         {
                             BachelorApp.Nullall.NullAll(s);
                             s.TotalConnectedUsers = BachelorApp.Updatetotal.UpdateTotal(s);

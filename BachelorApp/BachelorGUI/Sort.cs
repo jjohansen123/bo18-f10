@@ -42,7 +42,7 @@ namespace BachelorGUI
                 int i = 0;
                 foreach (Node n in templist)
                 {
-                    recSort(n.NodeID, rangeTop+(range * i), rangeTop + (range * (i+1)), listrb, SiteID);
+                    recSort(n.Lingling, rangeTop+(range * i), rangeTop + (range * (i+1)), listrb, SiteID);
                     foreach (RadioButton rb in listrb)
                     {
                         if (rb.Name == Parent.ToString())

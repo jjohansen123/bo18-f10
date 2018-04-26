@@ -9,7 +9,7 @@ namespace BachelorApp
 {
     class Viewsinglenodeparent
     {
-        public static int ViewSingleNodeParent(Int32 NodeID, int SiteID)
+        public static int ViewSingleNodeParent(Int32 Lingling, int SiteID)
         {
             SqlConnectionStringBuilder connStringBuilder = new SqlConnectionStringBuilder
             {
@@ -21,7 +21,7 @@ namespace BachelorApp
             {
                 using (SqlConnection conn = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = BachelorDataAccess.BachelorContext; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False"))
                 {
-                    SqlCommand cmd = new SqlCommand(string.Format("SELECT ParentID FROM dbo.Nodes WHERE NodeID = '{0}' AND SiteID = '{1}'", NodeID, SiteID), conn);
+                    SqlCommand cmd = new SqlCommand(string.Format("SELECT ParentID FROM dbo.Nodes WHERE Lingling = '{0}' AND SiteID = '{1}'", Lingling, SiteID), conn);
                     conn.Open();
                     int Output = (int)cmd.ExecuteScalar();
                     return Output;

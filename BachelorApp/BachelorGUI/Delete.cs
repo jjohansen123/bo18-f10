@@ -63,7 +63,7 @@ namespace BachelorGUI
             {
                 foreach (Node n in templist)
                 {
-                    endlist.AddRange(recDelete(n.NodeID, listrb, endlist, SiteID));
+                    endlist.AddRange(recDelete(n.Lingling, listrb, endlist, SiteID));
                 }
 
                 foreach (RadioButton rb in listrb)

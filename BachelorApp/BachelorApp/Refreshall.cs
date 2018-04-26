@@ -19,7 +19,7 @@ namespace BachelorApp
                     List<Node> nodes = db.Nodes.ToList();
                     foreach (Node s in nodes)
                     {
-                        if (s.NodeID == 1)
+                        if (s.Lingling == 1)
                         {
                             BachelorApp.Nullall.NullAll(s);
                             s.TotalConnectedUsers = BachelorApp.Updatetotal.UpdateTotal(s);

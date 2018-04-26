@@ -11,7 +11,7 @@ namespace BachelorApp
 {
     public class Deletenode
     {
-        public static void DeleteNode(Int32 NodeID, int SiteID)
+        public static void DeleteNode(Int32 Lingling, int SiteID)
         {
             try
             {
@@ -21,7 +21,7 @@ namespace BachelorApp
                     List<Node> nodes = db.Nodes.ToList();
                     foreach (Node s in nodes)
                     {
-                        if (s.NodeID == NodeID)
+                        if (s.Lingling == Lingling)
                         {
                             if (s.Children == null || s.Children.Count() == 0)
                             {
@@ -36,7 +36,7 @@ namespace BachelorApp
                                 {
                                     using (SqlConnection conn = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = BachelorDataAccess.BachelorContext; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False"))
                                     {
-                                        SqlCommand cmd = new SqlCommand(string.Format("DELETE FROM dbo.Nodes WHERE NodeID = '{0}' AND SiteID = '{1}'", NodeID, SiteID), conn);
+                                        SqlCommand cmd = new SqlCommand(string.Format("DELETE FROM dbo.Nodes WHERE Lingling = '{0}' AND SiteID = '{1}'", Lingling, SiteID), conn);
                                         conn.Open();
                                         cmd.ExecuteNonQuery();
                                     }
@@ -65,14 +65,14 @@ namespace BachelorApp
             try
             {
                 Console.WriteLine("Node to Delete: ");
-                Int32 NodeID = Int32.Parse(Console.ReadLine());
+                Int32 Lingling = Int32.Parse(Console.ReadLine());
 
                 using (var db = new BachelorContext())
                 {
                     List<Node> nodes = db.Nodes.ToList();
                     foreach (Node s in nodes)
                     {
-                        if (s.NodeID == NodeID)
+                        if (s.Lingling == Lingling)
                         {
                             if (s.Children == null || s.Children.Count() == 0)
                             {
@@ -87,7 +87,7 @@ namespace BachelorApp
                                 {
                                     using (SqlConnection conn = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = BachelorDataAccess.BachelorContext; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False"))
                                     {
-                                        SqlCommand cmd = new SqlCommand(string.Format("DELETE FROM dbo.Nodes WHERE NodeID = '{0}'", NodeID), conn);
+                                        SqlCommand cmd = new SqlCommand(string.Format("DELETE FROM dbo.Nodes WHERE Lingling = '{0}'", Lingling), conn);
                                         conn.Open();
                                         cmd.ExecuteNonQuery();
                                     }

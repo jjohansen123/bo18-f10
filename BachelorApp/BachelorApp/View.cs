@@ -29,7 +29,7 @@ namespace BachelorApp
                         {
                             s.Children = new List<Node>();
                         }
-                        Console.WriteLine("Node ID: " + s.NodeID + " - Parent ID: " + s.ParentID + " - Description: " + s.Description + " - Routers connected: " + s.Children.Count + " - Users directly connected: " + s.DirectConnectedUsers + " - Total number of users: " + s.TotalConnectedUsers);
+                        Console.WriteLine("Node ID: " + s.Lingling + " - Parent ID: " + s.ParentID + " - Description: " + s.Description + " - Routers connected: " + s.Children.Count + " - Users directly connected: " + s.DirectConnectedUsers + " - Total number of users: " + s.TotalConnectedUsers);
                     }
                     Console.ReadKey();
                     BachelorApp.MenuNogui.Menu();

@@ -8,6 +8,7 @@ namespace BachelorModel
     public class Node
     {
         public int NodeID { get; set; }
+        public int Lingling { get; set; }
         public int ParentID { get; set; }
         public String Description { get; set; }
         public Int32 DirectConnectedUsers { set; get; }

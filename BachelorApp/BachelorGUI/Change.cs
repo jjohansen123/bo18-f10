@@ -11,7 +11,7 @@ namespace BachelorGUI
     {
         public static void ChangeNode(List<RadioButton> listrb, string desc, int users, int SiteID)
         {
-            int nodeID = 1;
+            int Lingling = 1;
             foreach (RadioButton rb in listrb)
             {
                 if (rb.Checked)
@@ -20,19 +20,19 @@ namespace BachelorGUI
                     {
                         break;
                     }
-                    nodeID = Convert.ToInt32(rb.Name);
+                    Lingling = Convert.ToInt32(rb.Name);
                     break;
                 }
             }
 
-            if (desc != BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(nodeID, SiteID))
+            if (desc != BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Lingling, SiteID))
             {
-                BachelorApp.Updatenode.UpdateNodeDescription(nodeID, desc);
+                BachelorApp.Updatenode.UpdateNodeDescription(Lingling, desc);
             }
 
-            if (users != BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(nodeID, SiteID))
+            if (users != BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Lingling, SiteID))
             {
-                BachelorApp.Updatenode.UpdateNodeUsers(nodeID, users);
+                BachelorApp.Updatenode.UpdateNodeUsers(Lingling, users);
             }
         }
     }

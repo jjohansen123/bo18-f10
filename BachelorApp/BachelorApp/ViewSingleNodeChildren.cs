@@ -19,7 +19,7 @@ namespace BachelorApp
                     List<Node> nodes = db.Nodes.ToList();
                     foreach(Node n in nodes)
                     {
-                        if(n.NodeID == ID && n.SiteId == SiteID)
+                        if(n.Lingling == ID && n.SiteId == SiteID)
                         {
                             return n.Children;
                         }

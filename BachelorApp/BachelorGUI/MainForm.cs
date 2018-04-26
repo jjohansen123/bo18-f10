@@ -228,10 +228,10 @@ namespace BachelorGUI
             List<Node> temp = BachelorApp.View.ViewNodesList(getSiteID());
             foreach (Node n in temp)
             {
-                if (n.NodeID != 1)
+                if (n.Lingling != 1)
                 {
                     RadioButton rBtn;
-                    rBtn = BachelorGUI.Create.CreateRBtnWithOutDB(GenerateList(), n.ParentID, n.NodeID);
+                    rBtn = BachelorGUI.Create.CreateRBtnWithOutDB(GenerateList(), n.ParentID, n.Lingling);
                     rBtn.CheckedChanged += new System.EventHandler(this.baseBtn_CheckedChanged);
                     this.panel1.Controls.Add(rBtn);
                     

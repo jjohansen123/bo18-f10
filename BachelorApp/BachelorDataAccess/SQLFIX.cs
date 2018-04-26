@@ -21,7 +21,7 @@ namespace BachelorApp
             {
                 using (SqlConnection conn = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = BachelorDataAccess.BachelorContext; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False"))
                 {
-                    SqlCommand cmd = new SqlCommand(string.Format("INSERT into dbo.HighestNodeID VALUES ( 1 , '{0}')", "REEE"), conn);
+                    SqlCommand cmd = new SqlCommand(string.Format("INSERT into dbo.HighestLingling VALUES ( 1 , '{0}')", "REEE"), conn);
                     conn.Open();
                     cmd.ExecuteNonQuery();
                 }

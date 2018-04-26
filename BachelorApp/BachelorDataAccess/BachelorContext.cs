@@ -35,7 +35,7 @@ namespace BachelorDataAccess
                 .HasKey(a => a.SiteId)
                 .Map(m =>
                 {
-                    m.ToTable("HighestNodeId");
+                    m.ToTable("HighestLingling");
 
                 });
 

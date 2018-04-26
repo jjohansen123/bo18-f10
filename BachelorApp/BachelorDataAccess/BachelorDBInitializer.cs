@@ -15,7 +15,7 @@ namespace BachelorDataAccess
         protected override void Seed(BachelorContext context)
         {
 
-            context.Nodes.Add(new Node() { Description = "Top node", ParentID = 0, Children = new List<Node>() });
+            context.Nodes.Add(new Node() { Description = "Top node", SiteId = 1, ParentID = 0, Children = new List<Node>() });
             context.HighestNode.Add(new HighId() { HighestId = 1, SiteId = 1 });
             context.Sites.Add(new Site() { SiteName="Example Network" });
             base.Seed(context);

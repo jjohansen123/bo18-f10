@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace BachelorApp
 {
-    class Viewsinglenodeparent
+    public class Viewsinglenodeparent
     {
         public static int ViewSingleNodeParent(Int32 LocalID, int SiteID)
         {

@@ -71,7 +71,7 @@ namespace BachelorApp
 
         
         public static void RegisterNode(string NodeDescription, Int32 readParent, Int32 DirectCon, int site)
-        { //SE HER MARTIN TODO: DROPDOWN MENU SOM BESTEMMER SITE, REEEE!
+        { 
             try
             {
                 
@@ -81,7 +81,7 @@ namespace BachelorApp
                     foreach (Node s in nodes)
                     {
                         s.TotalConnectedUsers = 0;
-                        if (s.LocalID == readParent)
+                        if (s.LocalID == readParent && s.SiteId == site)
                         {
                             if (s.Children == null)
                             {
@@ -95,7 +95,7 @@ namespace BachelorApp
                     }
                     foreach (Node s in nodes)
                     {
-                        if (s.LocalID == 1)
+                        if (s.LocalID == 1 && s.SiteId == site)
                         {
                             BachelorApp.Nullall.NullAll(s);
                             s.TotalConnectedUsers = BachelorApp.Updatetotal.UpdateTotal(s);

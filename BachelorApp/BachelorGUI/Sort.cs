@@ -21,11 +21,11 @@ namespace BachelorGUI
             List<Node> templist = BachelorApp.ViewSingleNodeChildren.ViewChildren(Parent, SiteID);
             if (templist == null)
             {
-                foreach(RadioButton rb in listrb)
+                foreach (RadioButton rb in listrb)
                 {
                     if(rb.Name == Parent.ToString())
                     {
-                        rb.Location = new Point(rb.Location.X, (rangeTop) + ((rangeBot - rangeTop)/2) - (rb.Height / 2));
+                        rb.Location = new Point(rb.Location.X, (rangeTop) + ((rangeBot - rangeTop) / 2) - (rb.Height / 2));
                     }
 
                     else if(rb.Name == "baseBtn" && Parent == 1)

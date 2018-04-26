@@ -14,6 +14,7 @@ namespace BachelorGUI
 {
     public partial class MainForm1 : Form
     {
+        bool loaded = false;
         public MainForm1()
         {
             InitializeComponent();
@@ -67,6 +68,8 @@ namespace BachelorGUI
         {
             BachelorGUI.Sort.SortField(GenerateList(), panel1.Height,panel1.Location.Y,baseBtn.Height, getSiteID());
             Recolor();
+            draw();
+
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
@@ -120,8 +123,6 @@ namespace BachelorGUI
             UpdateCB();
             schoolCB.SelectedIndex = 0;
             UpdatePanel();
-            Recolor();
-            SortField();
         }
 
         private void changeBTN_Click(object sender, EventArgs e)
@@ -176,7 +177,10 @@ namespace BachelorGUI
                 rb.CheckedChanged -= this.baseBtn_CheckedChanged;
                 rb.CheckedChanged += this.baseBtn_CheckedChanged;
             }
-            SortField();
+            if (loaded)
+            {
+                SortField();
+            }
         }
 
         private void SchoolBtn_Click(object sender, EventArgs e)
@@ -227,6 +231,7 @@ namespace BachelorGUI
 
         public void UpdatePanel()
         {
+            loaded = false;
             List<Node> temp = BachelorApp.View.ViewNodesList(getSiteID());
             foreach (Node n in temp)
             {
@@ -239,6 +244,7 @@ namespace BachelorGUI
                     
                 }
             }
+            loaded = true;
             SortField();
         }
 
@@ -269,6 +275,17 @@ namespace BachelorGUI
                 schoolCB.Items.Add(s.SiteName);
             }
             schoolCB.SelectedIndex = tempIndex;
+        }
+        private void draw()
+        {
+            this.Invalidate();
+            Pen myPen = new Pen(Color.Black);
+            myPen.Width = 10;
+            Graphics formGraphics;
+            formGraphics = panel1.CreateGraphics();
+            BachelorGUI.Drawing.drawLines(GenerateList(), formGraphics, myPen, getSiteID());
+            myPen.Dispose();
+            formGraphics.Dispose();
         }
     }
 }

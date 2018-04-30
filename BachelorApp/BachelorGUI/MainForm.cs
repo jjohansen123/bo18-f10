@@ -19,6 +19,7 @@ namespace BachelorGUI
         {
             InitializeComponent();
         }  
+
         private List<RadioButton> GenerateList()
         {
             List<RadioButton> temprb = new List<RadioButton>();
@@ -28,6 +29,7 @@ namespace BachelorGUI
             }
             return temprb;
         }
+
         private void CreateBTN_Click(object sender, EventArgs e)
         {
 
@@ -64,6 +66,7 @@ namespace BachelorGUI
                 CreateForm.Show();
             }
         }
+
         private void SortField()
         {
             BachelorGUI.Sort.SortField(GenerateList(), panel1.Height,panel1.Location.Y,baseBtn.Height, getSiteID());
@@ -106,14 +109,16 @@ namespace BachelorGUI
                     if(rb.Name == "baseBtn")
                     {
                         int id = 1;
-                        descTB.Text = BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(id), getSiteID());
-                        conUTB.Text = BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(id), getSiteID()).ToString();
+                        descTB.Text = BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(id, getSiteID());
+                        conUTB.Text = BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(id, getSiteID()).ToString();
+                        TConUTB.Text = BachelorApp.ViewSingleNodeTotalConnected.viewSingleNodeTotalConnected(id, getSiteID()).ToString();
                         idTB.Text = Convert.ToString(id);
                         break;
                     }
                     
                     descTB.Text = BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name), getSiteID());
                     conUTB.Text = BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(rb.Name), getSiteID()).ToString();
+                    TConUTB.Text = BachelorApp.ViewSingleNodeTotalConnected.viewSingleNodeTotalConnected(Convert.ToInt32(rb.Name), getSiteID()).ToString();
                     idTB.Text = rb.Name;
                     break;
                 }   
@@ -167,6 +172,7 @@ namespace BachelorGUI
         {
             SortField();
         }
+
         private void Recolor()
         {
             BachelorGUI.Recolor.recolor(GenerateList(), getSiteID());
@@ -183,6 +189,7 @@ namespace BachelorGUI
             {
                 SortField();
             }
+            addText();
         }
 
         private void SchoolBtn_Click(object sender, EventArgs e)
@@ -243,11 +250,11 @@ namespace BachelorGUI
                     rBtn = BachelorGUI.Create.CreateRBtnWithOutDB(GenerateList(), n.ParentID, n.LocalID);
                     rBtn.CheckedChanged += new System.EventHandler(this.baseBtn_CheckedChanged);
                     this.panel1.Controls.Add(rBtn);
-                    
                 }
             }
             loaded = true;
             SortField();
+            addText();
         }
 
         private int getSiteID()
@@ -268,6 +275,7 @@ namespace BachelorGUI
             UpdatePanel();
             SortField();
         }
+
         private void UpdateCB()
         {
             int tempIndex = siteCB.SelectedIndex;
@@ -278,6 +286,7 @@ namespace BachelorGUI
             }
             siteCB.SelectedIndex = tempIndex;
         }
+
         private void draw()
         {
             this.Invalidate();
@@ -294,6 +303,11 @@ namespace BachelorGUI
         private void MainForm1_Shown(object sender, EventArgs e)
         {
             draw();
+        }
+
+        private void addText()
+        {
+            BachelorGUI.AddPercent.addPercent(GenerateList(), getSiteID());
         }
     }
 }

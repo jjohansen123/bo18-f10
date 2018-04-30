@@ -13,6 +13,7 @@ namespace BachelorGUI
     public partial class ChangeForm : Form
     {
         List<RadioButton> listrb = new List<RadioButton>();
+        List<int> listIndex = new List<int>();
         int SiteID;
         public ChangeForm(List<RadioButton> templist,int siteID)
         {
@@ -32,12 +33,14 @@ namespace BachelorGUI
                         if (descTB.Text != "")
                         {
                             BachelorGUI.Change.ChangeNode(listrb, descTB.Text, Convert.ToInt32(ConUTB.Text), SiteID);
+                            BachelorGUI.AddPercent.addPercent(listrb,SiteID);
                             break;
                         }
 
                         else
                         {
                             BachelorGUI.Change.ChangeNode(listrb, BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name),SiteID), Convert.ToInt32(ConUTB.Text), SiteID);
+                            BachelorGUI.AddPercent.addPercent(listrb, SiteID);
                             break;
                         }
                     }
@@ -47,6 +50,7 @@ namespace BachelorGUI
                         if (descTB.Text != "")
                         {
                             BachelorGUI.Change.ChangeNode(listrb, descTB.Text, BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(rb.Name), SiteID), SiteID);
+                            BachelorGUI.AddPercent.addPercent(listrb, SiteID);
                             break;
                         }
                     }
@@ -62,13 +66,20 @@ namespace BachelorGUI
                 if(rb.Name == "baseBtn")
                 {
                     nodeCB.Items.Add(BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(1, SiteID));
+                    listIndex.Add(1);
                 }
+
                 else
                 {
                     nodeCB.Items.Add(BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name), SiteID));
+                    listIndex.Add(Convert.ToInt32(rb.Name));
+                }
+
+                if (rb.Checked)
+                {
+                    nodeCB.SelectedIndex = listIndex.Count - 1;
                 }
             }
-            nodeCB.SelectedIndex = 0;
         }
 
         private void nodeCB_SelectionChangeCommitted(object sender, EventArgs e)
@@ -89,7 +100,7 @@ namespace BachelorGUI
                 }
                 else
                 {
-                    if (BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name), SiteID) == nodeCB.Text)
+                    if(BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription((listIndex[(nodeCB.SelectedIndex)]), SiteID) == nodeCB.Text && Convert.ToInt32(rb.Name) == (listIndex[(nodeCB.SelectedIndex)]))
                     {
                         rb.Checked = true;
                         break;

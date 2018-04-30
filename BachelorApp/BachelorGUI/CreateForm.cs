@@ -44,6 +44,7 @@ namespace BachelorGUI
                                     listrb.Add(rBtn);
                                     listIndex.Add(Convert.ToInt32(rBtn.Name));
                                     nodeCB.Items.Add(descTB.Text);
+                                    BachelorGUI.AddPercent.addPercent(listrb, siteID);
                                 }
                             }
                         }
@@ -70,13 +71,18 @@ namespace BachelorGUI
                     nodeCB.Items.Add(BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(1, siteID));
                     listIndex.Add(1);
                 }
+
                 else
                 {
                     nodeCB.Items.Add(BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name), siteID));
                     listIndex.Add(Convert.ToInt32(rb.Name));
                 }
+
+                if (rb.Checked)
+                {
+                    nodeCB.SelectedIndex = listIndex.Count - 1;
+                }
             }
-            nodeCB.SelectedIndex = 0;
         }
 
         private void nodeCB_SelectionChangeCommitted(object sender, EventArgs e)

@@ -45,6 +45,8 @@ namespace BachelorGUI
             this.idTB = new System.Windows.Forms.TextBox();
             this.SchoolBtn = new System.Windows.Forms.Button();
             this.siteCB = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TConUTB = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,7 +122,7 @@ namespace BachelorGUI
             // 
             // descTB
             // 
-            this.descTB.Location = new System.Drawing.Point(4, 149);
+            this.descTB.Location = new System.Drawing.Point(4, 131);
             this.descTB.Name = "descTB";
             this.descTB.ReadOnly = true;
             this.descTB.Size = new System.Drawing.Size(200, 20);
@@ -129,7 +131,7 @@ namespace BachelorGUI
             // descLBL
             // 
             this.descLBL.AutoSize = true;
-            this.descLBL.Location = new System.Drawing.Point(1, 133);
+            this.descLBL.Location = new System.Drawing.Point(1, 115);
             this.descLBL.Name = "descLBL";
             this.descLBL.Size = new System.Drawing.Size(63, 13);
             this.descLBL.TabIndex = 6;
@@ -138,7 +140,7 @@ namespace BachelorGUI
             // conULBL
             // 
             this.conULBL.AutoSize = true;
-            this.conULBL.Location = new System.Drawing.Point(1, 173);
+            this.conULBL.Location = new System.Drawing.Point(1, 155);
             this.conULBL.Name = "conULBL";
             this.conULBL.Size = new System.Drawing.Size(92, 13);
             this.conULBL.TabIndex = 8;
@@ -146,7 +148,7 @@ namespace BachelorGUI
             // 
             // conUTB
             // 
-            this.conUTB.Location = new System.Drawing.Point(4, 189);
+            this.conUTB.Location = new System.Drawing.Point(4, 171);
             this.conUTB.Name = "conUTB";
             this.conUTB.ReadOnly = true;
             this.conUTB.Size = new System.Drawing.Size(200, 20);
@@ -161,7 +163,8 @@ namespace BachelorGUI
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(200, 185);
             this.richTextBox1.TabIndex = 10;
-            this.richTextBox1.Text = "";
+            this.richTextBox1.Text = "Fargekoder: \nRød = høgt antall brukere\nGul = medium/høgt antall brukere men ikke " +
+    "kritisk\nGrønn = greit antall brukere\nBlå = ingen brukere\n";
             // 
             // outputLBL
             // 
@@ -175,7 +178,7 @@ namespace BachelorGUI
             // idLBL
             // 
             this.idLBL.AutoSize = true;
-            this.idLBL.Location = new System.Drawing.Point(1, 94);
+            this.idLBL.Location = new System.Drawing.Point(1, 76);
             this.idLBL.Name = "idLBL";
             this.idLBL.Size = new System.Drawing.Size(21, 13);
             this.idLBL.TabIndex = 13;
@@ -184,7 +187,7 @@ namespace BachelorGUI
             // idTB
             // 
             this.idTB.Cursor = System.Windows.Forms.Cursors.Default;
-            this.idTB.Location = new System.Drawing.Point(4, 110);
+            this.idTB.Location = new System.Drawing.Point(4, 92);
             this.idTB.Name = "idTB";
             this.idTB.ReadOnly = true;
             this.idTB.Size = new System.Drawing.Size(200, 20);
@@ -209,6 +212,24 @@ namespace BachelorGUI
             this.siteCB.Name = "siteCB";
             this.siteCB.Size = new System.Drawing.Size(170, 21);
             this.siteCB.TabIndex = 15;
+            this.siteCB.SelectionChangeCommitted += new System.EventHandler(this.siteCB_SelectionChangeCommitted);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1, 195);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(119, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Total Connected Users:";
+            // 
+            // TConUTB
+            // 
+            this.TConUTB.Location = new System.Drawing.Point(4, 211);
+            this.TConUTB.Name = "TConUTB";
+            this.TConUTB.ReadOnly = true;
+            this.TConUTB.Size = new System.Drawing.Size(200, 20);
+            this.TConUTB.TabIndex = 16;
             // 
             // MainForm1
             // 
@@ -216,6 +237,8 @@ namespace BachelorGUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1052, 549);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.TConUTB);
             this.Controls.Add(this.siteCB);
             this.Controls.Add(this.SchoolBtn);
             this.Controls.Add(this.idLBL);
@@ -259,6 +282,8 @@ namespace BachelorGUI
         public System.Windows.Forms.TextBox idTB;
         private System.Windows.Forms.Button SchoolBtn;
         private ComboBox siteCB;
+        private Label label1;
+        public TextBox TConUTB;
     }
 }
 

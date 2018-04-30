@@ -74,6 +74,7 @@
     <Compile Include="Viewsinglenodeconnected.cs" />
     <Compile Include="Viewsinglenodedescription.cs" />
     <Compile Include="Viewsinglenodeparent.cs" />
+    <Compile Include="ViewSingleNodeTotalConnected.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BachelorModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace BachelorGUI
 {
     public partial class SiteForm : Form
     {
-        public SiteForm()
+        ComboBox formSiteCB;
+        public SiteForm(ComboBox cb)
         {
             InitializeComponent();
+            formSiteCB = cb;
         }
 
         private void CreateBTN_Click(object sender, EventArgs e)
@@ -22,10 +25,29 @@ namespace BachelorGUI
             BachelorApp.SiteFunctions.AddSite(NameTB.Text);
             MessageBox.Show("School has been created");
             FormCollection fc = Application.OpenForms;
-            MainForm1.UpdateCB();
+            UpdateCB();
         }
 
         private void SiteForm_Load(object sender, EventArgs e)
+        {
+            UpdateCB();
+        }
+        private void UpdateCB()
+        {
+            int tempIndex = formSiteCB.SelectedIndex;
+            int tempIndex2 = SiteCB.SelectedIndex;
+            formSiteCB.Items.Clear();
+            SiteCB.Items.Clear();
+            foreach (Site s in BachelorApp.SiteFunctions.GetSite())
+            {
+                formSiteCB.Items.Add(s.SiteName);
+                SiteCB.Items.Add(s.SiteName);
+            }
+            formSiteCB.SelectedIndex = tempIndex;
+            SiteCB.SelectedIndex = tempIndex2;
+        }
+
+        private void DeleteBTN_Click(object sender, EventArgs e)
         {
 
         }

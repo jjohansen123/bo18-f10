@@ -11,8 +11,6 @@ namespace BachelorGUI
 {
     class Create
     {
-        private static int id;
-
         public static RadioButton CreateRBtn(List<RadioButton> listrb, Int32 conU, string desc, int SiteID)
         {
            

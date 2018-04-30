@@ -46,7 +46,7 @@ namespace BachelorGUI
                         if(n.LocalID == Convert.ToInt32(temp) && n.SiteId == siteID)
                         {
                             temprec(rb, listrb, g, p, siteID);
-                            g.DrawLine(p, prb.Location, rb.Location);
+                            g.DrawLine(p, new Point(prb.Location.X + (prb.Width / 2), prb.Location.Y + (prb.Height / 2)), new Point(rb.Location.X + (prb.Width / 2), rb.Location.Y + (rb.Height / 2)));
                             break;
                         }
                     }

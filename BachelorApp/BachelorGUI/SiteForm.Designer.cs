@@ -38,6 +38,7 @@
             // 
             // SiteCB
             // 
+            this.SiteCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SiteCB.FormattingEnabled = true;
             this.SiteCB.Location = new System.Drawing.Point(12, 25);
             this.SiteCB.Name = "SiteCB";
@@ -59,6 +60,7 @@
             this.DeleteBTN.TabIndex = 2;
             this.DeleteBTN.Text = "Delete selected School";
             this.DeleteBTN.UseVisualStyleBackColor = true;
+            this.DeleteBTN.Click += new System.EventHandler(this.DeleteBTN_Click);
             // 
             // CreateBTN
             // 

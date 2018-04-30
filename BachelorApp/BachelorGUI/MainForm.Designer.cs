@@ -1,4 +1,6 @@
-﻿namespace BachelorGUI
+﻿using System.Windows.Forms;
+
+namespace BachelorGUI
 {
     partial class MainForm1
     {
@@ -37,12 +39,12 @@
             this.descLBL = new System.Windows.Forms.Label();
             this.conULBL = new System.Windows.Forms.Label();
             this.conUTB = new System.Windows.Forms.TextBox();
-            MainForm1.schoolCB = new System.Windows.Forms.ComboBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.outputLBL = new System.Windows.Forms.Label();
             this.idLBL = new System.Windows.Forms.Label();
             this.idTB = new System.Windows.Forms.TextBox();
             this.SchoolBtn = new System.Windows.Forms.Button();
+            this.siteCB = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,6 +122,7 @@
             // 
             this.descTB.Location = new System.Drawing.Point(4, 149);
             this.descTB.Name = "descTB";
+            this.descTB.ReadOnly = true;
             this.descTB.Size = new System.Drawing.Size(200, 20);
             this.descTB.TabIndex = 5;
             // 
@@ -145,18 +148,9 @@
             // 
             this.conUTB.Location = new System.Drawing.Point(4, 189);
             this.conUTB.Name = "conUTB";
+            this.conUTB.ReadOnly = true;
             this.conUTB.Size = new System.Drawing.Size(200, 20);
             this.conUTB.TabIndex = 7;
-            // 
-            // schoolCB
-            // 
-            MainForm1.schoolCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            MainForm1.schoolCB.FormattingEnabled = true;
-            MainForm1.schoolCB.Location = new System.Drawing.Point(4, 9);
-            MainForm1.schoolCB.Name = "schoolCB";
-            MainForm1.schoolCB.Size = new System.Drawing.Size(170, 21);
-            MainForm1.schoolCB.TabIndex = 9;
-            MainForm1.schoolCB.SelectionChangeCommitted += new System.EventHandler(this.schoolCB_SelectionChangeCommitted);
             // 
             // richTextBox1
             // 
@@ -198,14 +192,23 @@
             // 
             // SchoolBtn
             // 
-            this.SchoolBtn.Location = new System.Drawing.Point(180, 9);
+            this.SchoolBtn.Location = new System.Drawing.Point(180, 7);
             this.SchoolBtn.Name = "SchoolBtn";
-            this.SchoolBtn.Size = new System.Drawing.Size(25, 21);
+            this.SchoolBtn.Size = new System.Drawing.Size(25, 22);
             this.SchoolBtn.TabIndex = 14;
             this.SchoolBtn.Text = "+";
             this.SchoolBtn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.SchoolBtn.UseVisualStyleBackColor = true;
             this.SchoolBtn.Click += new System.EventHandler(this.SchoolBtn_Click);
+            // 
+            // siteCB
+            // 
+            this.siteCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.siteCB.FormattingEnabled = true;
+            this.siteCB.Location = new System.Drawing.Point(4, 8);
+            this.siteCB.Name = "siteCB";
+            this.siteCB.Size = new System.Drawing.Size(170, 21);
+            this.siteCB.TabIndex = 15;
             // 
             // MainForm1
             // 
@@ -213,12 +216,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1052, 549);
+            this.Controls.Add(this.siteCB);
             this.Controls.Add(this.SchoolBtn);
             this.Controls.Add(this.idLBL);
             this.Controls.Add(this.idTB);
             this.Controls.Add(this.outputLBL);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(MainForm1.schoolCB);
             this.Controls.Add(this.conULBL);
             this.Controls.Add(this.conUTB);
             this.Controls.Add(this.descLBL);
@@ -232,6 +235,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Network Test";
             this.Load += new System.EventHandler(this.MainForm1_Load);
+            this.Shown += new System.EventHandler(this.MainForm1_Shown);
             this.SizeChanged += new System.EventHandler(this.MainForm1_SizeChanged);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -249,12 +253,12 @@
         private System.Windows.Forms.Label descLBL;
         private System.Windows.Forms.Label conULBL;
         public System.Windows.Forms.TextBox conUTB;
-        public static System.Windows.Forms.ComboBox schoolCB;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label outputLBL;
         private System.Windows.Forms.Label idLBL;
         public System.Windows.Forms.TextBox idTB;
         private System.Windows.Forms.Button SchoolBtn;
+        private ComboBox siteCB;
     }
 }
 

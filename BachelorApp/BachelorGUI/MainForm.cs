@@ -108,11 +108,13 @@ namespace BachelorGUI
                         int id = 1;
                         descTB.Text = BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(id), getSiteID());
                         conUTB.Text = BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(id), getSiteID()).ToString();
+                        idTB.Text = Convert.ToString(id);
                         break;
                     }
                     
                     descTB.Text = BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name), getSiteID());
                     conUTB.Text = BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(rb.Name), getSiteID()).ToString();
+                    idTB.Text = rb.Name;
                     break;
                 }   
             }
@@ -121,7 +123,7 @@ namespace BachelorGUI
         private void MainForm1_Load(object sender, EventArgs e)
         {
             UpdateCB();
-            schoolCB.SelectedIndex = 0;
+            siteCB.SelectedIndex = 0;
             UpdatePanel();
         }
 
@@ -212,7 +214,7 @@ namespace BachelorGUI
             }
             if (formcheck == false)
             {
-                SiteForm siteForm = new SiteForm();
+                SiteForm siteForm = new SiteForm(siteCB);
                 siteForm.Show();
             }
         }
@@ -252,7 +254,7 @@ namespace BachelorGUI
         {
             foreach (Site s in BachelorApp.SiteFunctions.GetSite())
             {
-                if (s.SiteName == schoolCB.Text)
+                if (s.SiteName == siteCB.Text)
                 {
                     return s.SiteId;
                 }
@@ -260,32 +262,38 @@ namespace BachelorGUI
             return 1;
         }
 
-        private void schoolCB_SelectionChangeCommitted(object sender, EventArgs e)
+        private void siteCB_SelectionChangeCommitted(object sender, EventArgs e)
         {
             ClearPanel();
             UpdatePanel();
             SortField();
         }
-        public static void UpdateCB()
+        private void UpdateCB()
         {
-            int tempIndex = schoolCB.SelectedIndex;
-            schoolCB.Items.Clear();
+            int tempIndex = siteCB.SelectedIndex;
+            siteCB.Items.Clear();
             foreach (Site s in BachelorApp.SiteFunctions.GetSite())
             {
-                schoolCB.Items.Add(s.SiteName);
+                siteCB.Items.Add(s.SiteName);
             }
-            schoolCB.SelectedIndex = tempIndex;
+            siteCB.SelectedIndex = tempIndex;
         }
         private void draw()
         {
             this.Invalidate();
+            panel1.Refresh();
             Pen myPen = new Pen(Color.Black);
-            myPen.Width = 10;
+            myPen.Width = 2;
             Graphics formGraphics;
             formGraphics = panel1.CreateGraphics();
             BachelorGUI.Drawing.drawLines(GenerateList(), formGraphics, myPen, getSiteID());
             myPen.Dispose();
             formGraphics.Dispose();
+        }
+
+        private void MainForm1_Shown(object sender, EventArgs e)
+        {
+            draw();
         }
     }
 }

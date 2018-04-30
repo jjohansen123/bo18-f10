@@ -257,6 +257,7 @@ namespace BachelorGUI
             this.Name = "MainForm1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Network Test";
+            this.Activated += new System.EventHandler(this.MainForm1_Activated);
             this.Load += new System.EventHandler(this.MainForm1_Load);
             this.Shown += new System.EventHandler(this.MainForm1_Shown);
             this.SizeChanged += new System.EventHandler(this.MainForm1_SizeChanged);

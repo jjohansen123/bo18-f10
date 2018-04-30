@@ -97,6 +97,7 @@ namespace BachelorGUI
             }
             
             SortField();
+            addText();
         }
 
         public void baseBtn_CheckedChanged(object sender, EventArgs e)
@@ -308,6 +309,11 @@ namespace BachelorGUI
         private void addText()
         {
             BachelorGUI.AddPercent.addPercent(GenerateList(), getSiteID());
+        }
+
+        private void MainForm1_Activated(object sender, EventArgs e)
+        {
+            draw();
         }
     }
 }

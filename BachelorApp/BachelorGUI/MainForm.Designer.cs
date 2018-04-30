@@ -30,6 +30,7 @@ namespace BachelorGUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm1));
             this.createBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.baseBtn = new System.Windows.Forms.RadioButton();
@@ -163,8 +164,7 @@ namespace BachelorGUI
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(200, 185);
             this.richTextBox1.TabIndex = 10;
-            this.richTextBox1.Text = "Fargekoder: \nRød = høgt antall brukere\nGul = medium/høgt antall brukere men ikke " +
-    "kritisk\nGrønn = greit antall brukere\nBlå = ingen brukere\n";
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
             // outputLBL
             // 

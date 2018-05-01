@@ -56,7 +56,6 @@
     <Compile Include="BachelorContext.cs" />
     <Compile Include="BachelorDBInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SQLFIX.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

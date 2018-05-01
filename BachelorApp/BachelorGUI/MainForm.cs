@@ -97,6 +97,7 @@ namespace BachelorGUI
             }
             
             SortField();
+            Updatetotal.RunUpdate(getSiteID());
             addText();
         }
 

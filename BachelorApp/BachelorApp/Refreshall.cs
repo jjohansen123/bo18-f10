@@ -21,7 +21,7 @@ namespace BachelorApp
                     {
                         if (s.LocalID == 1)
                         {
-                            BachelorApp.Nullall.NullAll(s);
+                           
                             s.TotalConnectedUsers = BachelorApp.Updatetotal.UpdateTotal(s);
                             db.SaveChanges();
                         }

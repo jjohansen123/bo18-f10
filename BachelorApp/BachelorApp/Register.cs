@@ -52,7 +52,7 @@ namespace BachelorApp
                     {
                         if (s.LocalID == 1)
                         {
-                            BachelorApp.Nullall.NullAll(s);
+                            
                             s.TotalConnectedUsers = BachelorApp.Updatetotal.UpdateTotal(s);
                             db.SaveChanges();
                         }
@@ -80,9 +80,10 @@ namespace BachelorApp
                     List<Node> nodes = db.Nodes.ToList();
                     foreach (Node s in nodes)
                     {
-                        s.TotalConnectedUsers = 0;
+                       
                         if (s.LocalID == readParent && s.SiteId == site)
                         {
+                            s.TotalConnectedUsers = 0;
                             if (s.Children == null)
                             {
                                 s.Children = new List<Node>();
@@ -97,7 +98,7 @@ namespace BachelorApp
                     {
                         if (s.LocalID == 1 && s.SiteId == site)
                         {
-                            BachelorApp.Nullall.NullAll(s);
+                            
                             s.TotalConnectedUsers = BachelorApp.Updatetotal.UpdateTotal(s);
                             db.SaveChanges();
                         }

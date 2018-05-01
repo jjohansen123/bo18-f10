@@ -4,11 +4,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BachelorModel;
+using BachelorDataAccess;
 
 namespace BachelorApp
 {
-    class Updatetotal
+    public class Updatetotal
     {
+        public static void RunUpdate(int Site)
+        {
+            using (var db = new BachelorContext())
+            {
+                try
+                {
+                    List<Node> nodes = db.Nodes.ToList();
+                    foreach (Node s in nodes)
+                    {
+                        if (s.LocalID == 1 && s.SiteId == Site)
+                        {
+                            UpdateTotal(s);
+                        }
+                    }
+                }
+                catch(Exception e)
+                {
+                    throw e;
+                }
+            }
+        }
         public static int UpdateTotal(Node n)
         {
             try

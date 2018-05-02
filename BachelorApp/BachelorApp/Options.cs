@@ -25,6 +25,33 @@ namespace BachelorApp
                 throw e;
             }
         }
+
+        public static void Change(int Id, String name, int Low, int High)
+        {
+            try
+            {
+                using (var db = new BachelorContext())
+                {
+
+                    List<BachelorModel.Options> OptionsList = db.Model.ToList();
+                    foreach (BachelorModel.Options s in OptionsList)
+                    {
+                        if (s.ModelId == Id)
+                        {
+                            s.ModelName = name;
+                            s.RangeOne = Low;
+                            s.RangeTwo = High;
+                            db.SaveChanges();
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
         public static void Delete( int Id)
         {
             try

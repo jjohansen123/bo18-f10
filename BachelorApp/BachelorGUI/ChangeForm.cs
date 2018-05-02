@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BachelorModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,7 @@ namespace BachelorGUI
     {
         List<RadioButton> listrb = new List<RadioButton>();
         List<int> listIndex = new List<int>();
+        List<int> DeviceIndex = new List<int>();
         int SiteID;
         public ChangeForm(List<RadioButton> templist,int siteID)
         {
@@ -32,14 +34,14 @@ namespace BachelorGUI
                     {
                         if (descTB.Text != "")
                         {
-                            BachelorGUI.Change.ChangeNode(listrb, descTB.Text, Convert.ToInt32(ConUTB.Text), SiteID);
+                            BachelorGUI.Change.ChangeNode(listrb, descTB.Text, Convert.ToInt32(ConUTB.Text), SiteID, DeviceIndex[DeviceCB.SelectedIndex]);
                             BachelorGUI.AddPercent.addPercent(listrb,SiteID);
                             break;
                         }
 
                         else
                         {
-                            BachelorGUI.Change.ChangeNode(listrb, BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name),SiteID), Convert.ToInt32(ConUTB.Text), SiteID);
+                            BachelorGUI.Change.ChangeNode(listrb, BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name),SiteID), Convert.ToInt32(ConUTB.Text), SiteID, DeviceIndex[DeviceCB.SelectedIndex]);
                             BachelorGUI.AddPercent.addPercent(listrb, SiteID);
                             break;
                         }
@@ -49,7 +51,7 @@ namespace BachelorGUI
                     {
                         if (descTB.Text != "")
                         {
-                            BachelorGUI.Change.ChangeNode(listrb, descTB.Text, BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(rb.Name), SiteID), SiteID);
+                            BachelorGUI.Change.ChangeNode(listrb, descTB.Text, BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(rb.Name), SiteID), SiteID, DeviceIndex[DeviceCB.SelectedIndex]);
                             BachelorGUI.AddPercent.addPercent(listrb, SiteID);
                             break;
                         }
@@ -80,6 +82,12 @@ namespace BachelorGUI
                     nodeCB.SelectedIndex = listIndex.Count - 1;
                 }
             }
+            foreach(Options op in BachelorApp.Options.Get())
+            {
+                DeviceCB.Items.Add(op.ModelName);
+                DeviceIndex.Add(op.ModelId);
+            }
+            DeviceCB.SelectedIndex = 0;
         }
 
         private void nodeCB_SelectionChangeCommitted(object sender, EventArgs e)

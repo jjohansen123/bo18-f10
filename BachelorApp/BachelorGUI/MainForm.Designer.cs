@@ -48,6 +48,7 @@ namespace BachelorGUI
             this.siteCB = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.TConUTB = new System.Windows.Forms.TextBox();
+            this.DeviceBTN = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -195,7 +196,7 @@ namespace BachelorGUI
             // 
             // SchoolBtn
             // 
-            this.SchoolBtn.Location = new System.Drawing.Point(180, 7);
+            this.SchoolBtn.Location = new System.Drawing.Point(179, 7);
             this.SchoolBtn.Name = "SchoolBtn";
             this.SchoolBtn.Size = new System.Drawing.Size(25, 22);
             this.SchoolBtn.TabIndex = 14;
@@ -231,12 +232,23 @@ namespace BachelorGUI
             this.TConUTB.Size = new System.Drawing.Size(200, 20);
             this.TConUTB.TabIndex = 16;
             // 
+            // DeviceBTN
+            // 
+            this.DeviceBTN.Location = new System.Drawing.Point(4, 35);
+            this.DeviceBTN.Name = "DeviceBTN";
+            this.DeviceBTN.Size = new System.Drawing.Size(200, 23);
+            this.DeviceBTN.TabIndex = 18;
+            this.DeviceBTN.Text = "Device Options";
+            this.DeviceBTN.UseVisualStyleBackColor = true;
+            this.DeviceBTN.Click += new System.EventHandler(this.DeviceBTN_Click);
+            // 
             // MainForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1052, 549);
+            this.Controls.Add(this.DeviceBTN);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TConUTB);
             this.Controls.Add(this.siteCB);
@@ -253,6 +265,7 @@ namespace BachelorGUI
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.createBtn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -285,6 +298,7 @@ namespace BachelorGUI
         private ComboBox siteCB;
         private Label label1;
         public TextBox TConUTB;
+        private Button DeviceBTN;
     }
 }
 

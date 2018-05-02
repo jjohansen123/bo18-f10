@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangeForm));
             this.nodeCB = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -35,6 +36,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.ConUTB = new System.Windows.Forms.TextBox();
             this.ChangeBTN = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.DeviceCB = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // nodeCB
@@ -43,7 +46,7 @@
             this.nodeCB.FormattingEnabled = true;
             this.nodeCB.Location = new System.Drawing.Point(12, 25);
             this.nodeCB.Name = "nodeCB";
-            this.nodeCB.Size = new System.Drawing.Size(178, 21);
+            this.nodeCB.Size = new System.Drawing.Size(183, 21);
             this.nodeCB.TabIndex = 0;
             this.nodeCB.SelectionChangeCommitted += new System.EventHandler(this.nodeCB_SelectionChangeCommitted);
             // 
@@ -59,7 +62,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 49);
+            this.label2.Location = new System.Drawing.Point(12, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 2;
@@ -67,15 +70,15 @@
             // 
             // descTB
             // 
-            this.descTB.Location = new System.Drawing.Point(12, 65);
+            this.descTB.Location = new System.Drawing.Point(12, 105);
             this.descTB.Name = "descTB";
-            this.descTB.Size = new System.Drawing.Size(178, 20);
+            this.descTB.Size = new System.Drawing.Size(183, 20);
             this.descTB.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 88);
+            this.label3.Location = new System.Drawing.Point(12, 128);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 13);
             this.label3.TabIndex = 4;
@@ -83,26 +86,46 @@
             // 
             // ConUTB
             // 
-            this.ConUTB.Location = new System.Drawing.Point(12, 104);
+            this.ConUTB.Location = new System.Drawing.Point(12, 144);
             this.ConUTB.Name = "ConUTB";
-            this.ConUTB.Size = new System.Drawing.Size(178, 20);
+            this.ConUTB.Size = new System.Drawing.Size(183, 20);
             this.ConUTB.TabIndex = 5;
             // 
             // ChangeBTN
             // 
-            this.ChangeBTN.Location = new System.Drawing.Point(12, 132);
+            this.ChangeBTN.Location = new System.Drawing.Point(12, 170);
             this.ChangeBTN.Name = "ChangeBTN";
-            this.ChangeBTN.Size = new System.Drawing.Size(178, 29);
+            this.ChangeBTN.Size = new System.Drawing.Size(183, 29);
             this.ChangeBTN.TabIndex = 6;
             this.ChangeBTN.Text = "Change Node";
             this.ChangeBTN.UseVisualStyleBackColor = true;
             this.ChangeBTN.Click += new System.EventHandler(this.ChangeBTN_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "DeviceType";
+            // 
+            // DeviceCB
+            // 
+            this.DeviceCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DeviceCB.FormattingEnabled = true;
+            this.DeviceCB.Location = new System.Drawing.Point(12, 65);
+            this.DeviceCB.Name = "DeviceCB";
+            this.DeviceCB.Size = new System.Drawing.Size(183, 21);
+            this.DeviceCB.TabIndex = 7;
+            // 
             // ChangeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(202, 173);
+            this.ClientSize = new System.Drawing.Size(206, 207);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.DeviceCB);
             this.Controls.Add(this.ChangeBTN);
             this.Controls.Add(this.ConUTB);
             this.Controls.Add(this.label3);
@@ -110,10 +133,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nodeCB);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ChangeForm";
-            this.Text = "ChangeForm";
+            this.Text = "Change Nodes";
             this.Load += new System.EventHandler(this.ChangeForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -129,5 +153,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox ConUTB;
         private System.Windows.Forms.Button ChangeBTN;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox DeviceCB;
     }
 }

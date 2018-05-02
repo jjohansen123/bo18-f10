@@ -11,7 +11,7 @@ namespace BachelorGUI
 {
     class Create
     {
-        public static RadioButton CreateRBtn(List<RadioButton> listrb, Int32 conU, string desc, int SiteID)
+        public static RadioButton CreateRBtn(List<RadioButton> listrb, Int32 conU, string desc, int SiteID, int ModelID)
         {
            
             int increaseLength = 100;
@@ -30,7 +30,7 @@ namespace BachelorGUI
                     break;
                 }
             }//HIVEMIND MARTIN, HIVEMIND!
-            BachelorApp.Register.RegisterNode(desc, ParentID, conU, SiteID, 1);
+            BachelorApp.Register.RegisterNode(desc, ParentID, conU, SiteID, ModelID);
             return createBTN(listrb,ParentID,BachelorApp.Highestnode.GetHighest(SiteID));
         }
 
@@ -62,6 +62,7 @@ namespace BachelorGUI
             }
 
             RadioButton rBtn = new RadioButton();
+            rBtn.TextAlign = ContentAlignment.MiddleCenter;
             rBtn.Appearance = Appearance.Button;
             rBtn.BackColor = baseBtn.BackColor;
             rBtn.FlatStyle = FlatStyle.Flat;

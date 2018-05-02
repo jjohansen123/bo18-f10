@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SiteForm));
             this.SiteCB = new System.Windows.Forms.ComboBox();
             this.NameTB = new System.Windows.Forms.TextBox();
             this.DeleteBTN = new System.Windows.Forms.Button();
@@ -101,8 +102,9 @@
             this.Controls.Add(this.DeleteBTN);
             this.Controls.Add(this.NameTB);
             this.Controls.Add(this.SiteCB);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SiteForm";
-            this.Text = "SiteForm";
+            this.Text = "School Options";
             this.Load += new System.EventHandler(this.SiteForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BachelorModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,7 @@ namespace BachelorGUI
     {
         List<RadioButton> listrb = new List<RadioButton>();
         List<int> listIndex = new List<int>();
+        List<int> DeviceIndex = new List<int>();
         int siteID;
         public CreateForm(List<RadioButton> temprb, int SiteID)
         {
@@ -29,7 +31,7 @@ namespace BachelorGUI
                 if(descTB.Text != "")
                 {
                     RadioButton rBtn;
-                    rBtn = BachelorGUI.Create.CreateRBtn(listrb, Convert.ToInt32(ConUTB.Text), descTB.Text, siteID);
+                    rBtn = BachelorGUI.Create.CreateRBtn(listrb, Convert.ToInt32(ConUTB.Text), descTB.Text, siteID, DeviceIndex[DeviceCB.SelectedIndex]);
                     FormCollection fc = Application.OpenForms;
                     foreach (Form f in fc)
                     {
@@ -83,6 +85,12 @@ namespace BachelorGUI
                     nodeCB.SelectedIndex = listIndex.Count - 1;
                 }
             }
+            foreach (Options op in BachelorApp.Options.Get())
+            {
+                DeviceCB.Items.Add(op.ModelName);
+                DeviceIndex.Add(op.ModelId);
+            }
+            DeviceCB.SelectedIndex = 0;
         }
 
         private void nodeCB_SelectionChangeCommitted(object sender, EventArgs e)

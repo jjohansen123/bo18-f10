@@ -60,7 +60,7 @@ namespace BachelorApp
             }
         }
 
-        public static void UpdateNodeDescription(int LocalID, String newDescription)
+        public static void UpdateNodeDescription(int LocalID, String Description, int SiteID)
         {
             try
             {
@@ -69,9 +69,9 @@ namespace BachelorApp
                     List<Node> nodes = db.Nodes.ToList();
                     foreach (Node s in nodes)
                     {
-                        if (s.LocalID == LocalID)
+                        if (s.LocalID == LocalID && s.SiteId == SiteID)
                         {
-                            s.Description = newDescription;
+                            s.Description = Description;
                             db.SaveChanges();
                         }
                     }
@@ -83,7 +83,7 @@ namespace BachelorApp
                 throw e;
             }
         }
-        public static void UpdateNodeUsers(int LocalID, Int32 NewDirectlyConnected)
+        public static void UpdateNodeUsers(int LocalID, Int32 NewDirectlyConnected, int SiteID)
         {
             try
             {
@@ -92,9 +92,32 @@ namespace BachelorApp
                     List<Node> nodes = db.Nodes.ToList();
                     foreach (Node s in nodes)
                     {
-                        if (s.LocalID == LocalID)
+                        if (s.LocalID == LocalID && s.SiteId == SiteID)
                         {
                             s.DirectConnectedUsers = NewDirectlyConnected;
+                            db.SaveChanges();
+                        }
+                    }
+                    BachelorApp.Refreshall.RefeshAll();
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public static void UpdateNodeModel(int LocalID, Int32 NodeModel, int SiteID)
+        {
+            try
+            {
+                using (var db = new BachelorContext())
+                {
+                    List<Node> nodes = db.Nodes.ToList();
+                    foreach (Node s in nodes)
+                    {
+                        if (s.LocalID == LocalID && s.SiteId == SiteID)
+                        {
+                            s.ModelId = NodeModel;
                             db.SaveChanges();
                         }
                     }

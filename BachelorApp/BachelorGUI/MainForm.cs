@@ -32,7 +32,6 @@ namespace BachelorGUI
 
         private void CreateBTN_Click(object sender, EventArgs e)
         {
-
             bool formcheck = false;
             FormCollection fc = Application.OpenForms;
             List<Form> closeList = new List<Form>();
@@ -46,6 +45,11 @@ namespace BachelorGUI
                     break;
                 }
                 if (f.Name == "ChangeForm")
+                {
+                    closeList.Add(f);
+
+                }
+                if (f.Name == "DeviceForm")
                 {
                     closeList.Add(f);
 
@@ -153,6 +157,11 @@ namespace BachelorGUI
                     closeList.Add(f);
 
                 }
+                if (f.Name == "DeviceForm")
+                {
+                    closeList.Add(f);
+
+                }
                 if (f.Name == "ChangeForm")
                 {
                     formcheck = true;
@@ -207,6 +216,11 @@ namespace BachelorGUI
                     f.Focus();
                 }
                 if (f.Name == "ChangeForm")
+                {
+                    closeList.Add(f);
+
+                }
+                if (f.Name == "DeviceForm")
                 {
                     closeList.Add(f);
 
@@ -315,6 +329,47 @@ namespace BachelorGUI
         private void MainForm1_Activated(object sender, EventArgs e)
         {
             draw();
+        }
+
+        private void DeviceBTN_Click(object sender, EventArgs e)
+        {
+            bool formcheck = false;
+            FormCollection fc = Application.OpenForms;
+            List<Form> closeList = new List<Form>();
+            foreach (Form f in fc)
+            {
+                if (f.Name == "SiteForm")
+                {
+                    formcheck = true;
+                    f.Focus();
+                    MessageBox.Show("You have to close the school window to continue");
+                    break;
+                }
+                if (f.Name == "ChangeForm")
+                {
+                    closeList.Add(f);
+
+                }
+                if (f.Name == "CreateForm")
+                {
+                    closeList.Add(f);
+
+                }
+                if (f.Name == "DeviceForm")
+                {
+                    formcheck = true;
+                    f.Focus();
+                }
+            }
+            foreach (Form f in closeList)
+            {
+                f.Close();
+            }
+            if (formcheck == false)
+            {
+                DeviceForm DeviceForm = new DeviceForm();
+                DeviceForm.Show();
+            }
         }
     }
 }

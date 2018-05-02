@@ -18,7 +18,7 @@ namespace BachelorGUI
                     double conu, tconu;
                     conu = BachelorApp.ViewSingleNodeTotalConnected.viewSingleNodeTotalConnected(Convert.ToInt32(rb.Name), SiteID);
                     tconu = BachelorApp.ViewSingleNodeTotalConnected.viewSingleNodeTotalConnected(BachelorApp.Viewsinglenodeparent.ViewSingleNodeParent(Convert.ToInt32(rb.Name), SiteID), SiteID) - BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(BachelorApp.Viewsinglenodeparent.ViewSingleNodeParent(Convert.ToInt32(rb.Name), SiteID), SiteID);
-                    rb.Text = Math.Round(((conu / tconu) * 100), 2).ToString() + "%";
+                    rb.Text = BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name),SiteID) + "\n" +  Math.Round(((conu / tconu) * 100), 2).ToString() + "%";
                 }
             }
         }

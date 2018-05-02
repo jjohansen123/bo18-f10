@@ -29,8 +29,8 @@ namespace BachelorGUI
                     ParentID = int.Parse(rb.Name);
                     break;
                 }
-            }
-            BachelorApp.Register.RegisterNode(desc, ParentID, conU, SiteID, model);
+            }//HIVEMIND MARTIN, HIVEMIND!
+            BachelorApp.Register.RegisterNode(desc, ParentID, conU, SiteID, 1);
             return createBTN(listrb,ParentID,BachelorApp.Highestnode.GetHighest(SiteID));
         }
 

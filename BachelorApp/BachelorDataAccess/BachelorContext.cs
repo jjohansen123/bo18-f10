@@ -39,6 +39,13 @@ namespace BachelorDataAccess
                     m.ToTable("HighestLocalID");
 
                 });
+            modelBuilder.Entity<Options>()
+                .HasKey(a => a.ModelId)
+                .Map(m =>
+                {
+                    m.ToTable("Options");
+
+                });
 
         }
     }

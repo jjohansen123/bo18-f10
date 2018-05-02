@@ -103,6 +103,8 @@
             this.Controls.Add(this.NameTB);
             this.Controls.Add(this.SiteCB);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(314, 140);
+            this.MinimumSize = new System.Drawing.Size(314, 140);
             this.Name = "SiteForm";
             this.Text = "School Options";
             this.Load += new System.EventHandler(this.SiteForm_Load);

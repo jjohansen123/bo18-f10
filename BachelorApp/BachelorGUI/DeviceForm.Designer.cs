@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeviceForm));
             this.SaveBTN = new System.Windows.Forms.Button();
-            this.RouterCB = new System.Windows.Forms.ComboBox();
+            this.DeviceCB = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.NameTB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,7 +38,7 @@
             this.Range1TB = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Range2TB = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.CreateBTN = new System.Windows.Forms.Button();
             this.DeleteBTN = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -53,14 +53,14 @@
             this.SaveBTN.UseVisualStyleBackColor = true;
             this.SaveBTN.Click += new System.EventHandler(this.SaveBTN_Click);
             // 
-            // RouterCB
+            // DeviceCB
             // 
-            this.RouterCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.RouterCB.FormattingEnabled = true;
-            this.RouterCB.Location = new System.Drawing.Point(139, 7);
-            this.RouterCB.Name = "RouterCB";
-            this.RouterCB.Size = new System.Drawing.Size(121, 21);
-            this.RouterCB.TabIndex = 1;
+            this.DeviceCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DeviceCB.FormattingEnabled = true;
+            this.DeviceCB.Location = new System.Drawing.Point(139, 7);
+            this.DeviceCB.Name = "DeviceCB";
+            this.DeviceCB.Size = new System.Drawing.Size(121, 21);
+            this.DeviceCB.TabIndex = 1;
             // 
             // label1
             // 
@@ -119,15 +119,15 @@
             this.Range2TB.Size = new System.Drawing.Size(121, 20);
             this.Range2TB.TabIndex = 7;
             // 
-            // button1
+            // CreateBTN
             // 
-            this.button1.Location = new System.Drawing.Point(139, 112);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Create New";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.CreateBTN.Location = new System.Drawing.Point(139, 112);
+            this.CreateBTN.Name = "CreateBTN";
+            this.CreateBTN.Size = new System.Drawing.Size(121, 23);
+            this.CreateBTN.TabIndex = 11;
+            this.CreateBTN.Text = "Create New";
+            this.CreateBTN.UseVisualStyleBackColor = true;
+            this.CreateBTN.Click += new System.EventHandler(this.CreateBTN_Click);
             // 
             // DeleteBTN
             // 
@@ -155,7 +155,7 @@
             this.ClientSize = new System.Drawing.Size(395, 144);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.DeleteBTN);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.CreateBTN);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Range2TB);
             this.Controls.Add(this.label3);
@@ -163,13 +163,16 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.NameTB);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.RouterCB);
+            this.Controls.Add(this.DeviceCB);
             this.Controls.Add(this.SaveBTN);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(411, 183);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(411, 183);
             this.Name = "DeviceForm";
             this.Text = "Device Options";
+            this.Load += new System.EventHandler(this.DeviceForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,7 +181,7 @@
         #endregion
 
         private System.Windows.Forms.Button SaveBTN;
-        private System.Windows.Forms.ComboBox RouterCB;
+        private System.Windows.Forms.ComboBox DeviceCB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox NameTB;
         private System.Windows.Forms.Label label2;
@@ -186,7 +189,7 @@
         private System.Windows.Forms.TextBox Range1TB;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox Range2TB;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button CreateBTN;
         private System.Windows.Forms.Button DeleteBTN;
         private System.Windows.Forms.Label label5;
     }

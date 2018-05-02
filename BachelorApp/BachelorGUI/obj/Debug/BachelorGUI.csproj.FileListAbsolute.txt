@@ -44,13 +44,11 @@ C:\Users\sonic\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\Entit
 C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\WindowsFormsApp1.exe.config
 C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\WindowsFormsApp1.exe
 C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\WindowsFormsApp1.pdb
-C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorApp.exe
 C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\EntityFramework.dll
 C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorDataAccess.dll
 C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorModel.dll
 C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorApp.pdb
-C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorApp.exe.config
 C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\EntityFramework.xml
 C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorDataAccess.pdb
@@ -94,3 +92,5 @@ C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\obj\Debug\Bach
 C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\obj\Debug\BachelorGUI.DeviceForm.resources
 C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorApp.dll
 C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorApp.dll.config
+C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorApp.dll
+C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorApp.dll.config

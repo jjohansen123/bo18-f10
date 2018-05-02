@@ -14,6 +14,7 @@ namespace BachelorGUI
     public partial class SiteForm : Form
     {
         ComboBox formSiteCB;
+        List<int> siteIndex = new List<int>();
         public SiteForm(ComboBox cb)
         {
             InitializeComponent();
@@ -24,32 +25,35 @@ namespace BachelorGUI
         {
             BachelorApp.SiteFunctions.AddSite(NameTB.Text);
             MessageBox.Show("School has been created");
-            FormCollection fc = Application.OpenForms;
             UpdateCB();
+            SiteForm.ActiveForm.Close();
         }
 
         private void SiteForm_Load(object sender, EventArgs e)
         {
             UpdateCB();
+            SiteCB.SelectedIndex = 0;
         }
         private void UpdateCB()
         {
             int tempIndex = formSiteCB.SelectedIndex;
-            int tempIndex2 = SiteCB.SelectedIndex;
             formSiteCB.Items.Clear();
             SiteCB.Items.Clear();
             foreach (Site s in BachelorApp.SiteFunctions.GetSite())
             {
                 formSiteCB.Items.Add(s.SiteName);
                 SiteCB.Items.Add(s.SiteName);
+                siteIndex.Add(s.SiteId);
             }
             formSiteCB.SelectedIndex = tempIndex;
-            SiteCB.SelectedIndex = tempIndex2;
         }
 
         private void DeleteBTN_Click(object sender, EventArgs e)
         {
-
+            BachelorApp.SiteFunctions.DeleteSite(siteIndex[SiteCB.SelectedIndex]);
+            formSiteCB.Items.RemoveAt(SiteCB.SelectedIndex);
+            SiteCB.Items.RemoveAt(SiteCB.SelectedIndex);
+            SiteCB.SelectedIndex = 0;
         }
     }
 }

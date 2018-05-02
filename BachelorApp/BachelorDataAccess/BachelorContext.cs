@@ -15,6 +15,7 @@ namespace BachelorDataAccess
         public virtual DbSet<Node> Nodes { get; set; }
         public virtual DbSet<HighId> HighestNode { get; set; }
         public virtual DbSet<Site> Sites { get; set; }
+        public virtual DbSet<Options> Model { get; set; }
         public BachelorContext()
         {
             Configuration.ProxyCreationEnabled = false;

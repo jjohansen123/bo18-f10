@@ -70,7 +70,7 @@ namespace BachelorApp
         }
 
         
-        public static void RegisterNode(string NodeDescription, Int32 readParent, Int32 DirectCon, int site)
+        public static void RegisterNode(string NodeDescription, Int32 readParent, Int32 DirectCon, int site, int model)
         { 
             try
             {
@@ -88,7 +88,7 @@ namespace BachelorApp
                             {
                                 s.Children = new List<Node>();
                             }
-                            s.Children.Add(new Node() { Description = NodeDescription, ParentID = readParent, LocalID = Highestnode.GetHighest(site) +1, DirectConnectedUsers = DirectCon, Children = new List<Node>(), SiteId = site });
+                            s.Children.Add(new Node() { Description = NodeDescription, ParentID = readParent, LocalID = Highestnode.GetHighest(site) +1, DirectConnectedUsers = DirectCon, Children = new List<Node>(), SiteId = site , ModelId = model});
                             db.SaveChanges();
                            // Tiers.Tiersort();
                             Highestnode.SetHighest(site);

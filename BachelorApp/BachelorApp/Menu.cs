@@ -39,7 +39,7 @@ namespace BachelorApp
             }
             else if (ButtonPressed == ConsoleKey.D6 || ButtonPressed == ConsoleKey.NumPad4 || ButtonPressed == ConsoleKey.PageDown)
             {
-                BachelorApp.SQLFIX.Sqlfix();
+              //  BachelorApp.SQLFIX.Sqlfix();
                 Menu();
             }
             else if (ButtonPressed == ConsoleKey.D7 || ButtonPressed == ConsoleKey.NumPad3 || ButtonPressed == ConsoleKey.PageDown)

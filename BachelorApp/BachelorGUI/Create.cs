@@ -30,7 +30,7 @@ namespace BachelorGUI
                     break;
                 }
             }
-            BachelorApp.Register.RegisterNode(desc, ParentID, conU, SiteID);
+            BachelorApp.Register.RegisterNode(desc, ParentID, conU, SiteID, model);
             return createBTN(listrb,ParentID,BachelorApp.Highestnode.GetHighest(SiteID));
         }
 

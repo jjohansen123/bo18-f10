@@ -99,6 +99,10 @@ namespace BachelorGUI
                     this.panel1.Controls.Remove(BachelorGUI.Delete.DeleteBtn(GenerateList(), getSiteID()));
                 }
             }
+            else
+            {
+                MessageBox.Show("You cant delete the top node");
+            }
             
             SortField();
             Updatetotal.RunUpdate(getSiteID());

@@ -21,30 +21,75 @@ namespace BachelorGUI
 
         private void SaveBTN_Click(object sender, EventArgs e)
         {
+            Options selectedOP = new Options();
+            foreach (Options op in BachelorApp.Options.Get())
+            {
+                if(op.ModelId == deviceIndex[DeviceCB.SelectedIndex])
+                {
+                    selectedOP = op;
+                    break;
+                }
+            }
+
             if (NameTB.Text != "")
             {
                 if (Range1TB.Text != "" && Range1TB.Text.All(char.IsDigit))
                 {
                     if (Range2TB.Text != "" && Range2TB.Text.All(char.IsDigit))
                     {
-                        //temp
+                        BachelorApp.Options.Change(deviceIndex[DeviceCB.SelectedIndex],NameTB.Text, Convert.ToInt32(Range1TB.Text), Convert.ToInt32(Range2TB.Text));
+                        updateCB();
                     }
 
                     else
                     {
-                        
+                        BachelorApp.Options.Change(deviceIndex[DeviceCB.SelectedIndex], NameTB.Text, Convert.ToInt32(Range1TB.Text), selectedOP.RangeTwo);
+                        updateCB();
                     }
                 }
 
                 else
                 {
-                    
+                    if (Range2TB.Text != "" && Range2TB.Text.All(char.IsDigit))
+                    {
+                        BachelorApp.Options.Change(deviceIndex[DeviceCB.SelectedIndex], NameTB.Text, selectedOP.RangeOne, Convert.ToInt32(Range2TB.Text));
+                        updateCB();
+                    }
+
+                    else
+                    {
+                        BachelorApp.Options.Change(deviceIndex[DeviceCB.SelectedIndex], NameTB.Text, selectedOP.RangeOne, selectedOP.RangeTwo);
+                        updateCB();
+                    }
                 }
             }
 
             else
             {
-                
+                if (Range1TB.Text != "" && Range1TB.Text.All(char.IsDigit))
+                {
+                    if (Range2TB.Text != "" && Range2TB.Text.All(char.IsDigit))
+                    {
+                        BachelorApp.Options.Change(deviceIndex[DeviceCB.SelectedIndex], selectedOP.ModelName, Convert.ToInt32(Range1TB.Text), Convert.ToInt32(Range2TB.Text));
+                    }
+
+                    else
+                    {
+                        BachelorApp.Options.Change(deviceIndex[DeviceCB.SelectedIndex], selectedOP.ModelName, Convert.ToInt32(Range1TB.Text), selectedOP.RangeTwo);
+                    }
+                }
+
+                else
+                {
+                    if (Range2TB.Text != "" && Range2TB.Text.All(char.IsDigit))
+                    {
+                        BachelorApp.Options.Change(deviceIndex[DeviceCB.SelectedIndex], selectedOP.ModelName, selectedOP.RangeOne, Convert.ToInt32(Range2TB.Text));
+                    }
+                    else
+                    {
+                        MessageBox.Show("no input");
+                    }
+                }
             }
         }
 
@@ -57,6 +102,7 @@ namespace BachelorGUI
                     if (Range2TB.Text != "" && Range2TB.Text.All(char.IsDigit))
                     {
                         BachelorApp.Options.Add(NameTB.Text,Convert.ToInt32(Range1TB.Text), Convert.ToInt32(Range2TB.Text));
+                        updateCB();
                     }
 
                     else if (!Range2TB.Text.All(char.IsDigit))
@@ -101,6 +147,18 @@ namespace BachelorGUI
                 DeviceCB.Items.Add(op.ModelName);
                 deviceIndex.Add(op.ModelId);
             }
+            DeviceCB.SelectedIndex = 0;
+        }
+        private void updateCB()
+        {
+            int selectedIndex = DeviceCB.SelectedIndex;
+            DeviceCB.Items.Clear();
+            foreach (Options op in BachelorApp.Options.Get())
+            {
+                DeviceCB.Items.Add(op.ModelName);
+                deviceIndex.Add(op.ModelId);
+            }
+            DeviceCB.SelectedIndex = selectedIndex;
         }
     }
 }

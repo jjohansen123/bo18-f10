@@ -81,20 +81,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(82, 63);
+            this.label2.Location = new System.Drawing.Point(74, 63);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Range 1:";
+            this.label2.Text = "Top range:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(82, 89);
+            this.label3.Location = new System.Drawing.Point(56, 89);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.Size = new System.Drawing.Size(77, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Range 2:";
+            this.label3.Text = "Medium range:";
             // 
             // Range1TB
             // 

@@ -13,50 +13,46 @@ namespace BachelorApp
     {
         public static void DeleteNode(Int32 LocalID, int SiteID)
         {
+
+            SqlConnectionStringBuilder connStringBuilder = new SqlConnectionStringBuilder
+            {
+                DataSource = @"(local)\SQLEXPRESS",
+                InitialCatalog = "BachelorDataAccess.BachelorContext",
+                IntegratedSecurity = true
+            };
+
+            using (SqlConnection conn = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = BachelorDataAccess.BachelorContext; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False"))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand(string.Format("DELETE FROM dbo.Nodes WHERE LocalID = '{0}' AND SiteID = '{1}'", LocalID, SiteID), conn);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
+            }
+
             try
             {
-                Console.WriteLine("Node to Delete: ");
                 using (var db = new BachelorContext())
                 {
                     List<Node> nodes = db.Nodes.ToList();
                     foreach (Node s in nodes)
                     {
-                        if (s.LocalID == LocalID)
+                        if (s.LocalID == 1 && s.SiteId == SiteID)
                         {
-                            if (s.Children == null || s.Children.Count() == 0)
-                            {
-                                SqlConnectionStringBuilder connStringBuilder = new SqlConnectionStringBuilder
-                                {
-                                    DataSource = @"(local)\SQLEXPRESS",
-                                    InitialCatalog = "BachelorDataAccess.BachelorContext",
-                                    IntegratedSecurity = true
-                                };
-
-                                try
-                                {
-                                    using (SqlConnection conn = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = BachelorDataAccess.BachelorContext; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False"))
-                                    {
-                                        SqlCommand cmd = new SqlCommand(string.Format("DELETE FROM dbo.Nodes WHERE LocalID = '{0}' AND SiteID = '{1}'", LocalID, SiteID), conn);
-                                        conn.Open();
-                                        cmd.ExecuteNonQuery();
-                                    }
-                                }
-                                catch (Exception ex)
-                                {
-                                    Console.WriteLine(ex);
-                                    Console.ReadLine();
-                                }
-                            }
+                            s.TotalConnectedUsers = BachelorApp.Updatetotal.UpdateTotal(s);
+                            db.SaveChanges();
                         }
                     }
-                    
                 }
             }
-
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                Console.ReadLine();
+                throw e;
             }
         }
     }

@@ -107,23 +107,23 @@ namespace BachelorGUI
 
                     else if (!Range2TB.Text.All(char.IsDigit))
                     {
-                        MessageBox.Show("Range 2 is not a number");
+                        MessageBox.Show("Medium Range is not a number");
                     }
 
                     else
                     {
-                        MessageBox.Show("Missing Range 2");
+                        MessageBox.Show("Missing Medium Range");
                     }
                 }
 
                 else if (!Range1TB.Text.All(char.IsDigit))
                 {
-                    MessageBox.Show("Range 1 is not a number");
+                    MessageBox.Show("Top Range is not a number");
                 }
 
                 else
                 {
-                    MessageBox.Show("Missing Range 1");
+                    MessageBox.Show("Missing Top Range");
                 }
             }
 

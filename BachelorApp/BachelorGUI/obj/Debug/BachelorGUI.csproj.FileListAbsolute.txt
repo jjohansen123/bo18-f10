@@ -67,13 +67,11 @@ C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\obj\Debug\Wind
 C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\WindowsFormsApp1.exe.config
 C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\WindowsFormsApp1.exe
 C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\WindowsFormsApp1.pdb
-C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorApp.exe
 C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorModel.dll
 C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\EntityFramework.dll
 C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorDataAccess.dll
 C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorApp.pdb
-C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorApp.exe.config
 C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorModel.pdb
 C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\EntityFramework.xml
 C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\EntityFramework.SqlServer.xml
@@ -93,3 +91,6 @@ C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\obj\Debug\Bache
 C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\obj\Debug\BachelorGUI.CreateForm.resources
 C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\obj\Debug\BachelorGUI.SiteForm.resources
 C:\Users\Martin\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\obj\Debug\BachelorGUI.DeviceForm.resources
+C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\obj\Debug\BachelorGUI.DeviceForm.resources
+C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorApp.dll
+C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorGUI\bin\Debug\BachelorApp.dll.config

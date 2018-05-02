@@ -15,8 +15,8 @@ namespace BachelorApp
             {
                 using (var db = new BachelorContext())
                 {
-                    List<BachelorModel.Options> REEEE = db.Model.ToList();
-                    REEEE.Add(new BachelorModel.Options() { ModelName = name, RangeOne = Low, RangeTwo = High });
+                    List<BachelorModel.Options> OptionsList = db.Model.ToList();
+                    OptionsList.Add(new BachelorModel.Options() { ModelName = name, RangeOne = Low, RangeTwo = High });
                     db.SaveChanges();
                 }
             }

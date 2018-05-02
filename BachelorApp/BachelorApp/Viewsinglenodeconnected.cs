@@ -29,8 +29,7 @@ namespace BachelorApp
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
-                return 0;
+                throw ex;
             }
         }
     }

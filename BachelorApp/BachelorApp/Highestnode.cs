@@ -33,27 +33,6 @@ namespace BachelorApp
                 throw e;
             }
         }
-        public static void PrintHighest()
-        {
-            try
-            {
-                
-                using (var db = new BachelorContext())
-                {
-                    List<HighId> highest = db.HighestNode.ToList();
-                    foreach (HighId s in highest)
-                    {
-                        Console.WriteLine("Highest ID on site: "+ s.SiteId +" is " + s.HighestId);
-                        
-                    }
-                    Console.ReadKey();
-                }
-            }
-            catch(Exception e)
-            {
-                throw e;
-            }
-        }
 
         public static int GetHighest(int SiteId)
         {

@@ -31,8 +31,7 @@ namespace BachelorApp
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                Console.ReadKey();
+                throw e;
             }
         }
     }

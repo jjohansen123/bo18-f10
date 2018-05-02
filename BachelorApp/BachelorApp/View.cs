@@ -11,37 +11,7 @@ namespace BachelorApp
 {
     public class View
     {
-        public static void ViewNodes()
-        {
-            try
-            {
-                using (var db = new BachelorContext())
-                {
-                    List<Node> nodes = db.Nodes.ToList();
-                    
-                    Console.Clear();
-                    Console.WriteLine("Node information");
-
-                    
-                    foreach (Node s in nodes)
-                    {
-                        if (s.Children == null)
-                        {
-                            s.Children = new List<Node>();
-                        }
-                        Console.WriteLine("Node ID: " + s.LocalID + " - Parent ID: " + s.ParentID + " - Description: " + s.Description + " - Routers connected: " + s.Children.Count + " - Users directly connected: " + s.DirectConnectedUsers + " - Total number of users: " + s.TotalConnectedUsers);
-                    }
-                    Console.ReadKey();
-                    BachelorApp.MenuNogui.Menu();
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                Console.ReadKey();
-                BachelorApp.MenuNogui.Menu();
-            }
-        }
+        
         public static List<Node> ViewNodesList(int ID)
         {
             try
@@ -63,8 +33,7 @@ namespace BachelorApp
 
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                return null;
+                throw e;
             }
         }
     }

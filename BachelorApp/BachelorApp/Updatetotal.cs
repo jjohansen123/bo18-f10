@@ -56,10 +56,10 @@ namespace BachelorApp
             }
             catch (Exception e)
             {
-                System.Console.WriteLine(e);
+                throw e;
             }
 
-            return n.TotalConnectedUsers;
+            
         }
     }
 }

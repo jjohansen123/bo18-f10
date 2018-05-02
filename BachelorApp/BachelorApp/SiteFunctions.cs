@@ -141,27 +141,7 @@ namespace BachelorApp
                 throw e;
             }
         }
-        public static String GetSiteNoGui()
-        {
-            try
-            {
-
-                using (var db = new BachelorContext())
-                {
-                    List<Site> Sites = db.Sites.ToList();
-                    foreach (Site s in Sites)
-                    {
-                        Console.WriteLine("Site id: " + s.SiteId + " sitename: " + s.SiteName);
-                        Console.ReadKey();
-                    }
-                }
-                return "Load error";
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
+        
         public static void DeleteSite(int Id)
         {
             SqlConnectionStringBuilder connStringBuilder = new SqlConnectionStringBuilder

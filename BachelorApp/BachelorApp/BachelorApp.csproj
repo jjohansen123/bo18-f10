@@ -70,6 +70,7 @@
     <Compile Include="Updatetotal.cs" />
     <Compile Include="View.cs" />
     <Compile Include="ViewSingleNodeChildren.cs" />
+    <Compile Include="ViewSingleNodeComment.cs" />
     <Compile Include="Viewsinglenodeconnected.cs" />
     <Compile Include="Viewsinglenodedescription.cs" />
     <Compile Include="ViewSingleNodeModelID.cs" />

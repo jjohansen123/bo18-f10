@@ -55,7 +55,7 @@ namespace BachelorGUI
 
                 else
                 {
-                    MessageBox.Show("Description: is missing text");
+                    MessageBox.Show("Name: is missing text");
                 }
             }
             else
@@ -70,13 +70,13 @@ namespace BachelorGUI
             {
                 if (rb.Name == "baseBtn")
                 {
-                    nodeCB.Items.Add(BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(1, siteID));
+                    nodeCB.Items.Add(BachelorApp.ViewsinglenodeDescription.ViewSingleNodeDescription(1, siteID));
                     listIndex.Add(1);
                 }
 
                 else
                 {
-                    nodeCB.Items.Add(BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name), siteID));
+                    nodeCB.Items.Add(BachelorApp.ViewsinglenodeDescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name), siteID));
                     listIndex.Add(Convert.ToInt32(rb.Name));
                 }
 
@@ -111,7 +111,7 @@ namespace BachelorGUI
                 }
                 else
                 {
-                    if (BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription((listIndex[(nodeCB.SelectedIndex)]), siteID) == nodeCB.Text && Convert.ToInt32(rb.Name) == (listIndex[(nodeCB.SelectedIndex)]))
+                    if (BachelorApp.ViewsinglenodeDescription.ViewSingleNodeDescription((listIndex[(nodeCB.SelectedIndex)]), siteID) == nodeCB.Text && Convert.ToInt32(rb.Name) == (listIndex[(nodeCB.SelectedIndex)]))
                     {
                         rb.Checked = true;
                         break;

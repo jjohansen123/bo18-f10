@@ -23,7 +23,7 @@ namespace BachelorApp
                 {
                     SqlCommand cmd = new SqlCommand(string.Format("SELECT ParentID FROM dbo.Nodes WHERE LocalID = '{0}' AND SiteID = '{1}'", LocalID, SiteID), conn);
                     conn.Open();
-                    int Output = (int)cmd.ExecuteScalar();
+                    int Output= (int)cmd.ExecuteScalar();
                     return Output;
                 }
             }

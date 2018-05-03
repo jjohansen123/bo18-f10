@@ -10,7 +10,8 @@ namespace BachelorModel
         public int NodeID { get; set; }
         public int LocalID { get; set; }
         public int ParentID { get; set; }
-        public String Description { get; set; }
+        public String Name { get; set; }
+        public String Comment { get; set; }
         public Int32 DirectConnectedUsers { set; get; }
         public int TotalConnectedUsers { set; get; }
         public virtual List<Node> Children { get; set; } 

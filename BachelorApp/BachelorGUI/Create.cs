@@ -30,7 +30,7 @@ namespace BachelorGUI
                     break;
                 }
             }//HIVEMIND MARTIN, HIVEMIND!
-            BachelorApp.Register.RegisterNode(desc, ParentID, conU, SiteID, ModelID);
+            BachelorApp.Register.RegisterNode(desc, "SETT INN COMMENT HER MARTIN", ParentID, conU, SiteID, ModelID);
             return createBTN(listrb,ParentID,BachelorApp.Highestnode.GetHighest(SiteID));
         }
 

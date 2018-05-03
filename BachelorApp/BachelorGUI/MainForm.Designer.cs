@@ -137,7 +137,7 @@ namespace BachelorGUI
             this.descLBL.Name = "descLBL";
             this.descLBL.Size = new System.Drawing.Size(63, 13);
             this.descLBL.TabIndex = 6;
-            this.descLBL.Text = "Description:";
+            this.descLBL.Text = "Name:";
             // 
             // conULBL
             // 

@@ -119,14 +119,14 @@ namespace BachelorGUI
                     if(rb.Name == "baseBtn")
                     {
                         int id = 1;
-                        descTB.Text = BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(id, getSiteID());
+                        descTB.Text = BachelorApp.ViewsinglenodeDescription.ViewSingleNodeDescription(id, getSiteID());
                         conUTB.Text = BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(id, getSiteID()).ToString();
                         TConUTB.Text = BachelorApp.ViewSingleNodeTotalConnected.viewSingleNodeTotalConnected(id, getSiteID()).ToString();
                         idTB.Text = Convert.ToString(id);
                         break;
                     }
                     
-                    descTB.Text = BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name), getSiteID());
+                    descTB.Text = BachelorApp.ViewsinglenodeDescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name), getSiteID());
                     conUTB.Text = BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(rb.Name), getSiteID()).ToString();
                     TConUTB.Text = BachelorApp.ViewSingleNodeTotalConnected.viewSingleNodeTotalConnected(Convert.ToInt32(rb.Name), getSiteID()).ToString();
                     idTB.Text = rb.Name;

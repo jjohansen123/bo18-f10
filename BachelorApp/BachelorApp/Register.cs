@@ -11,7 +11,7 @@ namespace BachelorApp
     public class Register
     {
         
-        public static void RegisterNode(string NodeDescription, Int32 readParent, Int32 DirectCon, int site, int model)
+        public static void RegisterNode(string NodeDescription, string NodeComment, Int32 readParent, Int32 DirectCon, int site, int model)
         { 
             try
             {
@@ -29,7 +29,7 @@ namespace BachelorApp
                             {
                                 s.Children = new List<Node>();
                             }
-                            s.Children.Add(new Node() { Description = NodeDescription, ParentID = readParent, LocalID = Highestnode.GetHighest(site) +1, DirectConnectedUsers = DirectCon, Children = new List<Node>(), SiteId = site , ModelId = model});
+                            s.Children.Add(new Node() { Name = NodeDescription,Comment = NodeComment, ParentID = readParent, LocalID = Highestnode.GetHighest(site) +1, DirectConnectedUsers = DirectCon, Children = new List<Node>(), SiteId = site , ModelId = model});
                             db.SaveChanges();
                             Highestnode.SetHighest(site);
                         }

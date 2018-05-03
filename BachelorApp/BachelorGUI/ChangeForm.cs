@@ -42,7 +42,7 @@ namespace BachelorGUI
 
                         else
                         {
-                            BachelorGUI.Change.ChangeNode(listrb, BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name),SiteID), Convert.ToInt32(ConUTB.Text), SiteID, DeviceIndex[DeviceCB.SelectedIndex]);
+                            BachelorGUI.Change.ChangeNode(listrb, BachelorApp.ViewsinglenodeDescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name),SiteID), Convert.ToInt32(ConUTB.Text), SiteID, DeviceIndex[DeviceCB.SelectedIndex]);
                             BachelorGUI.AddPercent.addPercent(listrb, SiteID);
                             nodeCB.SelectedText = descTB.Text;
                             break;
@@ -70,13 +70,13 @@ namespace BachelorGUI
             {
                 if(rb.Name == "baseBtn")
                 {
-                    nodeCB.Items.Add(BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(1, SiteID));
+                    nodeCB.Items.Add(BachelorApp.ViewsinglenodeDescription.ViewSingleNodeDescription(1, SiteID));
                     listIndex.Add(1);
                 }
 
                 else
                 {
-                    nodeCB.Items.Add(BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name), SiteID));
+                    nodeCB.Items.Add(BachelorApp.ViewsinglenodeDescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name), SiteID));
                     listIndex.Add(Convert.ToInt32(rb.Name));
                 }
 
@@ -111,7 +111,7 @@ namespace BachelorGUI
                 }
                 else
                 {
-                    if(BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription((listIndex[(nodeCB.SelectedIndex)]), SiteID) == nodeCB.Text && Convert.ToInt32(rb.Name) == (listIndex[(nodeCB.SelectedIndex)]))
+                    if(BachelorApp.ViewsinglenodeDescription.ViewSingleNodeDescription((listIndex[(nodeCB.SelectedIndex)]), SiteID) == nodeCB.Text && Convert.ToInt32(rb.Name) == (listIndex[(nodeCB.SelectedIndex)]))
                     {
                         rb.Checked = true;
                         break;

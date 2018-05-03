@@ -12,7 +12,7 @@ namespace BachelorApp
     {
         
 
-        public static void UpdateNodeDescription(int LocalID, String Description, int SiteID)
+        public static void UpdateNodeDescription(int LocalID, String Name, int SiteID)
         {
             try
             {
@@ -23,7 +23,30 @@ namespace BachelorApp
                     {
                         if (s.LocalID == LocalID && s.SiteId == SiteID)
                         {
-                            s.Description = Description;
+                            s.Name = Name;
+                            db.SaveChanges();
+                        }
+                    }
+                    BachelorApp.Refreshall.RefeshAll();
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public static void UpdateNodeComment(int LocalID, String Comment, int SiteID)
+        {
+            try
+            {
+                using (var db = new BachelorContext())
+                {
+                    List<Node> nodes = db.Nodes.ToList();
+                    foreach (Node s in nodes)
+                    {
+                        if (s.LocalID == LocalID && s.SiteId == SiteID)
+                        {
+                            s.Comment = Comment;
                             db.SaveChanges();
                         }
                     }

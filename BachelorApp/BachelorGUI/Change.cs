@@ -25,7 +25,7 @@ namespace BachelorGUI
                 }
             }
 
-            if (desc != BachelorApp.Viewsinglenodedescription.ViewSingleNodeDescription(LocalID, SiteID))
+            if (desc != BachelorApp.ViewsinglenodeDescription.ViewSingleNodeDescription(LocalID, SiteID))
             {
                 BachelorApp.Updatenode.UpdateNodeDescription(LocalID, desc, SiteID);
             }

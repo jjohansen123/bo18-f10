@@ -32,9 +32,10 @@ namespace BachelorGUI
             {
                 if (rb.Checked)
                 {
+                    bool error = false;
                     if(rb.Name != "baseBtn")
                     {
-                        if (ConUTB.Text != "")
+                        if (ConUTB.Text != "" && ConUTB.Text.All(char.IsNumber))
                         {
                             if (descTB.Text != "")
                             {
@@ -52,27 +53,38 @@ namespace BachelorGUI
                                 break;
                             }
                         }
+                        else if(ConUTB.Text != "" && !ConUTB.Text.All(char.IsNumber))
+                        {
+                            MessageBox.Show("Connected Users: in not a number!");
+                            error = true;
+                        }
 
                         else
                         {
                             if (descTB.Text != "")
                             {
-                                BachelorGUI.Change.ChangeNode(listrb, descTB.Text, BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(1, SiteID), SiteID, DeviceIndex[DeviceCB.SelectedIndex]);
+                                BachelorGUI.Change.ChangeNode(listrb, descTB.Text, BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(rb.Name), SiteID), SiteID, DeviceIndex[DeviceCB.SelectedIndex]);
                                 BachelorGUI.AddPercent.addPercent(listrb, SiteID);
                                 nodeCB.SelectedText = descTB.Text;
                                 break;
                             }
                         }
 
-                        if (commentRTB.Text != "")
+                        if (commentRTB.Text != "" && error == false)
                         {
-                            BachelorApp.Updatenode.UpdateNodeComment(1, commentRTB.Text, SiteID);
+                            BachelorApp.Updatenode.UpdateNodeComment(Convert.ToInt32(rb.Name), commentRTB.Text, SiteID);
                             formRTB.Text = commentRTB.Text;
                         }
+
+                        if (DeviceIndex[DeviceCB.SelectedIndex] != BachelorApp.ViewSingleNodeModelID.viewSingleNodeModelID(Convert.ToInt32(rb.Name), SiteID) && error == false)
+                        {
+                            BachelorApp.Updatenode.UpdateNodeModel(Convert.ToInt32(rb.Name), DeviceIndex[DeviceCB.SelectedIndex], SiteID);
+                        }
                     }
+
                     else
                     {
-                        if (ConUTB.Text != "")
+                        if (ConUTB.Text != "" && ConUTB.Text.All(char.IsNumber))
                         {
                             if (descTB.Text != "")
                             {
@@ -91,6 +103,12 @@ namespace BachelorGUI
                             }
                         }
 
+                        else if (ConUTB.Text != "" && !ConUTB.Text.All(char.IsNumber))
+                        {
+                            MessageBox.Show("Connected Users: in not a number!");
+                            error = true;
+                        }
+
                         else
                         {
                             if (descTB.Text != "")
@@ -102,10 +120,15 @@ namespace BachelorGUI
                             }
                         }
 
-                        if (commentRTB.Text != "")
+                        if (commentRTB.Text != "" && error == false)
                         {
                             BachelorApp.Updatenode.UpdateNodeComment(1, commentRTB.Text, SiteID);
                             formRTB.Text = commentRTB.Text;
+                        }
+                        
+                        if(DeviceIndex[DeviceCB.SelectedIndex] != BachelorApp.ViewSingleNodeModelID.viewSingleNodeModelID(1,SiteID) && error == false)
+                        {
+                            BachelorApp.Updatenode.UpdateNodeModel(1, DeviceIndex[DeviceCB.SelectedIndex], SiteID);
                         }
                     }
                 }

@@ -18,14 +18,14 @@ namespace BachelorGUI
                 {
                     if (rb.Name == "baseBtn")
                     {
-                        MessageBox.Show("Du kan ikke slette denne!");
+                        MessageBox.Show("You can not delete this node!");
                         return null;
                     }
                     BachelorApp.Deletenode.DeleteNode(Convert.ToInt32(rb.Name), SiteID);
                     return rb;
                 }
             }
-            MessageBox.Show("feil, fant ikke den du skulle slette");
+            MessageBox.Show("Error, did not find the node you want to delete!");
             return null;
         }
 

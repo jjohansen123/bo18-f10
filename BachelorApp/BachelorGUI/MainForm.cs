@@ -102,7 +102,7 @@ namespace BachelorGUI
             }
             else
             {
-                MessageBox.Show("You cant delete the top node");
+                MessageBox.Show("You can't delete the gateway node!");
             }
             
             SortField();

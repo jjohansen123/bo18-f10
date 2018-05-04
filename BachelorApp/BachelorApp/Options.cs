@@ -81,7 +81,7 @@ namespace BachelorApp
                 using (SqlConnection conn = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = BachelorDataAccess.BachelorContext; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False"))
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand(string.Format("DELETE FROM Dbo.Options WHERE SiteId = '{0}'", Id), conn);
+                    SqlCommand cmd = new SqlCommand(string.Format("DELETE FROM Dbo.Options WHERE ModelId = '{0}'", Id), conn);
                     cmd.ExecuteNonQuery();
                 }
             }

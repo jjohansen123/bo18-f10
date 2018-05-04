@@ -40,7 +40,7 @@ namespace BachelorGUI
             this.descLBL = new System.Windows.Forms.Label();
             this.conULBL = new System.Windows.Forms.Label();
             this.conUTB = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.commentRTB = new System.Windows.Forms.RichTextBox();
             this.outputLBL = new System.Windows.Forms.Label();
             this.idLBL = new System.Windows.Forms.Label();
             this.idTB = new System.Windows.Forms.TextBox();
@@ -124,10 +124,12 @@ namespace BachelorGUI
             // 
             // descTB
             // 
+            this.descTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.descTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descTB.Location = new System.Drawing.Point(4, 131);
             this.descTB.Name = "descTB";
             this.descTB.ReadOnly = true;
-            this.descTB.Size = new System.Drawing.Size(200, 20);
+            this.descTB.Size = new System.Drawing.Size(200, 19);
             this.descTB.TabIndex = 5;
             // 
             // descLBL
@@ -135,7 +137,7 @@ namespace BachelorGUI
             this.descLBL.AutoSize = true;
             this.descLBL.Location = new System.Drawing.Point(1, 115);
             this.descLBL.Name = "descLBL";
-            this.descLBL.Size = new System.Drawing.Size(63, 13);
+            this.descLBL.Size = new System.Drawing.Size(38, 13);
             this.descLBL.TabIndex = 6;
             this.descLBL.Text = "Name:";
             // 
@@ -150,31 +152,33 @@ namespace BachelorGUI
             // 
             // conUTB
             // 
+            this.conUTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.conUTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.conUTB.Location = new System.Drawing.Point(4, 171);
             this.conUTB.Name = "conUTB";
             this.conUTB.ReadOnly = true;
-            this.conUTB.Size = new System.Drawing.Size(200, 20);
+            this.conUTB.Size = new System.Drawing.Size(200, 19);
             this.conUTB.TabIndex = 7;
             // 
-            // richTextBox1
+            // commentRTB
             // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.commentRTB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.richTextBox1.Location = new System.Drawing.Point(4, 253);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(200, 185);
-            this.richTextBox1.TabIndex = 10;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.commentRTB.Location = new System.Drawing.Point(4, 253);
+            this.commentRTB.Name = "commentRTB";
+            this.commentRTB.ReadOnly = true;
+            this.commentRTB.Size = new System.Drawing.Size(200, 185);
+            this.commentRTB.TabIndex = 10;
+            this.commentRTB.Text = resources.GetString("commentRTB.Text");
             // 
             // outputLBL
             // 
             this.outputLBL.AutoSize = true;
             this.outputLBL.Location = new System.Drawing.Point(4, 234);
             this.outputLBL.Name = "outputLBL";
-            this.outputLBL.Size = new System.Drawing.Size(42, 13);
+            this.outputLBL.Size = new System.Drawing.Size(54, 13);
             this.outputLBL.TabIndex = 11;
-            this.outputLBL.Text = "Output:";
+            this.outputLBL.Text = "Comment:";
             // 
             // idLBL
             // 
@@ -187,11 +191,13 @@ namespace BachelorGUI
             // 
             // idTB
             // 
+            this.idTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.idTB.Cursor = System.Windows.Forms.Cursors.Default;
+            this.idTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idTB.Location = new System.Drawing.Point(4, 92);
             this.idTB.Name = "idTB";
             this.idTB.ReadOnly = true;
-            this.idTB.Size = new System.Drawing.Size(200, 20);
+            this.idTB.Size = new System.Drawing.Size(200, 19);
             this.idTB.TabIndex = 12;
             // 
             // SchoolBtn
@@ -226,10 +232,12 @@ namespace BachelorGUI
             // 
             // TConUTB
             // 
+            this.TConUTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TConUTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TConUTB.Location = new System.Drawing.Point(4, 211);
             this.TConUTB.Name = "TConUTB";
             this.TConUTB.ReadOnly = true;
-            this.TConUTB.Size = new System.Drawing.Size(200, 20);
+            this.TConUTB.Size = new System.Drawing.Size(200, 19);
             this.TConUTB.TabIndex = 16;
             // 
             // DeviceBTN
@@ -255,7 +263,7 @@ namespace BachelorGUI
             this.Controls.Add(this.idLBL);
             this.Controls.Add(this.idTB);
             this.Controls.Add(this.outputLBL);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.commentRTB);
             this.Controls.Add(this.conULBL);
             this.Controls.Add(this.conUTB);
             this.Controls.Add(this.descLBL);
@@ -290,7 +298,7 @@ namespace BachelorGUI
         private System.Windows.Forms.Label descLBL;
         private System.Windows.Forms.Label conULBL;
         public System.Windows.Forms.TextBox conUTB;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox commentRTB;
         private System.Windows.Forms.Label outputLBL;
         private System.Windows.Forms.Label idLBL;
         public System.Windows.Forms.TextBox idTB;

@@ -38,6 +38,8 @@
             this.ChangeBTN = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.DeviceCB = new System.Windows.Forms.ComboBox();
+            this.commentRTB = new System.Windows.Forms.RichTextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // nodeCB
@@ -64,7 +66,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 89);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Name:";
             // 
@@ -93,7 +95,7 @@
             // 
             // ChangeBTN
             // 
-            this.ChangeBTN.Location = new System.Drawing.Point(12, 170);
+            this.ChangeBTN.Location = new System.Drawing.Point(12, 285);
             this.ChangeBTN.Name = "ChangeBTN";
             this.ChangeBTN.Size = new System.Drawing.Size(183, 29);
             this.ChangeBTN.TabIndex = 6;
@@ -119,11 +121,31 @@
             this.DeviceCB.Size = new System.Drawing.Size(183, 21);
             this.DeviceCB.TabIndex = 7;
             // 
+            // commentRTB
+            // 
+            this.commentRTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.commentRTB.Location = new System.Drawing.Point(12, 183);
+            this.commentRTB.Name = "commentRTB";
+            this.commentRTB.Size = new System.Drawing.Size(182, 96);
+            this.commentRTB.TabIndex = 9;
+            this.commentRTB.Text = "";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 167);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Comment:";
+            // 
             // ChangeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(206, 207);
+            this.ClientSize = new System.Drawing.Size(206, 322);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.commentRTB);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.DeviceCB);
             this.Controls.Add(this.ChangeBTN);
@@ -135,9 +157,9 @@
             this.Controls.Add(this.nodeCB);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(222, 246);
+            this.MaximumSize = new System.Drawing.Size(222, 361);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(222, 246);
+            this.MinimumSize = new System.Drawing.Size(222, 361);
             this.Name = "ChangeForm";
             this.Text = "Change Nodes";
             this.Load += new System.EventHandler(this.ChangeForm_Load);
@@ -157,5 +179,7 @@
         private System.Windows.Forms.Button ChangeBTN;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox DeviceCB;
+        private System.Windows.Forms.RichTextBox commentRTB;
+        private System.Windows.Forms.Label label5;
     }
 }

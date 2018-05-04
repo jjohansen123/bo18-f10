@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -123,6 +124,7 @@ namespace BachelorGUI
                         conUTB.Text = BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(id, getSiteID()).ToString();
                         TConUTB.Text = BachelorApp.ViewSingleNodeTotalConnected.viewSingleNodeTotalConnected(id, getSiteID()).ToString();
                         idTB.Text = Convert.ToString(id);
+                        commentRTB.Text = BachelorApp.ViewSingleNodeComment.ViewSingleNodeChildren(id, getSiteID()).ToString();
                         break;
                     }
                     
@@ -130,6 +132,7 @@ namespace BachelorGUI
                     conUTB.Text = BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(rb.Name), getSiteID()).ToString();
                     TConUTB.Text = BachelorApp.ViewSingleNodeTotalConnected.viewSingleNodeTotalConnected(Convert.ToInt32(rb.Name), getSiteID()).ToString();
                     idTB.Text = rb.Name;
+                    commentRTB.Text = BachelorApp.ViewSingleNodeComment.ViewSingleNodeChildren(Convert.ToInt32(rb.Name), getSiteID()).ToString();
                     break;
                 }   
             }
@@ -140,6 +143,7 @@ namespace BachelorGUI
             UpdateCB();
             siteCB.SelectedIndex = 0;
             UpdatePanel();
+            giveDClick(baseBtn);
         }
 
         private void changeBTN_Click(object sender, EventArgs e)
@@ -178,7 +182,7 @@ namespace BachelorGUI
             }
             if (formcheck == false)
             {
-                ChangeForm ChangeForm = new ChangeForm(GenerateList(), getSiteID());
+                ChangeForm ChangeForm = new ChangeForm(GenerateList(), getSiteID(), commentRTB);
                 ChangeForm.Show();
             }
         }
@@ -199,6 +203,7 @@ namespace BachelorGUI
             {
                 rb.CheckedChanged -= this.baseBtn_CheckedChanged;
                 rb.CheckedChanged += this.baseBtn_CheckedChanged;
+                giveDClick(rb);
             }
             if (loaded)
             {
@@ -374,6 +379,16 @@ namespace BachelorGUI
                 DeviceForm DeviceForm = new DeviceForm();
                 DeviceForm.Show();
             }
+        }
+        public void giveDClick(RadioButton rb)
+        {
+            MethodInfo m = typeof(RadioButton).GetMethod("SetStyle", BindingFlags.Instance | BindingFlags.NonPublic);
+            if (m != null)
+            {
+                m.Invoke(rb, new object[] { ControlStyles.StandardClick | ControlStyles.StandardDoubleClick, true });
+            }
+            rb.MouseDoubleClick -= this.changeBTN_Click;
+            rb.MouseDoubleClick += this.changeBTN_Click;
         }
     }
 }

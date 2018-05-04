@@ -11,7 +11,7 @@ namespace BachelorGUI
 {
     class Create
     {
-        public static RadioButton CreateRBtn(List<RadioButton> listrb, Int32 conU, string desc, int SiteID, int ModelID)
+        public static RadioButton CreateRBtn(List<RadioButton> listrb, Int32 conU, string desc, string comment, int SiteID, int ModelID)
         {
            
             int increaseLength = 100;
@@ -30,7 +30,7 @@ namespace BachelorGUI
                     break;
                 }
             }//HIVEMIND MARTIN, HIVEMIND!
-            BachelorApp.Register.RegisterNode(desc, "SETT INN COMMENT HER MARTIN", ParentID, conU, SiteID, ModelID);
+            BachelorApp.Register.RegisterNode(desc, comment, ParentID, conU, SiteID, ModelID);
             return createBTN(listrb,ParentID,BachelorApp.Highestnode.GetHighest(SiteID));
         }
 

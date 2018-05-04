@@ -17,10 +17,12 @@ namespace BachelorGUI
         List<int> listIndex = new List<int>();
         List<int> DeviceIndex = new List<int>();
         int SiteID;
-        public ChangeForm(List<RadioButton> templist,int siteID)
+        RichTextBox formRTB;
+        public ChangeForm(List<RadioButton> templist,int siteID, RichTextBox rtb)
         {
             SiteID = siteID;
             listrb = templist;
+            formRTB = rtb;
             InitializeComponent();
         }
 
@@ -30,33 +32,80 @@ namespace BachelorGUI
             {
                 if (rb.Checked)
                 {
-                    if (ConUTB.Text != "")
+                    if(rb.Name != "baseBtn")
                     {
-                        if (descTB.Text != "")
+                        if (ConUTB.Text != "")
                         {
-                            BachelorGUI.Change.ChangeNode(listrb, descTB.Text, Convert.ToInt32(ConUTB.Text), SiteID, DeviceIndex[DeviceCB.SelectedIndex]);
-                            BachelorGUI.AddPercent.addPercent(listrb,SiteID);
-                            nodeCB.SelectedText = descTB.Text;
-                            break;
+                            if (descTB.Text != "")
+                            {
+                                BachelorGUI.Change.ChangeNode(listrb, descTB.Text, Convert.ToInt32(ConUTB.Text), SiteID, DeviceIndex[DeviceCB.SelectedIndex]);
+                                BachelorGUI.AddPercent.addPercent(listrb, SiteID);
+                                nodeCB.SelectedText = descTB.Text;
+                                break;
+                            }
+
+                            else
+                            {
+                                BachelorGUI.Change.ChangeNode(listrb, BachelorApp.ViewsinglenodeDescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name), SiteID), Convert.ToInt32(ConUTB.Text), SiteID, DeviceIndex[DeviceCB.SelectedIndex]);
+                                BachelorGUI.AddPercent.addPercent(listrb, SiteID);
+                                nodeCB.SelectedText = descTB.Text;
+                                break;
+                            }
                         }
 
                         else
                         {
-                            BachelorGUI.Change.ChangeNode(listrb, BachelorApp.ViewsinglenodeDescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name),SiteID), Convert.ToInt32(ConUTB.Text), SiteID, DeviceIndex[DeviceCB.SelectedIndex]);
-                            BachelorGUI.AddPercent.addPercent(listrb, SiteID);
-                            nodeCB.SelectedText = descTB.Text;
-                            break;
+                            if (descTB.Text != "")
+                            {
+                                BachelorGUI.Change.ChangeNode(listrb, descTB.Text, BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(1, SiteID), SiteID, DeviceIndex[DeviceCB.SelectedIndex]);
+                                BachelorGUI.AddPercent.addPercent(listrb, SiteID);
+                                nodeCB.SelectedText = descTB.Text;
+                                break;
+                            }
+                        }
+
+                        if (commentRTB.Text != "")
+                        {
+                            BachelorApp.Updatenode.UpdateNodeComment(1, commentRTB.Text, SiteID);
+                            formRTB.Text = commentRTB.Text;
                         }
                     }
-
                     else
                     {
-                        if (descTB.Text != "")
+                        if (ConUTB.Text != "")
                         {
-                            BachelorGUI.Change.ChangeNode(listrb, descTB.Text, BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(rb.Name), SiteID), SiteID, DeviceIndex[DeviceCB.SelectedIndex]);
-                            BachelorGUI.AddPercent.addPercent(listrb, SiteID);
-                            nodeCB.SelectedText = descTB.Text;
-                            break;
+                            if (descTB.Text != "")
+                            {
+                                BachelorGUI.Change.ChangeNode(listrb, descTB.Text, Convert.ToInt32(ConUTB.Text), SiteID, DeviceIndex[DeviceCB.SelectedIndex]);
+                                BachelorGUI.AddPercent.addPercent(listrb, SiteID);
+                                nodeCB.SelectedText = descTB.Text;
+                                break;
+                            }
+
+                            else
+                            {
+                                BachelorGUI.Change.ChangeNode(listrb, BachelorApp.ViewsinglenodeDescription.ViewSingleNodeDescription(1, SiteID), Convert.ToInt32(ConUTB.Text), SiteID, DeviceIndex[DeviceCB.SelectedIndex]);
+                                BachelorGUI.AddPercent.addPercent(listrb, SiteID);
+                                nodeCB.SelectedText = descTB.Text;
+                                break;
+                            }
+                        }
+
+                        else
+                        {
+                            if (descTB.Text != "")
+                            {
+                                BachelorGUI.Change.ChangeNode(listrb, descTB.Text, BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(1, SiteID), SiteID, DeviceIndex[DeviceCB.SelectedIndex]);
+                                BachelorGUI.AddPercent.addPercent(listrb, SiteID);
+                                nodeCB.SelectedText = descTB.Text;
+                                break;
+                            }
+                        }
+
+                        if (commentRTB.Text != "")
+                        {
+                            BachelorApp.Updatenode.UpdateNodeComment(1, commentRTB.Text, SiteID);
+                            formRTB.Text = commentRTB.Text;
                         }
                     }
                 }

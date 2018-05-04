@@ -31,16 +31,16 @@ namespace BachelorGUI
                 if(descTB.Text != "")
                 {
                     RadioButton rBtn;
-                    rBtn = BachelorGUI.Create.CreateRBtn(listrb, Convert.ToInt32(ConUTB.Text), descTB.Text, siteID, DeviceIndex[DeviceCB.SelectedIndex]);
+                    rBtn = BachelorGUI.Create.CreateRBtn(listrb, Convert.ToInt32(ConUTB.Text), descTB.Text, commentRTB.Text, siteID, DeviceIndex[DeviceCB.SelectedIndex]);
                     FormCollection fc = Application.OpenForms;
                     foreach (Form f in fc)
                     {
-                        if(f.Name == "MainForm1")
+                        if (f.Name == "MainForm1")
                         {
-                            foreach(Control c in f.Controls)
+                            foreach (Control c in f.Controls)
                             {
-                               
-                                if(c.Name == "panel1")
+
+                                if (c.Name == "panel1")
                                 {
                                     c.Controls.Add(rBtn);
                                     listrb.Add(rBtn);

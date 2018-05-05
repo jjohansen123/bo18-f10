@@ -24,7 +24,7 @@ namespace BachelorGUI
         private void CreateBTN_Click(object sender, EventArgs e)
         {
             BachelorApp.SiteFunctions.AddSite(NameTB.Text);
-            MessageBox.Show("School has been created");
+            MessageBox.Show("Site has been created");
             UpdateCB();
             SiteForm.ActiveForm.Close();
         }

@@ -12,6 +12,5 @@ namespace BachelorModel
         public String ModelName { get; set; }
         public int RangeOne { get; set; }
         public int RangeTwo { get; set; }
-       // public int RangeThree { get; set; }
     }
 }

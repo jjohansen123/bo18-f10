@@ -60,7 +60,7 @@ namespace BachelorApp
                     cmd = new SqlCommand(string.Format("SET IDENTITY_INSERT Nodes ON"), conn);
                     cmd.ExecuteNonQuery();
 
-                    cmd = new SqlCommand(string.Format("INSERT into dbo.Nodes ( SiteId, LocalID, Name, DirectConnectedUsers, ParentID, TotalConnectedUsers, TierID, NodeID, ModelId, Comment)  VALUES ( {0} , {1}, '{2}', {3}, {4}, {5}, {6}, {7}, {8}, '{9}')", HighestId, 1, "Top Node", 0, 0, 0, 0, HighestNodeId, 1,commentText), conn);
+                    cmd = new SqlCommand(string.Format("INSERT into dbo.Nodes ( SiteId, LocalID, Name, DirectConnectedUsers, ParentID, TotalConnectedUsers, NodeID, ModelId, Comment)  VALUES ( {0} , {1}, '{2}', {3}, {4}, {5}, {6}, {7}, '{8}')", HighestId, 1, "Internet Connection", 0, 0, 0, HighestNodeId, 1,commentText), conn);
                     cmd.ExecuteNonQuery();
 
                     cmd = new SqlCommand(string.Format("SET IDENTITY_INSERT Nodes OFF"), conn);

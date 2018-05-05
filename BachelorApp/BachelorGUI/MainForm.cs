@@ -312,6 +312,20 @@ namespace BachelorGUI
                 baseBtn.Checked = false;
             }
             baseBtn.Checked = true;
+
+            FormCollection fc = Application.OpenForms;
+            List<Form> closeList = new List<Form>();
+            foreach (Form f in fc)
+            {
+                if(f.Name != "MainForm1")
+                {
+                    closeList.Add(f);
+                }
+            }
+            foreach(Form f in closeList)
+            {
+                f.Close();
+            }
         }
 
         private void UpdateCB()

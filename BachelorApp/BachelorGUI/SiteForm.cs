@@ -51,6 +51,7 @@ namespace BachelorGUI
         private void DeleteBTN_Click(object sender, EventArgs e)
         {
             BachelorApp.SiteFunctions.DeleteSite(siteIndex[SiteCB.SelectedIndex]);
+            siteIndex.RemoveAt(SiteCB.SelectedIndex);
             formSiteCB.Items.RemoveAt(SiteCB.SelectedIndex);
             SiteCB.Items.RemoveAt(SiteCB.SelectedIndex);
             SiteCB.SelectedIndex = 0;

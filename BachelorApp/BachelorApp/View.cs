@@ -12,7 +12,7 @@ namespace BachelorApp
     public class View
     {
         
-        public static List<Node> ViewNodesList(int ID)
+        public static List<Node> ViewNodesList(int SiteID)
         {
             try
             {
@@ -22,7 +22,7 @@ namespace BachelorApp
                     List<Node> returnList = new List<Node>();
                     foreach(Node n in nodes)
                     {
-                        if(n.SiteId == ID)
+                        if(n.SiteId == SiteID)
                         {
                             returnList.Add(n);
                         }

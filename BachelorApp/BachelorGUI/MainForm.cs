@@ -343,11 +343,13 @@ namespace BachelorGUI
         {
             //this.Invalidate();
             panel1.Refresh();
+            Bitmap bitmap = new Bitmap(panel1.Width, panel1.Height);
             Pen myPen = new Pen(Color.Black);
             myPen.Width = 2;
             Graphics formGraphics;
-            formGraphics = panel1.CreateGraphics();
+            formGraphics = Graphics.FromImage(bitmap);
             BachelorGUI.Drawing.drawLines(GenerateList(), formGraphics, myPen, getSiteID());
+            panel1.BackgroundImage = bitmap;
             myPen.Dispose();
             formGraphics.Dispose();
         }
@@ -360,11 +362,6 @@ namespace BachelorGUI
         private void addText()
         {
             BachelorGUI.AddPercent.addPercent(GenerateList(), getSiteID());
-        }
-
-        private void MainForm1_Activated(object sender, EventArgs e)
-        {
-            draw();
         }
 
         private void DeviceBTN_Click(object sender, EventArgs e)
@@ -416,11 +413,6 @@ namespace BachelorGUI
             }
             rb.MouseDoubleClick -= this.changeBTN_Click;
             rb.MouseDoubleClick += this.changeBTN_Click;
-        }
-
-        private void MainForm1_Leave(object sender, EventArgs e)
-        {
-            draw();
         }
     }
 }

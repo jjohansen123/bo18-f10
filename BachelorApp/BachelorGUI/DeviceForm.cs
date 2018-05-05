@@ -145,9 +145,35 @@ namespace BachelorGUI
 
         private void DeleteBTN_Click(object sender, EventArgs e)
         {
-            BachelorApp.Options.Delete(deviceIndex[DeviceCB.SelectedIndex]);
-            DeviceCB.Items.RemoveAt(DeviceCB.SelectedIndex);
-            DeviceCB.SelectedIndex = 0;
+            bool deletable = true;
+            foreach(Site s in BachelorApp.SiteFunctions.GetSite())
+            {
+                foreach(Node n in BachelorApp.View.ViewNodesList(s.SiteId))
+                {
+                    if(n.ModelId == deviceIndex[DeviceCB.SelectedIndex])
+                    {
+                        deletable = false;
+                        break;
+                    }
+                }
+                if(deletable == false)
+                {
+                    break;
+                }
+            }
+
+            if(deletable == true)
+            {
+                BachelorApp.Options.Delete(deviceIndex[DeviceCB.SelectedIndex]);
+                deviceIndex.RemoveAt(DeviceCB.SelectedIndex);
+                DeviceCB.Items.RemoveAt(DeviceCB.SelectedIndex);
+                DeviceCB.SelectedIndex = 0;
+            }
+
+            else
+            {
+                MessageBox.Show("This Device is used by a node!");
+            }
         }
 
         private void DeviceForm_Load(object sender, EventArgs e)

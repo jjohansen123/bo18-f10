@@ -18,6 +18,5 @@ namespace BachelorModel
         public int TierID { get; set; }
         public int ModelId { get; set; }
         public int SiteId { get; set; }
-        //public int temp { get; set; }
     }
 }

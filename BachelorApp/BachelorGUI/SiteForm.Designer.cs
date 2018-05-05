@@ -59,7 +59,7 @@
             this.DeleteBTN.Name = "DeleteBTN";
             this.DeleteBTN.Size = new System.Drawing.Size(121, 38);
             this.DeleteBTN.TabIndex = 2;
-            this.DeleteBTN.Text = "Delete selected School";
+            this.DeleteBTN.Text = "Delete selected Site";
             this.DeleteBTN.UseVisualStyleBackColor = true;
             this.DeleteBTN.Click += new System.EventHandler(this.DeleteBTN_Click);
             // 
@@ -69,7 +69,7 @@
             this.CreateBTN.Name = "CreateBTN";
             this.CreateBTN.Size = new System.Drawing.Size(146, 38);
             this.CreateBTN.TabIndex = 3;
-            this.CreateBTN.Text = "Create new School";
+            this.CreateBTN.Text = "Create new Site";
             this.CreateBTN.UseVisualStyleBackColor = true;
             this.CreateBTN.Click += new System.EventHandler(this.CreateBTN_Click);
             // 
@@ -80,7 +80,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 13);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Select school:";
+            this.label1.Text = "Select site:";
             // 
             // label2
             // 
@@ -89,7 +89,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "School Name:";
+            this.label2.Text = "Site Name:";
             // 
             // SiteForm
             // 
@@ -106,7 +106,7 @@
             this.MaximumSize = new System.Drawing.Size(314, 140);
             this.MinimumSize = new System.Drawing.Size(314, 140);
             this.Name = "SiteForm";
-            this.Text = "School Options";
+            this.Text = "Site Options";
             this.Load += new System.EventHandler(this.SiteForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -98,7 +98,7 @@
             this.ChangeBTN.Location = new System.Drawing.Point(12, 285);
             this.ChangeBTN.Name = "ChangeBTN";
             this.ChangeBTN.Size = new System.Drawing.Size(183, 29);
-            this.ChangeBTN.TabIndex = 6;
+            this.ChangeBTN.TabIndex = 7;
             this.ChangeBTN.Text = "Change Node";
             this.ChangeBTN.UseVisualStyleBackColor = true;
             this.ChangeBTN.Click += new System.EventHandler(this.ChangeBTN_Click);
@@ -119,7 +119,7 @@
             this.DeviceCB.Location = new System.Drawing.Point(12, 65);
             this.DeviceCB.Name = "DeviceCB";
             this.DeviceCB.Size = new System.Drawing.Size(183, 21);
-            this.DeviceCB.TabIndex = 7;
+            this.DeviceCB.TabIndex = 2;
             // 
             // commentRTB
             // 
@@ -127,7 +127,7 @@
             this.commentRTB.Location = new System.Drawing.Point(12, 183);
             this.commentRTB.Name = "commentRTB";
             this.commentRTB.Size = new System.Drawing.Size(182, 96);
-            this.commentRTB.TabIndex = 9;
+            this.commentRTB.TabIndex = 6;
             this.commentRTB.Text = "";
             // 
             // label5

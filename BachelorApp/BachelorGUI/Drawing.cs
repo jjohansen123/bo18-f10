@@ -17,12 +17,12 @@ namespace BachelorGUI
             {
                 if(rb.Name == "baseBtn")
                 {
-                    temprec(rb, listrb, g, p, siteID);
+                    drawRec(rb, listrb, g, p, siteID);
                     break;
                 }
             }
         }
-        private static void temprec(RadioButton prb, List<RadioButton> listrb, Graphics g, Pen p, int siteID)
+        private static void drawRec(RadioButton prb, List<RadioButton> listrb, Graphics g, Pen p, int siteID)
         {
             List<Node> templist;
             if (prb.Name == "baseBtn")
@@ -45,7 +45,7 @@ namespace BachelorGUI
                             temp = "1";
                         if(n.LocalID == Convert.ToInt32(temp) && n.SiteId == siteID)
                         {
-                            temprec(rb, listrb, g, p, siteID);
+                            drawRec(rb, listrb, g, p, siteID);
                             g.DrawLine(p, new Point(prb.Location.X + (prb.Width / 2), prb.Location.Y + (prb.Height / 2)), new Point(rb.Location.X + (prb.Width / 2), rb.Location.Y + (rb.Height / 2)));
                             break;
                         }

@@ -44,7 +44,7 @@ namespace BachelorGUI
             this.outputLBL = new System.Windows.Forms.Label();
             this.idLBL = new System.Windows.Forms.Label();
             this.idTB = new System.Windows.Forms.TextBox();
-            this.SchoolBtn = new System.Windows.Forms.Button();
+            this.SiteBtn = new System.Windows.Forms.Button();
             this.siteCB = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.TConUTB = new System.Windows.Forms.TextBox();
@@ -59,7 +59,7 @@ namespace BachelorGUI
             this.createBtn.Margin = new System.Windows.Forms.Padding(2);
             this.createBtn.Name = "createBtn";
             this.createBtn.Size = new System.Drawing.Size(201, 30);
-            this.createBtn.TabIndex = 1;
+            this.createBtn.TabIndex = 3;
             this.createBtn.Text = "Create";
             this.createBtn.UseVisualStyleBackColor = true;
             this.createBtn.Click += new System.EventHandler(this.CreateBTN_Click);
@@ -71,7 +71,7 @@ namespace BachelorGUI
             this.deleteBtn.Margin = new System.Windows.Forms.Padding(2);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(201, 30);
-            this.deleteBtn.TabIndex = 2;
+            this.deleteBtn.TabIndex = 5;
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = true;
             this.deleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
@@ -90,7 +90,7 @@ namespace BachelorGUI
             this.baseBtn.Size = new System.Drawing.Size(80, 52);
             this.baseBtn.TabIndex = 0;
             this.baseBtn.TabStop = true;
-            this.baseBtn.Tag = "temp1";
+            this.baseBtn.Tag = "Tag1";
             this.baseBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.baseBtn.UseVisualStyleBackColor = false;
             this.baseBtn.CheckedChanged += new System.EventHandler(this.baseBtn_CheckedChanged);
@@ -130,7 +130,7 @@ namespace BachelorGUI
             this.descTB.Name = "descTB";
             this.descTB.ReadOnly = true;
             this.descTB.Size = new System.Drawing.Size(200, 19);
-            this.descTB.TabIndex = 5;
+            this.descTB.TabIndex = 13;
             // 
             // descLBL
             // 
@@ -158,7 +158,7 @@ namespace BachelorGUI
             this.conUTB.Name = "conUTB";
             this.conUTB.ReadOnly = true;
             this.conUTB.Size = new System.Drawing.Size(200, 19);
-            this.conUTB.TabIndex = 7;
+            this.conUTB.TabIndex = 14;
             // 
             // commentRTB
             // 
@@ -200,16 +200,16 @@ namespace BachelorGUI
             this.idTB.Size = new System.Drawing.Size(200, 19);
             this.idTB.TabIndex = 12;
             // 
-            // SchoolBtn
+            // SiteBtn
             // 
-            this.SchoolBtn.Location = new System.Drawing.Point(179, 7);
-            this.SchoolBtn.Name = "SchoolBtn";
-            this.SchoolBtn.Size = new System.Drawing.Size(25, 22);
-            this.SchoolBtn.TabIndex = 14;
-            this.SchoolBtn.Text = "+";
-            this.SchoolBtn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.SchoolBtn.UseVisualStyleBackColor = true;
-            this.SchoolBtn.Click += new System.EventHandler(this.SchoolBtn_Click);
+            this.SiteBtn.Location = new System.Drawing.Point(179, 7);
+            this.SiteBtn.Name = "SiteBtn";
+            this.SiteBtn.Size = new System.Drawing.Size(25, 22);
+            this.SiteBtn.TabIndex = 1;
+            this.SiteBtn.Text = "+";
+            this.SiteBtn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.SiteBtn.UseVisualStyleBackColor = true;
+            this.SiteBtn.Click += new System.EventHandler(this.SiteBtn_Click);
             // 
             // siteCB
             // 
@@ -218,7 +218,7 @@ namespace BachelorGUI
             this.siteCB.Location = new System.Drawing.Point(4, 8);
             this.siteCB.Name = "siteCB";
             this.siteCB.Size = new System.Drawing.Size(170, 21);
-            this.siteCB.TabIndex = 15;
+            this.siteCB.TabIndex = 0;
             this.siteCB.SelectionChangeCommitted += new System.EventHandler(this.siteCB_SelectionChangeCommitted);
             // 
             // label1
@@ -245,7 +245,7 @@ namespace BachelorGUI
             this.DeviceBTN.Location = new System.Drawing.Point(4, 35);
             this.DeviceBTN.Name = "DeviceBTN";
             this.DeviceBTN.Size = new System.Drawing.Size(200, 23);
-            this.DeviceBTN.TabIndex = 18;
+            this.DeviceBTN.TabIndex = 2;
             this.DeviceBTN.Text = "Device Options";
             this.DeviceBTN.UseVisualStyleBackColor = true;
             this.DeviceBTN.Click += new System.EventHandler(this.DeviceBTN_Click);
@@ -259,7 +259,7 @@ namespace BachelorGUI
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TConUTB);
             this.Controls.Add(this.siteCB);
-            this.Controls.Add(this.SchoolBtn);
+            this.Controls.Add(this.SiteBtn);
             this.Controls.Add(this.idLBL);
             this.Controls.Add(this.idTB);
             this.Controls.Add(this.outputLBL);
@@ -282,6 +282,7 @@ namespace BachelorGUI
             this.Load += new System.EventHandler(this.MainForm1_Load);
             this.Shown += new System.EventHandler(this.MainForm1_Shown);
             this.SizeChanged += new System.EventHandler(this.MainForm1_SizeChanged);
+            this.Leave += new System.EventHandler(this.MainForm1_Leave);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -302,7 +303,7 @@ namespace BachelorGUI
         private System.Windows.Forms.Label outputLBL;
         private System.Windows.Forms.Label idLBL;
         public System.Windows.Forms.TextBox idTB;
-        private System.Windows.Forms.Button SchoolBtn;
+        private System.Windows.Forms.Button SiteBtn;
         private ComboBox siteCB;
         private Label label1;
         public TextBox TConUTB;

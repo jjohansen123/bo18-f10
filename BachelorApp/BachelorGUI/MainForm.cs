@@ -42,7 +42,7 @@ namespace BachelorGUI
                 {
                     formcheck = true;
                     f.Focus();
-                    MessageBox.Show("You have to close the school window to continue");
+                    MessageBox.Show("You have to close the \"Site\" window to continue");
                     break;
                 }
                 if (f.Name == "ChangeForm")
@@ -144,6 +144,13 @@ namespace BachelorGUI
             siteCB.SelectedIndex = 0;
             UpdatePanel();
             giveDClick(baseBtn);
+
+            int id = 1;
+            descTB.Text = BachelorApp.ViewsinglenodeDescription.ViewSingleNodeDescription(id, getSiteID());
+            conUTB.Text = BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(id, getSiteID()).ToString();
+            TConUTB.Text = BachelorApp.ViewSingleNodeTotalConnected.viewSingleNodeTotalConnected(id, getSiteID()).ToString();
+            idTB.Text = Convert.ToString(id);
+            commentRTB.Text = BachelorApp.ViewSingleNodeComment.ViewSingleNodeChildren(id, getSiteID()).ToString();
         }
 
         private void changeBTN_Click(object sender, EventArgs e)
@@ -157,7 +164,7 @@ namespace BachelorGUI
                 {
                     formcheck = true;
                     f.Focus();
-                    MessageBox.Show("You have to close the school window to continue");
+                    MessageBox.Show("You have to close the \"Site\" window to continue");
                     break;
                 }
                 if (f.Name == "CreateForm")
@@ -212,7 +219,7 @@ namespace BachelorGUI
             addText();
         }
 
-        private void SchoolBtn_Click(object sender, EventArgs e)
+        private void SiteBtn_Click(object sender, EventArgs e)
         {
             bool formcheck = false;
             FormCollection fc = Application.OpenForms;
@@ -299,6 +306,12 @@ namespace BachelorGUI
             ClearPanel();
             UpdatePanel();
             SortField();
+
+            if (baseBtn.Checked)
+            {
+                baseBtn.Checked = false;
+            }
+            baseBtn.Checked = true;
         }
 
         private void UpdateCB()
@@ -314,7 +327,7 @@ namespace BachelorGUI
 
         private void draw()
         {
-            this.Invalidate();
+            //this.Invalidate();
             panel1.Refresh();
             Pen myPen = new Pen(Color.Black);
             myPen.Width = 2;
@@ -351,7 +364,7 @@ namespace BachelorGUI
                 {
                     formcheck = true;
                     f.Focus();
-                    MessageBox.Show("You have to close the school window to continue");
+                    MessageBox.Show("You have to close the \"Site\" window to continue");
                     break;
                 }
                 if (f.Name == "ChangeForm")
@@ -376,7 +389,7 @@ namespace BachelorGUI
             }
             if (formcheck == false)
             {
-                DeviceForm DeviceForm = new DeviceForm();
+                DeviceForm DeviceForm = new DeviceForm(GenerateList(), getSiteID());
                 DeviceForm.Show();
             }
         }
@@ -389,6 +402,11 @@ namespace BachelorGUI
             }
             rb.MouseDoubleClick -= this.changeBTN_Click;
             rb.MouseDoubleClick += this.changeBTN_Click;
+        }
+
+        private void MainForm1_Leave(object sender, EventArgs e)
+        {
+            draw();
         }
     }
 }

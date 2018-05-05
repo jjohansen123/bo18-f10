@@ -13,6 +13,16 @@ namespace BachelorApp
     {
         public static void AddSite(String SiteName)
         {
+            string commentText = "Color coding:" + "\n" +
+            "Red = High amounts of users." + "\n" +
+            "Yellow = Medium to high amounts of users." + "\n" +
+            "Green = Good amounts of users." + "\n" +
+            "Blue = No users." + "\n" +
+            "\n" +
+            "The \"%\" values on the nodes, describe where the load is higher" + "\n" +
+            "\n" +
+            "Double clicking on a node opens up the \"Change Nodes\" window." + "\n";
+
             SqlConnectionStringBuilder connStringBuilder = new SqlConnectionStringBuilder
             {
                 DataSource = @"(local)\SQLEXPRESS",
@@ -50,7 +60,7 @@ namespace BachelorApp
                     cmd = new SqlCommand(string.Format("SET IDENTITY_INSERT Nodes ON"), conn);
                     cmd.ExecuteNonQuery();
 
-                    cmd = new SqlCommand(string.Format("INSERT into dbo.Nodes ( SiteId, LocalID, Name, DirectConnectedUsers, ParentID, TotalConnectedUsers, TierID, NodeID, ModelId, Comment)  VALUES ( {0} , {1}, '{2}', {3}, {4}, {5}, {6}, {7}, {8}, '{9}')", HighestId, 1, "Top Node", 0, 0, 0, 0, HighestNodeId, 1,"Internet"), conn);
+                    cmd = new SqlCommand(string.Format("INSERT into dbo.Nodes ( SiteId, LocalID, Name, DirectConnectedUsers, ParentID, TotalConnectedUsers, TierID, NodeID, ModelId, Comment)  VALUES ( {0} , {1}, '{2}', {3}, {4}, {5}, {6}, {7}, {8}, '{9}')", HighestId, 1, "Top Node", 0, 0, 0, 0, HighestNodeId, 1,commentText), conn);
                     cmd.ExecuteNonQuery();
 
                     cmd = new SqlCommand(string.Format("SET IDENTITY_INSERT Nodes OFF"), conn);

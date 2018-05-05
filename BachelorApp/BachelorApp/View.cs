@@ -19,15 +19,15 @@ namespace BachelorApp
                 using (var db = new BachelorContext())
                 {
                     List<Node> nodes = db.Nodes.ToList();
-                    List<Node> temp = new List<Node>();
+                    List<Node> returnList = new List<Node>();
                     foreach(Node n in nodes)
                     {
                         if(n.SiteId == ID)
                         {
-                            temp.Add(n);
+                            returnList.Add(n);
                         }
                     }
-                    return temp;
+                    return returnList;
                 }
             }
 

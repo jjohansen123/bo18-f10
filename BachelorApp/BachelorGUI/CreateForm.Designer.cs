@@ -47,7 +47,7 @@
             this.CreateBTN.Location = new System.Drawing.Point(12, 285);
             this.CreateBTN.Name = "CreateBTN";
             this.CreateBTN.Size = new System.Drawing.Size(183, 29);
-            this.CreateBTN.TabIndex = 13;
+            this.CreateBTN.TabIndex = 14;
             this.CreateBTN.Text = "Create Node";
             this.CreateBTN.UseVisualStyleBackColor = true;
             this.CreateBTN.Click += new System.EventHandler(this.CreateBTN_Click);
@@ -119,7 +119,7 @@
             this.DeviceCB.Location = new System.Drawing.Point(12, 65);
             this.DeviceCB.Name = "DeviceCB";
             this.DeviceCB.Size = new System.Drawing.Size(183, 21);
-            this.DeviceCB.TabIndex = 14;
+            this.DeviceCB.TabIndex = 8;
             // 
             // label5
             // 
@@ -136,7 +136,7 @@
             this.commentRTB.Location = new System.Drawing.Point(12, 183);
             this.commentRTB.Name = "commentRTB";
             this.commentRTB.Size = new System.Drawing.Size(182, 96);
-            this.commentRTB.TabIndex = 16;
+            this.commentRTB.TabIndex = 13;
             this.commentRTB.Text = "";
             // 
             // CreateForm

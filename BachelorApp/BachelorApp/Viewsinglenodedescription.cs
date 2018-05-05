@@ -28,7 +28,7 @@ namespace BachelorApp
                     return Output;
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 return "error";
             }

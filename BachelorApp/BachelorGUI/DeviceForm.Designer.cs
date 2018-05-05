@@ -48,7 +48,7 @@
             this.SaveBTN.Location = new System.Drawing.Point(12, 112);
             this.SaveBTN.Name = "SaveBTN";
             this.SaveBTN.Size = new System.Drawing.Size(121, 23);
-            this.SaveBTN.TabIndex = 0;
+            this.SaveBTN.TabIndex = 8;
             this.SaveBTN.Text = "Save Changes";
             this.SaveBTN.UseVisualStyleBackColor = true;
             this.SaveBTN.Click += new System.EventHandler(this.SaveBTN_Click);
@@ -142,11 +142,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(285, 7);
+            this.label5.Location = new System.Drawing.Point(280, 7);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 13);
+            this.label5.Size = new System.Drawing.Size(107, 13);
             this.label5.TabIndex = 13;
-            this.label5.Text = "Blank = no changes";
+            this.label5.Text = "Blank = No changes.";
             // 
             // DeviceForm
             // 

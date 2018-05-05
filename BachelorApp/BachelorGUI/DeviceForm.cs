@@ -14,8 +14,12 @@ namespace BachelorGUI
     public partial class DeviceForm : Form
     {
         List<int> deviceIndex = new List<int>();
-        public DeviceForm()
+        int SiteID;
+        List<RadioButton> templist;
+        public DeviceForm(List<RadioButton> listrb, int siteID)
         {
+            templist = listrb;
+            SiteID = siteID;
             InitializeComponent();
         }
 
@@ -30,7 +34,7 @@ namespace BachelorGUI
                     break;
                 }
             }
-
+            
             if (NameTB.Text != "")
             {
                 if (Range1TB.Text != "" && Range1TB.Text.All(char.IsDigit))
@@ -39,12 +43,14 @@ namespace BachelorGUI
                     {
                         BachelorApp.Options.Change(deviceIndex[DeviceCB.SelectedIndex],NameTB.Text, Convert.ToInt32(Range1TB.Text), Convert.ToInt32(Range2TB.Text));
                         updateCB();
+                        BachelorGUI.Recolor.recolor(templist, SiteID);
                     }
 
                     else
                     {
                         BachelorApp.Options.Change(deviceIndex[DeviceCB.SelectedIndex], NameTB.Text, Convert.ToInt32(Range1TB.Text), selectedOP.RangeTwo);
                         updateCB();
+                        BachelorGUI.Recolor.recolor(templist, SiteID);
                     }
                 }
 
@@ -54,6 +60,7 @@ namespace BachelorGUI
                     {
                         BachelorApp.Options.Change(deviceIndex[DeviceCB.SelectedIndex], NameTB.Text, selectedOP.RangeOne, Convert.ToInt32(Range2TB.Text));
                         updateCB();
+                        BachelorGUI.Recolor.recolor(templist, SiteID);
                     }
 
                     else
@@ -71,11 +78,13 @@ namespace BachelorGUI
                     if (Range2TB.Text != "" && Range2TB.Text.All(char.IsDigit))
                     {
                         BachelorApp.Options.Change(deviceIndex[DeviceCB.SelectedIndex], selectedOP.ModelName, Convert.ToInt32(Range1TB.Text), Convert.ToInt32(Range2TB.Text));
+                        BachelorGUI.Recolor.recolor(templist, SiteID);
                     }
 
                     else
                     {
                         BachelorApp.Options.Change(deviceIndex[DeviceCB.SelectedIndex], selectedOP.ModelName, Convert.ToInt32(Range1TB.Text), selectedOP.RangeTwo);
+                        BachelorGUI.Recolor.recolor(templist, SiteID);
                     }
                 }
 
@@ -84,6 +93,7 @@ namespace BachelorGUI
                     if (Range2TB.Text != "" && Range2TB.Text.All(char.IsDigit))
                     {
                         BachelorApp.Options.Change(deviceIndex[DeviceCB.SelectedIndex], selectedOP.ModelName, selectedOP.RangeOne, Convert.ToInt32(Range2TB.Text));
+                        BachelorGUI.Recolor.recolor(templist, SiteID);
                     }
                     else
                     {

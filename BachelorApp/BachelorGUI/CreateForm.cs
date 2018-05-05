@@ -17,10 +17,10 @@ namespace BachelorGUI
         List<int> listIndex = new List<int>();
         List<int> DeviceIndex = new List<int>();
         int siteID;
-        public CreateForm(List<RadioButton> temprb, int SiteID)
+        public CreateForm(List<RadioButton> tempList, int SiteID)
         {
             siteID = SiteID;
-            listrb = temprb;
+            listrb = tempList;
             InitializeComponent();
         }
 

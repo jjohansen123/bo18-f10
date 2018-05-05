@@ -41,14 +41,15 @@ namespace BachelorGUI
                             {
                                 BachelorGUI.Change.ChangeNode(listrb, descTB.Text, Convert.ToInt32(ConUTB.Text), SiteID, DeviceIndex[DeviceCB.SelectedIndex]);
                                 BachelorGUI.AddPercent.addPercent(listrb, SiteID);
-                                nodeCB.SelectedText = descTB.Text;
+
+                                nodeCB.Items[nodeCB.SelectedIndex] = descTB.Text;
                             }
 
                             else
                             {
                                 BachelorGUI.Change.ChangeNode(listrb, BachelorApp.ViewsinglenodeDescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name), SiteID), Convert.ToInt32(ConUTB.Text), SiteID, DeviceIndex[DeviceCB.SelectedIndex]);
                                 BachelorGUI.AddPercent.addPercent(listrb, SiteID);
-                                nodeCB.SelectedText = descTB.Text;
+                                nodeCB.Items[nodeCB.SelectedIndex] = descTB.Text;
                             }
                         }
                         else if(ConUTB.Text != "" && !ConUTB.Text.All(char.IsNumber))
@@ -63,7 +64,7 @@ namespace BachelorGUI
                             {
                                 BachelorGUI.Change.ChangeNode(listrb, descTB.Text, BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(rb.Name), SiteID), SiteID, DeviceIndex[DeviceCB.SelectedIndex]);
                                 BachelorGUI.AddPercent.addPercent(listrb, SiteID);
-                                nodeCB.SelectedText = descTB.Text;
+                                nodeCB.Items[nodeCB.SelectedIndex] = descTB.Text;
                             }
                         }
 
@@ -88,14 +89,13 @@ namespace BachelorGUI
                             {
                                 BachelorGUI.Change.ChangeNode(listrb, descTB.Text, Convert.ToInt32(ConUTB.Text), SiteID, DeviceIndex[DeviceCB.SelectedIndex]);
                                 BachelorGUI.AddPercent.addPercent(listrb, SiteID);
-                                nodeCB.SelectedText = descTB.Text;
+                                nodeCB.Items[nodeCB.SelectedIndex] = descTB.Text;
                             }
 
                             else
                             {
                                 BachelorGUI.Change.ChangeNode(listrb, BachelorApp.ViewsinglenodeDescription.ViewSingleNodeDescription(1, SiteID), Convert.ToInt32(ConUTB.Text), SiteID, DeviceIndex[DeviceCB.SelectedIndex]);
                                 BachelorGUI.AddPercent.addPercent(listrb, SiteID);
-                                nodeCB.SelectedText = descTB.Text;
                             }
                         }
 
@@ -111,7 +111,7 @@ namespace BachelorGUI
                             {
                                 BachelorGUI.Change.ChangeNode(listrb, descTB.Text, BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(1, SiteID), SiteID, DeviceIndex[DeviceCB.SelectedIndex]);
                                 BachelorGUI.AddPercent.addPercent(listrb, SiteID);
-                                nodeCB.SelectedText = descTB.Text;
+                                nodeCB.Items[nodeCB.SelectedIndex] = descTB.Text;
                             }
                         }
 

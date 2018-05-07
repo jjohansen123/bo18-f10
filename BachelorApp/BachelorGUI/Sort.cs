@@ -26,11 +26,13 @@ namespace BachelorGUI
                     if(rb.Name == Parent.ToString())
                     {
                         rb.Location = new Point(rb.Location.X, (rangeTop) + ((rangeBot - rangeTop) / 2) - (rb.Height / 2));
+                        break;
                     }
 
                     else if(rb.Name == "baseBtn" && Parent == 1)
                     {
                         rb.Location = new Point(rb.Location.X, (rangeTop) + ((rangeBot - rangeTop) / 2) - (rb.Height / 2));
+                        break;
                     }
                 }
             }
@@ -51,11 +53,13 @@ namespace BachelorGUI
                     if (rb.Name == Parent.ToString())
                     {
                         rb.Location = new Point(rb.Location.X, (rangeTop) + ((rangeBot - rangeTop) / 2) - (rb.Height / 2));
+                        break;
                     }
 
                     else if (rb.Name == "baseBtn" && Parent == 1)
                     {
                         rb.Location = new Point(rb.Location.X, (rangeTop) + ((rangeBot - rangeTop) / 2) - (rb.Height / 2));
+                        break;
                     }
                 }
             }

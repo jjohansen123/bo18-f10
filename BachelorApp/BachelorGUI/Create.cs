@@ -29,7 +29,7 @@ namespace BachelorGUI
                     ParentID = int.Parse(rb.Name);
                     break;
                 }
-            }//HIVEMIND MARTIN, HIVEMIND!
+            }
             BachelorApp.Register.RegisterNode(desc, comment, ParentID, conU, SiteID, ModelID);
             return createBTN(listrb,ParentID,BachelorApp.Highestnode.GetHighest(SiteID));
         }
@@ -48,6 +48,7 @@ namespace BachelorGUI
                 if (rb.Name == Convert.ToString(parent) || (rb.Name == "baseBtn" && parent == 1))
                 {
                     maxLength = (((rb.Location.X - 13) / (100 + increaseLength)) + 1);
+                    break;
                 }
 
             }

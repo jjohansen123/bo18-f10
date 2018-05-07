@@ -13,15 +13,11 @@ namespace BachelorGUI
     {
         public static RadioButton CreateRBtn(List<RadioButton> listrb, Int32 conU, string desc, string comment, int SiteID, int ModelID)
         {
-           
-            int increaseLength = 100;
-            int ParentID = 1, maxLength = 1;
+            int ParentID = 1;
             foreach (RadioButton rb in listrb)
             {
                 if (rb.Checked)
                 {
-                    maxLength = (((rb.Location.X - 13) / (100 + increaseLength)) + 1);
-
                     if (rb.Name == "baseBtn")
                     {
                         break;

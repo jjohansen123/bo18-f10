@@ -10,8 +10,6 @@ namespace BachelorApp
 {
     public class Updatenode
     {
-        
-
         public static void UpdateNodeDescription(int LocalID, String Name, int SiteID)
         {
             try

@@ -54,7 +54,7 @@ namespace BachelorGUI
             siteCB.SelectedIndex = tempIndex;
         }
 
-        public void ClearPanel()
+        private void ClearPanel()
         {
             foreach (RadioButton rb in GenerateList())
             {
@@ -68,8 +68,6 @@ namespace BachelorGUI
 
         private void draw()
         {
-            this.Invalidate();
-            panel1.Refresh();
             Bitmap bitmap = new Bitmap(panel1.Width, panel1.Height);
             Pen myPen = new Pen(Color.Black);
             myPen.Width = 2;
@@ -99,7 +97,7 @@ namespace BachelorGUI
             BachelorGUI.AddPercent.addPercent(GenerateList(), getSiteID());
         }
 
-        public void UpdatePanel()
+        private void UpdatePanel()
         {
             loaded = false;
             List<Node> temp = BachelorApp.View.ViewNodesList(getSiteID());
@@ -118,7 +116,7 @@ namespace BachelorGUI
             addText();
         }
 
-        public void giveDClick(RadioButton rb)
+        private void giveDClick(RadioButton rb)
         {
             MethodInfo m = typeof(RadioButton).GetMethod("SetStyle", BindingFlags.Instance | BindingFlags.NonPublic);
             if (m != null)
@@ -321,6 +319,7 @@ namespace BachelorGUI
                 ChangeForm.Show();
             }
         }
+
         private void SiteBtn_Click(object sender, EventArgs e)
         {
             bool formcheck = false;

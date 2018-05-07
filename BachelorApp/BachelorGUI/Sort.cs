@@ -43,19 +43,20 @@ namespace BachelorGUI
                 foreach (Node n in templist)
                 {
                     recSort(n.LocalID, rangeTop+(range * i), rangeTop + (range * (i+1)), listrb, SiteID);
-                    foreach (RadioButton rb in listrb)
-                    {
-                        if (rb.Name == Parent.ToString())
-                        {
-                            rb.Location = new Point(rb.Location.X, (rangeTop) + ((rangeBot - rangeTop) / 2) - (rb.Height / 2));
-                        }
-
-                        else if (rb.Name == "baseBtn" && Parent == 1)
-                        {
-                            rb.Location = new Point(rb.Location.X, (rangeTop) + ((rangeBot - rangeTop) / 2) - (rb.Height / 2));
-                        }
-                    }
                     i++;
+                }
+
+                foreach (RadioButton rb in listrb)
+                {
+                    if (rb.Name == Parent.ToString())
+                    {
+                        rb.Location = new Point(rb.Location.X, (rangeTop) + ((rangeBot - rangeTop) / 2) - (rb.Height / 2));
+                    }
+
+                    else if (rb.Name == "baseBtn" && Parent == 1)
+                    {
+                        rb.Location = new Point(rb.Location.X, (rangeTop) + ((rangeBot - rangeTop) / 2) - (rb.Height / 2));
+                    }
                 }
             }
         }

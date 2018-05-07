@@ -86,7 +86,7 @@ namespace BachelorGUI
 
         private void SortField()
         {
-            BachelorGUI.Sort.SortField(GenerateList(), panel1.Height,panel1.Location.Y,baseBtn.Height, getSiteID());
+            BachelorGUI.Sort.SortField(GenerateList(), panel1.Height,panel1.Location.Y, getSiteID());
             Recolor();
             draw();
 

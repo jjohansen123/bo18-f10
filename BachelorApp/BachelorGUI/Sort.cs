@@ -11,7 +11,7 @@ namespace BachelorGUI
 {
     class Sort
     {
-        public static void SortField(List<RadioButton> listrb, int panelHeight, int PanelLocY, int bntHeight, int SiteID)
+        public static void SortField(List<RadioButton> listrb, int panelHeight, int PanelLocY, int SiteID)
         {
             int start = 1;//top node
             recSort(start, panelHeight, PanelLocY, listrb, SiteID);

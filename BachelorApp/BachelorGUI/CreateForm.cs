@@ -120,5 +120,13 @@ namespace BachelorGUI
 
             }
         }
+
+        private void descTB_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                CreateBTN_Click(sender, e);
+            }
+        }
     }
 }

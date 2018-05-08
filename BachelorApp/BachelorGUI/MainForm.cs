@@ -251,6 +251,34 @@ namespace BachelorGUI
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
+            FormCollection fc = Application.OpenForms;
+            List<Form> closeList = new List<Form>();
+            foreach (Form f in fc)
+            {
+                if (f.Name == "SiteForm")
+                {
+                    
+                }
+                if (f.Name == "CreateForm")
+                {
+                    closeList.Add(f);
+
+                }
+                if (f.Name == "DeviceForm")
+                {
+                    closeList.Add(f);
+
+                }
+                if (f.Name == "ChangeForm")
+                {
+                    closeList.Add(f);
+                }
+            }
+            foreach (Form f in closeList)
+            {
+                f.Close();
+            }
+
             if (!baseBtn.Checked)
             {
                 if (BachelorGUI.NodeHasChildren.HasChild(GenerateList(), getSiteID()))
@@ -277,6 +305,7 @@ namespace BachelorGUI
             SortField();
             Updatetotal.RunUpdate(getSiteID());
             addText();
+            baseBtn.Checked = true;
         }
 
         private void changeBTN_Click(object sender, EventArgs e)

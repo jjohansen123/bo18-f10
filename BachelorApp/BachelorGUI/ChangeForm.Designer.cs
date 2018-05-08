@@ -76,6 +76,7 @@
             this.descTB.Name = "descTB";
             this.descTB.Size = new System.Drawing.Size(183, 20);
             this.descTB.TabIndex = 3;
+            this.descTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.descTB_KeyDown);
             // 
             // label3
             // 
@@ -92,6 +93,7 @@
             this.ConUTB.Name = "ConUTB";
             this.ConUTB.Size = new System.Drawing.Size(183, 20);
             this.ConUTB.TabIndex = 5;
+            this.ConUTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.descTB_KeyDown);
             // 
             // ChangeBTN
             // 

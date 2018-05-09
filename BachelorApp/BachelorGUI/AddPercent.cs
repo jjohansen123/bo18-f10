@@ -21,12 +21,12 @@ namespace BachelorGUI
                     tconu = BachelorApp.ViewSingleNodeTotalConnected.viewSingleNodeTotalConnected(BachelorApp.ViewSingleNodeParent.ViewSingleParent(Convert.ToInt32(rb.Name), SiteID), SiteID) - BachelorApp.ViewSingleNodeConnected.ViewSingleConnected(BachelorApp.ViewSingleNodeParent.ViewSingleParent(Convert.ToInt32(rb.Name), SiteID), SiteID);
                     string name = BachelorApp.ViewSingleNodeDescription.ViewSingleDescription(Convert.ToInt32(rb.Name), SiteID);
 
-                    if(TextRenderer.MeasureText(name, rb.Font).Width >= (rb.Width - 15))
+                    if(TextRenderer.MeasureText(name, rb.Font).Width >= (rb.Width - 20))
                     {
                         for(int i = 0; i < name.Length; i++)
                         {
                             string TempName = new string(name.Take(name.Length - i).ToArray());
-                            if(TextRenderer.MeasureText(TempName,rb.Font).Width < (rb.Width - 15))
+                            if(TextRenderer.MeasureText(TempName,rb.Font).Width < (rb.Width - 20))
                             {
                                 name = TempName + "...";
                                 break;

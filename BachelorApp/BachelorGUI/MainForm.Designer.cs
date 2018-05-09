@@ -246,7 +246,7 @@ namespace BachelorGUI
             this.DeviceBTN.Name = "DeviceBTN";
             this.DeviceBTN.Size = new System.Drawing.Size(200, 23);
             this.DeviceBTN.TabIndex = 2;
-            this.DeviceBTN.Text = "Device Devices";
+            this.DeviceBTN.Text = "Device Options";
             this.DeviceBTN.UseVisualStyleBackColor = true;
             this.DeviceBTN.Click += new System.EventHandler(this.DeviceBTN_Click);
             // 

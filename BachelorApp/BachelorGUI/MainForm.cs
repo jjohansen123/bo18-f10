@@ -19,8 +19,12 @@ namespace BachelorGUI
         public MainForm1()
         {
             InitializeComponent();
-        }  
+        }
 
+        /// <summary>
+        /// Generates the list.
+        /// </summary>
+        /// <returns></returns>
         private List<RadioButton> GenerateList()
         {
             List<RadioButton> temprb = new List<RadioButton>();
@@ -31,6 +35,10 @@ namespace BachelorGUI
             return temprb;
         }
 
+        /// <summary>
+        /// Gets the site identifier.
+        /// </summary>
+        /// <returns></returns>
         private int getSiteID()
         {
             foreach (Site s in BachelorApp.SiteFunctions.GetSite())
@@ -43,6 +51,9 @@ namespace BachelorGUI
             return 1;
         }
 
+        /// <summary>
+        /// Updates the cb.
+        /// </summary>
         private void UpdateCB()
         {
             int tempIndex = siteCB.SelectedIndex;
@@ -54,6 +65,9 @@ namespace BachelorGUI
             siteCB.SelectedIndex = tempIndex;
         }
 
+        /// <summary>
+        /// Clears the panel.
+        /// </summary>
         private void ClearPanel()
         {
             foreach (RadioButton rb in GenerateList())
@@ -64,8 +78,11 @@ namespace BachelorGUI
                     rb.Dispose();
                 }
             }
-        } 
+        }
 
+        /// <summary>
+        /// Draws lines for the panel.
+        /// </summary>
         private void draw()
         {
             Bitmap bitmap = new Bitmap(panel1.Width, panel1.Height);
@@ -79,11 +96,17 @@ namespace BachelorGUI
             formGraphics.Dispose();
         }
 
+        /// <summary>
+        /// Recolors the buttons;
+        /// </summary>
         private void Recolor()
         {
             BachelorGUI.Recolor.recolor(GenerateList(), getSiteID());
         }
 
+        /// <summary>
+        /// Sorts the field.
+        /// </summary>
         private void SortField()
         {
             BachelorGUI.Sort.SortField(GenerateList(), panel1.Height,panel1.Location.Y, getSiteID());
@@ -92,11 +115,17 @@ namespace BachelorGUI
 
         }
 
+        /// <summary>
+        /// Adds the text.
+        /// </summary>
         private void addText()
         {
             BachelorGUI.AddPercent.addPercent(GenerateList(), getSiteID());
         }
 
+        /// <summary>
+        /// Updates the panel.
+        /// </summary>
         private void UpdatePanel()
         {
             loaded = false;
@@ -116,6 +145,10 @@ namespace BachelorGUI
             addText();
         }
 
+        /// <summary>
+        /// Gives the dclick event to radio button.
+        /// </summary>
+        /// <param name="rb">The rb.</param>
         private void giveDClick(RadioButton rb)
         {
             MethodInfo m = typeof(RadioButton).GetMethod("SetStyle", BindingFlags.Instance | BindingFlags.NonPublic);
@@ -127,6 +160,11 @@ namespace BachelorGUI
             rb.MouseDoubleClick += this.changeBTN_Click;
         }
 
+        /// <summary>
+        /// Handles the Load event of the MainForm1 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void MainForm1_Load(object sender, EventArgs e)
         {
             UpdateCB();
@@ -142,11 +180,21 @@ namespace BachelorGUI
             commentRTB.Text = BachelorApp.ViewSingleNodeComment.ViewSingleComment(id, getSiteID()).ToString();
         }
 
+        /// <summary>
+        /// Handles the Shown event of the MainForm1 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void MainForm1_Shown(object sender, EventArgs e)
         {
             draw();
         }
 
+        /// <summary>
+        /// Handles the ControlAdded event of the panel1 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="ControlEventArgs"/> instance containing the event data.</param>
         private void panel1_ControlAdded(object sender, ControlEventArgs e)
         {
             foreach (RadioButton rb in GenerateList())
@@ -162,11 +210,21 @@ namespace BachelorGUI
             addText();
         }
 
+        /// <summary>
+        /// Handles the SizeChanged event of the MainForm1 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void MainForm1_SizeChanged(object sender, EventArgs e)
         {
             SortField();
         }
 
+        /// <summary>
+        /// Handles the Click event of the DeviceBTN control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void DeviceBTN_Click(object sender, EventArgs e)
         {
             bool formcheck = false;
@@ -208,6 +266,11 @@ namespace BachelorGUI
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the CreateBTN control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void CreateBTN_Click(object sender, EventArgs e)
         {
             bool formcheck = false;
@@ -249,6 +312,11 @@ namespace BachelorGUI
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the DeleteBtn control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             FormCollection fc = Application.OpenForms;
@@ -308,6 +376,11 @@ namespace BachelorGUI
             baseBtn.Checked = true;
         }
 
+        /// <summary>
+        /// Handles the Click event of the changeBTN control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void changeBTN_Click(object sender, EventArgs e)
         {
             bool formcheck = false;
@@ -349,6 +422,11 @@ namespace BachelorGUI
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the SiteBtn control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void SiteBtn_Click(object sender, EventArgs e)
         {
             bool formcheck = false;
@@ -388,6 +466,11 @@ namespace BachelorGUI
             }
         }
 
+        /// <summary>
+        /// Handles the CheckedChanged event of the baseBtn control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         public void baseBtn_CheckedChanged(object sender, EventArgs e)
         {
             foreach (RadioButton rb in panel1.Controls)
@@ -415,6 +498,11 @@ namespace BachelorGUI
             }
         }
 
+        /// <summary>
+        /// Handles the SelectionChangeCommitted event of the siteCB control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void siteCB_SelectionChangeCommitted(object sender, EventArgs e)
         {
             ClearPanel();

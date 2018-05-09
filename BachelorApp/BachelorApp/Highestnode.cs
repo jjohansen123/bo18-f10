@@ -11,6 +11,10 @@ namespace BachelorApp
 {
     public class Highestnode
     {
+        /// <summary>
+        /// Increments the highest value in the database.
+        /// </summary>
+        
         public static void SetHighest(int Site)
         {
             try
@@ -34,6 +38,10 @@ namespace BachelorApp
             }
         }
 
+        /// <summary>
+        /// Gets the highest ID in the given site. This is to generate a button with the correct name.
+        /// </summary>
+    
         public static int GetHighest(int SiteId)
         {
             try

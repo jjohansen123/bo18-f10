@@ -18,8 +18,8 @@ namespace BachelorGUI
                 {
                     double conu, tconu;
                     conu = BachelorApp.ViewSingleNodeTotalConnected.viewSingleNodeTotalConnected(Convert.ToInt32(rb.Name), SiteID);
-                    tconu = BachelorApp.ViewSingleNodeTotalConnected.viewSingleNodeTotalConnected(BachelorApp.Viewsinglenodeparent.ViewSingleNodeParent(Convert.ToInt32(rb.Name), SiteID), SiteID) - BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(BachelorApp.Viewsinglenodeparent.ViewSingleNodeParent(Convert.ToInt32(rb.Name), SiteID), SiteID);
-                    string name = BachelorApp.ViewsinglenodeDescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name), SiteID);
+                    tconu = BachelorApp.ViewSingleNodeTotalConnected.viewSingleNodeTotalConnected(BachelorApp.ViewSingleNodeParent.ViewSingleParent(Convert.ToInt32(rb.Name), SiteID), SiteID) - BachelorApp.ViewSingleNodeConnected.ViewSingleConnected(BachelorApp.ViewSingleNodeParent.ViewSingleParent(Convert.ToInt32(rb.Name), SiteID), SiteID);
+                    string name = BachelorApp.ViewSingleNodeDescription.ViewSingleDescription(Convert.ToInt32(rb.Name), SiteID);
 
                     if(TextRenderer.MeasureText(name, rb.Font).Width >= (rb.Width - 15))
                     {
@@ -36,12 +36,12 @@ namespace BachelorGUI
 
                     if (conu != 0 && tconu != 0)
                     {
-                        rb.Text = name + "\n" + BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(rb.Name), SiteID) + " Users" + "\n" + Math.Round(((conu / tconu) * 100), 2).ToString() + "%";
+                        rb.Text = name + "\n" + BachelorApp.ViewSingleNodeConnected.ViewSingleConnected(Convert.ToInt32(rb.Name), SiteID) + " Users" + "\n" + Math.Round(((conu / tconu) * 100), 2).ToString() + "%";
                     }
 
                     else
                     {
-                        rb.Text = name + "\n" + BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(rb.Name), SiteID) + " Users" + "\n" + "100%";
+                        rb.Text = name + "\n" + BachelorApp.ViewSingleNodeConnected.ViewSingleConnected(Convert.ToInt32(rb.Name), SiteID) + " Users" + "\n" + "100%";
                     }
                     
                 }

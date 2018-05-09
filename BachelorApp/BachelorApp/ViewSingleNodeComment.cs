@@ -9,7 +9,13 @@ namespace BachelorApp
 {
     public class ViewSingleNodeComment
     {
-        public static String ViewSingleNodeChildren(Int32 LocalID, int SiteID)
+        /// <summary>
+        /// Views the comment for the single node.
+        /// </summary>
+        /// <param name="LocalID">The local identifier.</param>
+        /// <param name="SiteID">The site identifier.</param>
+        /// <returns></returns>
+        public static String ViewSingleComment(Int32 LocalID, int SiteID)
         {
             SqlConnectionStringBuilder connStringBuilder = new SqlConnectionStringBuilder
             {

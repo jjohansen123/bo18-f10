@@ -25,12 +25,12 @@ namespace BachelorGUI
                 }
             }
 
-            if (desc != BachelorApp.ViewsinglenodeDescription.ViewSingleNodeDescription(LocalID, SiteID))
+            if (desc != BachelorApp.ViewSingleNodeDescription.ViewSingleDescription(LocalID, SiteID))
             {
                 BachelorApp.Updatenode.UpdateNodeDescription(LocalID, desc, SiteID);
             }
 
-            if (users != BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(LocalID, SiteID))
+            if (users != BachelorApp.ViewSingleNodeConnected.ViewSingleConnected(LocalID, SiteID))
             {
                 BachelorApp.Updatenode.UpdateNodeUsers(LocalID, users, SiteID);
             }

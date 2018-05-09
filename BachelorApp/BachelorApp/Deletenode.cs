@@ -7,10 +7,14 @@ using BachelorModel;
 using BachelorDataAccess;
 using System.Data.SqlClient;
 
+/// <summary>
+/// This function takes in a local ID and site ID to delete a spesific done from the database.
+/// </summary>
 namespace BachelorApp
 {
     public class Deletenode
     {
+
         public static void DeleteNode(Int32 LocalID, int SiteID)
         {
 

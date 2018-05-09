@@ -11,7 +11,12 @@ namespace BachelorApp
 {
     public class View
     {
-        
+
+        /// <summary>
+        /// Returns a list of all nodes from a site.
+        /// </summary>
+        /// <param name="SiteID">The site identifier.</param>
+        /// <returns></returns>
         public static List<Node> ViewNodesList(int SiteID)
         {
             try

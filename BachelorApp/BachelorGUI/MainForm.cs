@@ -135,11 +135,11 @@ namespace BachelorGUI
             giveDClick(baseBtn);
 
             int id = 1;
-            descTB.Text = BachelorApp.ViewsinglenodeDescription.ViewSingleNodeDescription(id, getSiteID());
-            conUTB.Text = BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(id, getSiteID()).ToString();
+            descTB.Text = BachelorApp.ViewSingleNodeDescription.ViewSingleDescription(id, getSiteID());
+            conUTB.Text = BachelorApp.ViewSingleNodeConnected.ViewSingleConnected(id, getSiteID()).ToString();
             TConUTB.Text = BachelorApp.ViewSingleNodeTotalConnected.viewSingleNodeTotalConnected(id, getSiteID()).ToString();
             idTB.Text = Convert.ToString(id);
-            commentRTB.Text = BachelorApp.ViewSingleNodeComment.ViewSingleNodeChildren(id, getSiteID()).ToString();
+            commentRTB.Text = BachelorApp.ViewSingleNodeComment.ViewSingleComment(id, getSiteID()).ToString();
         }
 
         private void MainForm1_Shown(object sender, EventArgs e)
@@ -397,19 +397,19 @@ namespace BachelorGUI
                     if (rb.Name == "baseBtn")
                     {
                         int id = 1;
-                        descTB.Text = BachelorApp.ViewsinglenodeDescription.ViewSingleNodeDescription(id, getSiteID());
-                        conUTB.Text = BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(id, getSiteID()).ToString();
+                        descTB.Text = BachelorApp.ViewSingleNodeDescription.ViewSingleDescription(id, getSiteID());
+                        conUTB.Text = BachelorApp.ViewSingleNodeConnected.ViewSingleConnected(id, getSiteID()).ToString();
                         TConUTB.Text = BachelorApp.ViewSingleNodeTotalConnected.viewSingleNodeTotalConnected(id, getSiteID()).ToString();
                         idTB.Text = Convert.ToString(id);
-                        commentRTB.Text = BachelorApp.ViewSingleNodeComment.ViewSingleNodeChildren(id, getSiteID()).ToString();
+                        commentRTB.Text = BachelorApp.ViewSingleNodeComment.ViewSingleComment(id, getSiteID()).ToString();
                         break;
                     }
 
-                    descTB.Text = BachelorApp.ViewsinglenodeDescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name), getSiteID());
-                    conUTB.Text = BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(rb.Name), getSiteID()).ToString();
+                    descTB.Text = BachelorApp.ViewSingleNodeDescription.ViewSingleDescription(Convert.ToInt32(rb.Name), getSiteID());
+                    conUTB.Text = BachelorApp.ViewSingleNodeConnected.ViewSingleConnected(Convert.ToInt32(rb.Name), getSiteID()).ToString();
                     TConUTB.Text = BachelorApp.ViewSingleNodeTotalConnected.viewSingleNodeTotalConnected(Convert.ToInt32(rb.Name), getSiteID()).ToString();
                     idTB.Text = rb.Name;
-                    commentRTB.Text = BachelorApp.ViewSingleNodeComment.ViewSingleNodeChildren(Convert.ToInt32(rb.Name), getSiteID()).ToString();
+                    commentRTB.Text = BachelorApp.ViewSingleNodeComment.ViewSingleComment(Convert.ToInt32(rb.Name), getSiteID()).ToString();
                     break;
                 }
             }

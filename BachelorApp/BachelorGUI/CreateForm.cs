@@ -70,13 +70,13 @@ namespace BachelorGUI
             {
                 if (rb.Name == "baseBtn")
                 {
-                    nodeCB.Items.Add(BachelorApp.ViewsinglenodeDescription.ViewSingleNodeDescription(1, siteID));
+                    nodeCB.Items.Add(BachelorApp.ViewSingleNodeDescription.ViewSingleDescription(1, siteID));
                     listIndex.Add(1);
                 }
 
                 else
                 {
-                    nodeCB.Items.Add(BachelorApp.ViewsinglenodeDescription.ViewSingleNodeDescription(Convert.ToInt32(rb.Name), siteID));
+                    nodeCB.Items.Add(BachelorApp.ViewSingleNodeDescription.ViewSingleDescription(Convert.ToInt32(rb.Name), siteID));
                     listIndex.Add(Convert.ToInt32(rb.Name));
                 }
 
@@ -85,7 +85,7 @@ namespace BachelorGUI
                     nodeCB.SelectedIndex = listIndex.Count - 1;
                 }
             }
-            foreach (Options op in BachelorApp.Options.Get())
+            foreach (Devices op in BachelorApp.Devices.Get())
             {
                 DeviceCB.Items.Add(op.ModelName);
                 DeviceIndex.Add(op.ModelId);
@@ -111,7 +111,7 @@ namespace BachelorGUI
                 }
                 else
                 {
-                    if (BachelorApp.ViewsinglenodeDescription.ViewSingleNodeDescription((listIndex[(nodeCB.SelectedIndex)]), siteID) == nodeCB.Text && Convert.ToInt32(rb.Name) == (listIndex[(nodeCB.SelectedIndex)]))
+                    if (BachelorApp.ViewSingleNodeDescription.ViewSingleDescription((listIndex[(nodeCB.SelectedIndex)]), siteID) == nodeCB.Text && Convert.ToInt32(rb.Name) == (listIndex[(nodeCB.SelectedIndex)]))
                     {
                         rb.Checked = true;
                         break;

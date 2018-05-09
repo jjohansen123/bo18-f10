@@ -25,8 +25,8 @@ namespace BachelorGUI
 
         private void SaveBTN_Click(object sender, EventArgs e)
         {
-            Options selectedOP = new Options();
-            foreach (Options op in BachelorApp.Options.Get())
+            Devices selectedOP = new Devices();
+            foreach (Devices op in BachelorApp.Devices.Get())
             {
                 if(op.ModelId == deviceIndex[DeviceCB.SelectedIndex])
                 {
@@ -41,14 +41,14 @@ namespace BachelorGUI
                 {
                     if (Range2TB.Text != "" && Range2TB.Text.All(char.IsDigit))
                     {
-                        BachelorApp.Options.Change(deviceIndex[DeviceCB.SelectedIndex],NameTB.Text, Convert.ToInt32(Range1TB.Text), Convert.ToInt32(Range2TB.Text));
+                        BachelorApp.Devices.Change(deviceIndex[DeviceCB.SelectedIndex],NameTB.Text, Convert.ToInt32(Range1TB.Text), Convert.ToInt32(Range2TB.Text));
                         updateCB();
                         BachelorGUI.Recolor.recolor(templist, SiteID);
                     }
 
                     else
                     {
-                        BachelorApp.Options.Change(deviceIndex[DeviceCB.SelectedIndex], NameTB.Text, Convert.ToInt32(Range1TB.Text), selectedOP.RangeTwo);
+                        BachelorApp.Devices.Change(deviceIndex[DeviceCB.SelectedIndex], NameTB.Text, Convert.ToInt32(Range1TB.Text), selectedOP.RangeTwo);
                         updateCB();
                         BachelorGUI.Recolor.recolor(templist, SiteID);
                     }
@@ -58,14 +58,14 @@ namespace BachelorGUI
                 {
                     if (Range2TB.Text != "" && Range2TB.Text.All(char.IsDigit))
                     {
-                        BachelorApp.Options.Change(deviceIndex[DeviceCB.SelectedIndex], NameTB.Text, selectedOP.RangeOne, Convert.ToInt32(Range2TB.Text));
+                        BachelorApp.Devices.Change(deviceIndex[DeviceCB.SelectedIndex], NameTB.Text, selectedOP.RangeOne, Convert.ToInt32(Range2TB.Text));
                         updateCB();
                         BachelorGUI.Recolor.recolor(templist, SiteID);
                     }
 
                     else
                     {
-                        BachelorApp.Options.Change(deviceIndex[DeviceCB.SelectedIndex], NameTB.Text, selectedOP.RangeOne, selectedOP.RangeTwo);
+                        BachelorApp.Devices.Change(deviceIndex[DeviceCB.SelectedIndex], NameTB.Text, selectedOP.RangeOne, selectedOP.RangeTwo);
                         updateCB();
                     }
                 }
@@ -77,13 +77,13 @@ namespace BachelorGUI
                 {
                     if (Range2TB.Text != "" && Range2TB.Text.All(char.IsDigit))
                     {
-                        BachelorApp.Options.Change(deviceIndex[DeviceCB.SelectedIndex], selectedOP.ModelName, Convert.ToInt32(Range1TB.Text), Convert.ToInt32(Range2TB.Text));
+                        BachelorApp.Devices.Change(deviceIndex[DeviceCB.SelectedIndex], selectedOP.ModelName, Convert.ToInt32(Range1TB.Text), Convert.ToInt32(Range2TB.Text));
                         BachelorGUI.Recolor.recolor(templist, SiteID);
                     }
 
                     else
                     {
-                        BachelorApp.Options.Change(deviceIndex[DeviceCB.SelectedIndex], selectedOP.ModelName, Convert.ToInt32(Range1TB.Text), selectedOP.RangeTwo);
+                        BachelorApp.Devices.Change(deviceIndex[DeviceCB.SelectedIndex], selectedOP.ModelName, Convert.ToInt32(Range1TB.Text), selectedOP.RangeTwo);
                         BachelorGUI.Recolor.recolor(templist, SiteID);
                     }
                 }
@@ -92,7 +92,7 @@ namespace BachelorGUI
                 {
                     if (Range2TB.Text != "" && Range2TB.Text.All(char.IsDigit))
                     {
-                        BachelorApp.Options.Change(deviceIndex[DeviceCB.SelectedIndex], selectedOP.ModelName, selectedOP.RangeOne, Convert.ToInt32(Range2TB.Text));
+                        BachelorApp.Devices.Change(deviceIndex[DeviceCB.SelectedIndex], selectedOP.ModelName, selectedOP.RangeOne, Convert.ToInt32(Range2TB.Text));
                         BachelorGUI.Recolor.recolor(templist, SiteID);
                     }
                     else
@@ -111,7 +111,7 @@ namespace BachelorGUI
                 {
                     if (Range2TB.Text != "" && Range2TB.Text.All(char.IsDigit))
                     {
-                        BachelorApp.Options.Add(NameTB.Text,Convert.ToInt32(Range1TB.Text), Convert.ToInt32(Range2TB.Text));
+                        BachelorApp.Devices.Add(NameTB.Text,Convert.ToInt32(Range1TB.Text), Convert.ToInt32(Range2TB.Text));
                         updateCB();
                     }
 
@@ -164,7 +164,7 @@ namespace BachelorGUI
 
             if(deletable == true)
             {
-                BachelorApp.Options.Delete(deviceIndex[DeviceCB.SelectedIndex]);
+                BachelorApp.Devices.Delete(deviceIndex[DeviceCB.SelectedIndex]);
                 deviceIndex.RemoveAt(DeviceCB.SelectedIndex);
                 DeviceCB.Items.RemoveAt(DeviceCB.SelectedIndex);
                 DeviceCB.SelectedIndex = 0;
@@ -178,7 +178,7 @@ namespace BachelorGUI
 
         private void DeviceForm_Load(object sender, EventArgs e)
         {
-            foreach(Options op in BachelorApp.Options.Get())
+            foreach(Devices op in BachelorApp.Devices.Get())
             {
                 DeviceCB.Items.Add(op.ModelName);
                 deviceIndex.Add(op.ModelId);
@@ -189,7 +189,7 @@ namespace BachelorGUI
         {
             int selectedIndex = DeviceCB.SelectedIndex;
             DeviceCB.Items.Clear();
-            foreach (Options op in BachelorApp.Options.Get())
+            foreach (Devices op in BachelorApp.Devices.Get())
             {
                 DeviceCB.Items.Add(op.ModelName);
                 deviceIndex.Add(op.ModelId);

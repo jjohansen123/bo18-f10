@@ -106,7 +106,7 @@
             this.MaximumSize = new System.Drawing.Size(314, 140);
             this.MinimumSize = new System.Drawing.Size(314, 140);
             this.Name = "SiteForm";
-            this.Text = "Site Options";
+            this.Text = "Site Devices";
             this.Load += new System.EventHandler(this.SiteForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

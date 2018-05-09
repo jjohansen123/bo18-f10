@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BachelorModel
 {
-    public class Options
+    public class Devices
     {
         public int ModelId { get; set; }
         public String ModelName { get; set; }

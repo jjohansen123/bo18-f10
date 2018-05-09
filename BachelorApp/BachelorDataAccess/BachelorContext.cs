@@ -15,7 +15,7 @@ namespace BachelorDataAccess
         public virtual DbSet<Node> Nodes { get; set; }
         public virtual DbSet<HighId> HighestNode { get; set; }
         public virtual DbSet<Site> Sites { get; set; }
-        public virtual DbSet<Options> Model { get; set; }
+        public virtual DbSet<Devices> Model { get; set; }
         public BachelorContext()
         {
             Configuration.ProxyCreationEnabled = false;
@@ -39,11 +39,11 @@ namespace BachelorDataAccess
                     m.ToTable("HighestLocalID");
 
                 });
-            modelBuilder.Entity<Options>()
+            modelBuilder.Entity<Devices>()
                 .HasKey(a => a.ModelId)
                 .Map(m =>
                 {
-                    m.ToTable("Options");
+                    m.ToTable("Devices");
 
                 });
 

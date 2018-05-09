@@ -7,9 +7,15 @@ using System.Data.SqlClient;
 
 namespace BachelorApp
 {
-    public class Viewsinglenodeparent
+    public class ViewSingleNodeParent
     {
-        public static int ViewSingleNodeParent(Int32 LocalID, int SiteID)
+        /// <summary>
+        /// Returns the id of the nodes parent.
+        /// </summary>
+        /// <param name="LocalID">The local identifier.</param>
+        /// <param name="SiteID">The site identifier.</param>
+        /// <returns></returns>
+        public static int ViewSingleParent(Int32 LocalID, int SiteID)
         {
             SqlConnectionStringBuilder connStringBuilder = new SqlConnectionStringBuilder
             {

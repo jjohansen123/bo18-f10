@@ -61,7 +61,7 @@
   <ItemGroup>
     <Compile Include="Deletenode.cs" />
     <Compile Include="Highestnode.cs" />
-    <Compile Include="Options.cs" />
+    <Compile Include="Devices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Refreshall.cs" />
     <Compile Include="Register.cs" />
@@ -71,10 +71,10 @@
     <Compile Include="View.cs" />
     <Compile Include="ViewSingleNodeChildren.cs" />
     <Compile Include="ViewSingleNodeComment.cs" />
-    <Compile Include="Viewsinglenodeconnected.cs" />
-    <Compile Include="Viewsinglenodedescription.cs" />
+    <Compile Include="ViewSingleNodeConnected.cs" />
+    <Compile Include="ViewSingleNodeDescription.cs" />
     <Compile Include="ViewSingleNodeModelID.cs" />
-    <Compile Include="Viewsinglenodeparent.cs" />
+    <Compile Include="ViewSingleNodeParent.cs" />
     <Compile Include="ViewSingleNodeTotalConnected.cs" />
   </ItemGroup>
   <ItemGroup>

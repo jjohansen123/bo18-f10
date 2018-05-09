@@ -10,6 +10,12 @@ namespace BachelorApp
 {
     public class ViewSingleNodeChildren
     {
+        /// <summary>
+        /// Returns a list of the nodes children.
+        /// </summary>
+        /// <param name="ID">The identifier.</param>
+        /// <param name="SiteID">The site identifier.</param>
+        /// <returns></returns>
         public static List<Node> ViewChildren(Int32 ID, int SiteID)
         {
             try

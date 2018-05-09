@@ -9,6 +9,12 @@ namespace BachelorApp
 {
     public class ViewSingleNodeModelID
     {
+        /// <summary>
+        /// Views the type of device at the given local and site ID.
+        /// </summary>
+        /// <param name="LocalID">The local identifier.</param>
+        /// <param name="SiteID">The site identifier.</param>
+        /// <returns></returns>
         public static int viewSingleNodeModelID(Int32 LocalID, int SiteID)
         {
             SqlConnectionStringBuilder connStringBuilder = new SqlConnectionStringBuilder

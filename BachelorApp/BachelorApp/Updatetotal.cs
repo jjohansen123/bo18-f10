@@ -10,6 +10,11 @@ namespace BachelorApp
 {
     public class Updatetotal
     {
+        /// <summary>
+        /// Helping function to update total connected users in.
+        /// Finds the correct node to start the recursive algorithm.
+        /// </summary>
+        /// <param name="Site">The site.</param>
         public static void RunUpdate(int Site)
         {
             using (var db = new BachelorContext())
@@ -31,6 +36,11 @@ namespace BachelorApp
                 }
             }
         }
+        /// <summary>
+        /// Recursive algorithm that updates the total connected user from the given node.
+        /// </summary>
+        /// <param name="n">The n.</param>
+        /// <returns></returns>
         public static int UpdateTotal(Node n)
         {
             try

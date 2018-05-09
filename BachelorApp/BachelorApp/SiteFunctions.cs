@@ -11,6 +11,10 @@ namespace BachelorApp
 {
     public class SiteFunctions
     {
+        /// <summary>
+        /// Registers a new site.
+        /// </summary>
+        /// <param name="SiteName">Name of the site.</param>
         public static void AddSite(String SiteName)
         {
             string commentText = "Color coding:" + "\n" +
@@ -76,8 +80,12 @@ namespace BachelorApp
         }
 
 
-       
 
+
+        /// <summary>
+        /// Gets a list of all sites.
+        /// </summary>
+        /// <returns></returns>
         public static List<Site> GetSite()
         {
             try
@@ -95,7 +103,11 @@ namespace BachelorApp
                 throw e;
             }
         }
-        
+
+        /// <summary>
+        /// Deletes the site.
+        /// </summary>
+        /// <param name="Id">The identifier.</param>
         public static void DeleteSite(int Id)
         {
             SqlConnectionStringBuilder connStringBuilder = new SqlConnectionStringBuilder

@@ -14,16 +14,16 @@ namespace BachelorGUI
     {
         public static void recolor(List<RadioButton> listrb, int SiteID)
         {
-            List<Options> templist = BachelorApp.Options.Get();
+            List<Devices> templist = BachelorApp.Devices.Get();
             foreach (RadioButton rb in listrb)
             {
                 if(rb.Name != "baseBtn")
                 {
-                    foreach(Options op in templist)
+                    foreach(Devices op in templist)
                     {
                         if(op.ModelId == BachelorApp.ViewSingleNodeModelID.viewSingleNodeModelID(Convert.ToInt32(rb.Name), SiteID))
                         {
-                            int conu = BachelorApp.Viewsinglenodeconnected.ViewSingleNodeConnected(Convert.ToInt32(rb.Name), SiteID);
+                            int conu = BachelorApp.ViewSingleNodeConnected.ViewSingleConnected(Convert.ToInt32(rb.Name), SiteID);
                             if (conu > op.RangeOne)
                             {
                                 rb.BackColor = ColorTranslator.FromHtml("#ff4d4d");

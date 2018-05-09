@@ -8,9 +8,15 @@ using System.Data.SqlClient;
 
 namespace BachelorApp
 {
-    public class ViewsinglenodeDescription
+    public class ViewSingleNodeDescription
     {
-        public static String ViewSingleNodeDescription(Int32 LocalID, int SiteID)
+        /// <summary>
+        /// Views the description of a single node.
+        /// </summary>
+        /// <param name="LocalID">The local identifier.</param>
+        /// <param name="SiteID">The site identifier.</param>
+        /// <returns></returns>
+        public static String ViewSingleDescription(Int32 LocalID, int SiteID)
         {
             SqlConnectionStringBuilder connStringBuilder = new SqlConnectionStringBuilder
             {

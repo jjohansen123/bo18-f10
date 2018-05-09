@@ -7,9 +7,15 @@ using System.Data.SqlClient;
 
 namespace BachelorApp
 {
-    public class Viewsinglenodeconnected
+    public class ViewSingleNodeConnected
     {
-        public static int ViewSingleNodeConnected(Int32 LocalID, int SiteID)
+        /// <summary>
+        /// Returns an integer of how many directly connected users on the node.
+        /// </summary>
+        /// <param name="LocalID">The local identifier.</param>
+        /// <param name="SiteID">The site identifier.</param>
+        /// <returns></returns>
+        public static int ViewSingleConnected(Int32 LocalID, int SiteID)
         {
             SqlConnectionStringBuilder connStringBuilder = new SqlConnectionStringBuilder
             {

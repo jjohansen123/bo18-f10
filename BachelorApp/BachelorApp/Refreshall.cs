@@ -10,6 +10,9 @@ namespace BachelorApp
 {
     class Refreshall
     {
+        /// <summary>
+        /// A helper function to refresh all nodes total connected users.
+        /// </summary>
         public static void RefeshAll()
         {
             try

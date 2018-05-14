@@ -1,0 +1,17 @@
+C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorDataAccess\bin\Release\BachelorDataAccess.dll.config
+C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorDataAccess\bin\Release\BachelorDataAccess.dll
+C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorDataAccess\bin\Release\BachelorDataAccess.pdb
+C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorDataAccess\bin\Release\BachelorModel.dll
+C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorDataAccess\bin\Release\EntityFramework.dll
+C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorDataAccess\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorDataAccess\bin\Release\EntityFramework.SqlServerCompact.dll
+C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorDataAccess\bin\Release\System.Data.SqlServerCe.dll
+C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorDataAccess\bin\Release\BachelorModel.pdb
+C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorDataAccess\bin\Release\EntityFramework.xml
+C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorDataAccess\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorDataAccess\bin\Release\EntityFramework.SqlServerCompact.xml
+C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorDataAccess\obj\Release\BachelorDataAccess.csprojAssemblyReference.cache
+C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorDataAccess\obj\Release\BachelorDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorDataAccess\obj\Release\BachelorDataAccess.csproj.CopyComplete
+C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorDataAccess\obj\Release\BachelorDataAccess.dll
+C:\Users\Kissi\Documents\GitHub\bo18-f10\BachelorApp\BachelorDataAccess\obj\Release\BachelorDataAccess.pdb

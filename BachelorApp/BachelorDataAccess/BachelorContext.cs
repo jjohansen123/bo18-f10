@@ -16,7 +16,7 @@ namespace BachelorDataAccess
         public virtual DbSet<HighId> HighestNode { get; set; }
         public virtual DbSet<Site> Sites { get; set; }
         public virtual DbSet<Devices> Model { get; set; }
-        public BachelorContext()
+        public BachelorContext() : base(@"Data Source=donau.hiof.no;Initial Catalog=kristei;Integrated Security=False;User ID=kristei;Password=qDW7OP;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
         {
             Configuration.ProxyCreationEnabled = false;
             Database.SetInitializer(new BachelorDBInitializer());

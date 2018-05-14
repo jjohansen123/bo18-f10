@@ -35,7 +35,7 @@ namespace BachelorApp
             };
             try
             {
-                using (SqlConnection conn = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = BachelorDataAccess.BachelorContext; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False"))
+                using (SqlConnection conn = new SqlConnection(@"Data Source=donau.hiof.no;Initial Catalog=kristei;Integrated Security=False;User ID=kristei;Password=qDW7OP;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand(string.Format("SELECT MAX(SiteId) FROM DBO.Sites"), conn);
@@ -118,7 +118,7 @@ namespace BachelorApp
             };
             try
             {
-                using (SqlConnection conn = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = BachelorDataAccess.BachelorContext; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False"))
+                using (SqlConnection conn = new SqlConnection(@"Data Source=donau.hiof.no;Initial Catalog=kristei;Integrated Security=False;User ID=kristei;Password=qDW7OP;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand(string.Format("DELETE FROM Dbo.Sites WHERE SiteId = '{0}'", Id), conn);
